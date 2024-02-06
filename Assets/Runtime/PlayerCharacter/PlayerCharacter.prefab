@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c80d6aeeca46889288d37243846b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimer: 0.5
+  cooldownTimer: 0.35
   projectileLauncher: {fileID: 5989775452810852730}
 --- !u!114 &5989775452810852730
 MonoBehaviour:
@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchVelocity: 25
+  pitchVariation: 0.5
   objectToLaunch: {fileID: 1050092730644915003, guid: e8d0841c6bc806547868c81120e44dfb, type: 3}
   fireFrom: {fileID: 6144143817728312801}
 --- !u!114 &7292131213452536812
@@ -502,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef31c416bc450544b1cc72492c9dff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyDelay: 0.25
   healthHandler: {fileID: 622157033376170197}
 --- !u!114 &622157033376170197
 MonoBehaviour:

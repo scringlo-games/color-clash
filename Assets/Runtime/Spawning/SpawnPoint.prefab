@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 0}
-  interval: 10
+  interval: 5.5
 --- !u!82 &5459411277451993329
 AudioSource:
   m_ObjectHideFlags: 0
