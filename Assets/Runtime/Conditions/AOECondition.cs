@@ -46,7 +46,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                         foreach (var thisCond in bank.Conditions)
                         {
                             float duration = thisCond.Duration;
-                            Condition newCondition;
+                            Condition newCondition = null;
                             // Case uses pattern casting!
                             switch (thisCond)
                             {
@@ -54,17 +54,16 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                                 {
                                     newCondition = new SlowCondition(condition.SlowPercent, 
                                         condition.Duration - condition.Time);
-                                    targetBank.Apply(newCondition);
                                     break;
                                 }
                                 case DOTCondition condition:
                                 {
                                     newCondition = new DOTCondition(condition.DamagePerTick, 
                                         condition.Duration - condition.Time);
-                                    targetBank.Apply(newCondition);
                                     break;
                                 }
                             }
+                            if (newCondition != null) {targetBank.Apply(newCondition); };
                         }
                     }
                 }
