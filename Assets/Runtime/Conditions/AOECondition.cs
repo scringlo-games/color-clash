@@ -52,14 +52,16 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                             {
                                 case SlowCondition condition:
                                 {
-                                    newCondition = new SlowCondition(condition.slowPercent);
-                                    SetTimeAndApply(newCondition, condition, targetBank);
+                                    newCondition = new SlowCondition(condition.GetSlowPercent(), 
+                                        condition.Duration - condition.Time);
+                                    targetBank.Apply(newCondition);
                                     break;
                                 }
                                 case DOTCondition condition:
                                 {
-                                    newCondition = new DOTCondition(condition.Damage);
-                                    SetTimeAndApply(newCondition, condition, targetBank);
+                                    newCondition = new DOTCondition(condition.GetDamagePerTick(), 
+                                        condition.Duration - condition.Time);
+                                    targetBank.Apply(newCondition);
                                     break;
                                 }
                             }
@@ -67,12 +69,6 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                     }
                 }
             }
-        }
-        private void SetTimeAndApply(Condition newCondition, Condition oldCondition,
-            ConditionBank targetBank)
-        {
-            newCondition.Duration = oldCondition.Duration - oldCondition.Time;
-            targetBank.Apply(newCondition);
         }
     }
 }

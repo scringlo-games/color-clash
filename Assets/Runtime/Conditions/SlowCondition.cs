@@ -5,12 +5,29 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 {
     public class SlowCondition : Condition
     {
-        public float slowPercent;
+        private float slowPercent;
         private MoveToGameObject moveToGameObject;
+
+        public float GetSlowPercent()
+        {
+            return slowPercent;
+        }
         
         //If percent is too big/small, clamp to reasonable range.
         public SlowCondition(float slowPercent)
         {
+            slowPercent = Mathf.Clamp01(slowPercent);
+            this.slowPercent = slowPercent;
+        }
+
+        /// <summary>
+        /// Instance with set duration.
+        /// </summary>
+        /// <param name="slowPercent">Percent speed after slow.</param>
+        /// <param name="Duration">How long it lasts.</param>
+        public SlowCondition(float slowPercent, float Duration)
+        {
+            this.Duration = Duration;
             slowPercent = Mathf.Clamp01(slowPercent);
             this.slowPercent = slowPercent;
         }

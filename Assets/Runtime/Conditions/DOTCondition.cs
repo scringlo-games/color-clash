@@ -10,8 +10,13 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         /// <summary>
         /// Damage dealt per tick
         /// </summary>
-        public float Damage;
+        private float Damage;
         private HealthHandler AffectedHealth;
+
+        public float GetDamagePerTick()
+        {
+            return Damage;
+        }
         
         /// <summary>
         /// Creates instance of DOTCondition
@@ -19,6 +24,17 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         /// <param name="damage">Damage per tick.</param>
         public DOTCondition(float damage)
         {
+            this.Damage = damage;
+        }
+        
+        /// <summary>
+        /// Instance with specific duration
+        /// </summary>
+        /// <param name="damage">Damage per tick.</param>
+        /// <param name="duration">How long it lasts.</param>
+        public DOTCondition(float damage, float duration)
+        {
+            this.Duration = duration;
             this.Damage = damage;
         }
         
