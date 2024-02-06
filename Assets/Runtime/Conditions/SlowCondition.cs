@@ -8,9 +8,12 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private float slowPercent;
         private MoveToGameObject moveToGameObject;
 
-        public float GetSlowPercent()
+        /// <summary>
+        /// Percent speed after slow. Read only.
+        /// </summary>
+        public float SlowPercent
         {
-            return slowPercent;
+            get { return slowPercent; }
         }
         
         //If percent is too big/small, clamp to reasonable range.

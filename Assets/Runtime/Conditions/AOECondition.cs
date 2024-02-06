@@ -52,14 +52,14 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                             {
                                 case SlowCondition condition:
                                 {
-                                    newCondition = new SlowCondition(condition.GetSlowPercent(), 
+                                    newCondition = new SlowCondition(condition.SlowPercent, 
                                         condition.Duration - condition.Time);
                                     targetBank.Apply(newCondition);
                                     break;
                                 }
                                 case DOTCondition condition:
                                 {
-                                    newCondition = new DOTCondition(condition.GetDamagePerTick(), 
+                                    newCondition = new DOTCondition(condition.DamagePerTick, 
                                         condition.Duration - condition.Time);
                                     targetBank.Apply(newCondition);
                                     break;
