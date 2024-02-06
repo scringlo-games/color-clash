@@ -45,11 +45,34 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                     {
                         foreach (var thisCond in bank.Conditions)
                         {
-                            targetBank.Apply(thisCond);
+                            float duration = thisCond.Duration;
+                            Condition newCondition;
+                            // Case uses pattern casting!
+                            switch (thisCond)
+                            {
+                                case SlowCondition condition:
+                                {
+                                    newCondition = new SlowCondition(condition.slowPercent);
+                                    SetTimeAndApply(newCondition, condition, targetBank);
+                                    break;
+                                }
+                                case DOTCondition condition:
+                                {
+                                    newCondition = new DOTCondition(condition.Damage);
+                                    SetTimeAndApply(newCondition, condition, targetBank);
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
             }
+        }
+        private void SetTimeAndApply(Condition newCondition, Condition oldCondition,
+            ConditionBank targetBank)
+        {
+            newCondition.Duration = oldCondition.Duration - oldCondition.Time;
+            targetBank.Apply(newCondition);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         /// <summary>
         /// Damage dealt per tick
         /// </summary>
-        private float Damage;
+        public float Damage;
         private HealthHandler AffectedHealth;
         
         /// <summary>

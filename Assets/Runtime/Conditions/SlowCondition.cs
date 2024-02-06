@@ -5,7 +5,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 {
     public class SlowCondition : Condition
     {
-        private float slowPercent;
+        public float slowPercent;
         private MoveToGameObject moveToGameObject;
         
         //If percent is too big/small, clamp to reasonable range.
