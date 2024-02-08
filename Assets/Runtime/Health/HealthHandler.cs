@@ -14,12 +14,6 @@ namespace ScringloGames.ColorClash.Runtime.Health
 
         private void Awake()
         {
-            this.registrar.Setup();
-        }
-
-        private void Start()
-        {
-            //sets health to max health on the first frame of the player existing. 
             this.Health = this.MaxHealth;
         }
 
