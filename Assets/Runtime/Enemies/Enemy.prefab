@@ -329,12 +329,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1696952737144271157, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
       propertyPath: offsetY
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1696952737144271157, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 6631468549797979530}
+    - target: {fileID: 2824095802998858730, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6e948690cf95e64ab6d3dd3163098a6, type: 3}
+    - target: {fileID: 2824095802998858730, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Color.b
+      value: 0.009789954
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824095802998858730, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Color.g
+      value: 0.009789954
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824095802998858730, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Color.r
+      value: 0.05660379
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469464309833536245, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469464309833536245, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477587458781573657, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6e948690cf95e64ab6d3dd3163098a6, type: 3}
+    - target: {fileID: 3477587458781573657, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477587458781573657, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477587458781573657, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477587458781573657, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_FillMethod
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860299128834540484, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860299128834540484, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5385962593210355355, guid: 1f7fac35aa06d1747afaec883bed1c87, type: 3}
       propertyPath: m_Name
       value: EnemyHealthCanvas
