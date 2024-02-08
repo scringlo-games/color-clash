@@ -49,7 +49,7 @@ public class FlinchOnDamage : MonoBehaviour
             if(flashLength <= 0 )
             {
                 this.sprite.color = startColor;
-                this.sprite.size = startScale;
+                sprite.transform.localScale = startScale;
                 isFlash = false;
             }
         }
@@ -58,7 +58,7 @@ public class FlinchOnDamage : MonoBehaviour
     {  
             isFlash = true;
             this.sprite.color = lerpedColor;
-            this.sprite.size = modScale;
+            sprite.transform.localScale = modScale;
             flashLength = flashLengthMax;
         
     }
