@@ -17,20 +17,19 @@ public class FlinchOnDamage : MonoBehaviour
     private float flashIntensity;
     [SerializeField]
     private Color flashColor;
-    [SerializeField][Range(0.75f,1f)]
-    private float flinchScaleX;
-    [SerializeField][Range(0.75f,1f)]
-    private float flinchScaleY;
-    [SerializeField][Range(0.05f, 1f)]
-    private float flinchScaleLength;
+    [SerializeField][Range(0f,0.20f)]
+    private float flinchScaleIntensity;
+    private UnityEngine.Vector2 startScale;
+    private UnityEngine.Vector2 modScale;
     private Color startColor;
     private Color lerpedColor;
     private float flashLength;
     private bool isFlash;
-    private int lastHealth;
     void Start()
     {
-        lastHealth = health.Health;
+        startScale = this.sprite.size;
+        modScale = new UnityEngine.Vector2(this.sprite.size.x - (flinchScaleIntensity * this.sprite.size.x),this.sprite.size.y - (flinchScaleIntensity*this.sprite.size.y));
+        Debug.Log($"mod scale is {modScale}");
         startColor = this.sprite.color;
         lerpedColor = Color.Lerp(startColor, flashColor, flashIntensity);
 
@@ -50,22 +49,17 @@ public class FlinchOnDamage : MonoBehaviour
             if(flashLength <= 0 )
             {
                 this.sprite.color = startColor;
+                this.sprite.size = startScale;
                 isFlash = false;
             }
         }
     }
     void Flinch(int currentHealth)
-    {   
-        if(currentHealth <= lastHealth)
-        {
+    {  
             isFlash = true;
-            sprite.color = lerpedColor;
+            this.sprite.color = lerpedColor;
+            this.sprite.size = modScale;
             flashLength = flashLengthMax;
-            lastHealth = currentHealth;
-        }
-        else 
-        {
-            lastHealth = currentHealth;
-        }
+        
     }
 }
