@@ -21,7 +21,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
             {
                 if (this.TryGetComponent(out AudioSource audioSource))
                 {
-                    audioSource.pitch = (pitchVariation * Random.value) + 1.0f;
+                    audioSource.pitch = (this.pitchVariation * Random.value) + 1.0f;
                     audioSource.Play();
                 }
                 Destroy(this.gameObject);
@@ -44,10 +44,10 @@ namespace ScringloGames.ColorClash.Runtime.Shared
                 Destroy(this.gameObject); 
             }
         }
-        
-        void OnDisable()
+
+        private void OnDisable()
         {
-            tempSpawner.CreateNewSprite(this.transform.position);
+            this.tempSpawner.CreateNewSprite(this.transform.position);
         }
         
         /// <summary>

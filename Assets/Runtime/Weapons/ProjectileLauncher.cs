@@ -24,7 +24,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         {
             if (this.TryGetComponent(out AudioSource audioSource))
             {
-                audioSource.pitch = (pitchVariation * Random.value) + 1.0f;
+                audioSource.pitch = (this.pitchVariation * Random.value) + 1.0f;
                 audioSource.Play();
             }
             var newProjectile = 
