@@ -1,65 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
-using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Health;
-using ScringloGames.ColorClash.Runtime.UI;
 using UnityEngine;
 
-public class FlinchOnDamage : MonoBehaviour
+namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    [SerializeField]
-    private HealthHandler health;
-    [SerializeField]
-    private SpriteRenderer sprite;
-    [SerializeField][Range(0.05f,1f)]
-    private float flashLengthMax;
-    [SerializeField][Range(0,1)]
-    private float flashIntensity;
-    [SerializeField]
-    private Color flashColor;
-    [SerializeField][Range(0f,0.20f)]
-    private float flinchScaleIntensity;
-    private UnityEngine.Vector2 startScale;
-    private UnityEngine.Vector2 modScale;
-    private Color startColor;
-    private Color lerpedColor;
-    private float flashLength;
-    private bool isFlash;
-    void Start()
+    public class FlinchOnDamage : MonoBehaviour
     {
-        startScale = this.sprite.size;
-        modScale = new UnityEngine.Vector2(this.sprite.size.x - (flinchScaleIntensity * this.sprite.size.x),this.sprite.size.y - (flinchScaleIntensity*this.sprite.size.y));
-        Debug.Log($"mod scale is {modScale}");
-        startColor = this.sprite.color;
-        lerpedColor = Color.Lerp(startColor, flashColor, flashIntensity);
+        [SerializeField]
+        private HealthHandler health;
+        [SerializeField]
+        private SpriteRenderer sprite;
+        [SerializeField][Range(0.05f,1f)]
+        private float flashLengthMax;
+        [SerializeField][Range(0,1)]
+        private float flashIntensity;
+        [SerializeField]
+        private Color flashColor;
+        [SerializeField][Range(0f,0.20f)]
+        private float flinchScaleIntensity;
+        private Vector2 startScale;
+        private Vector2 modScale;
+        private Color startColor;
+        private Color lerpedColor;
+        private float flashLength;
+        private bool isFlash;
 
-    }
-    void OnEnable()
-    {
-        health.HealthChanged += Flinch;
-    }
-    void OnDisable()
-    {
-        health.HealthChanged -= Flinch;
-    }
-    void Update()
-    {   if(isFlash)
+        private void Start()
         {
-            flashLength -= Time.deltaTime;
-            if(flashLength <= 0 )
+            var size = this.sprite.size;
+            this.startScale = size;
+            this.modScale = new Vector2(size.x - (this.flinchScaleIntensity * size.x),size.y - (this.flinchScaleIntensity * size.y));
+            Debug.Log($"mod scale is {this.modScale}");
+            this.startColor = this.sprite.color;
+            this.lerpedColor = Color.Lerp(this.startColor, this.flashColor, this.flashIntensity);
+        }
+
+        private void OnEnable()
+        {
+            this.health.HealthChanged += this.Flinch;
+        }
+
+        private void OnDisable()
+        {
+            this.health.HealthChanged -= this.Flinch;
+        }
+
+        private void Update()
+        {   if(this.isFlash)
             {
-                this.sprite.color = startColor;
-                sprite.transform.localScale = startScale;
-                isFlash = false;
+                this.flashLength -= Time.deltaTime;
+                if(this.flashLength <= 0 )
+                {
+                    this.sprite.color = this.startColor;
+                    this.sprite.transform.localScale = this.startScale;
+                    this.isFlash = false;
+                }
             }
         }
-    }
-    void Flinch(int currentHealth)
-    {  
-            isFlash = true;
-            this.sprite.color = lerpedColor;
-            sprite.transform.localScale = modScale;
-            flashLength = flashLengthMax;
-        
+
+        private void Flinch(int currentHealth)
+        {  
+            this.isFlash = true;
+            this.sprite.color = this.lerpedColor;
+            this.sprite.transform.localScale = this.modScale;
+            this.flashLength = this.flashLengthMax;
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
             if (this.TryGetComponent(out ConditionBank conditionBank) && 
                 this.TryGetComponent(out SpriteRenderer spriteRenderer))
             {
-                disableOnDisable = true;
+                this.disableOnDisable = true;
                 this.conditionBank = conditionBank;
                 this.spriteRenderer = spriteRenderer;
                 conditionBank.Applied += this.OnAppliedOrExpired;
@@ -27,24 +27,24 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         private void OnDisable()
         {
-            if (disableOnDisable)
+            if (this.disableOnDisable)
             {
-                conditionBank.Applied -= this.OnAppliedOrExpired;
-                conditionBank.Expired -= this.OnAppliedOrExpired;
+                this.conditionBank.Applied -= this.OnAppliedOrExpired;
+                this.conditionBank.Expired -= this.OnAppliedOrExpired;
             }
         }
 
         private void OnAppliedOrExpired(Condition obj)
         {
-            UpdateColor();
+            this.UpdateColor();
         }
 
         private void UpdateColor()
         {
-            var redCounter = conditionBank.Conditions
+            var redCounter = this.conditionBank.Conditions
                 .OfType<DOTCondition>()
                 .Count();
-            var blueCounter = conditionBank.Conditions
+            var blueCounter = this.conditionBank.Conditions
                 .OfType<SlowCondition>()
                 .Count();
             Color newColor = new Color();
@@ -65,7 +65,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                 newColor = Color.white;
             }
 
-            spriteRenderer.color = newColor;
+            this.spriteRenderer.color = newColor;
         }
     }
 }
