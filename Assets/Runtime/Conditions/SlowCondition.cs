@@ -37,7 +37,18 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         public override void OnApplied(ConditionBank bank)
         {
+            if (bank == null)
+            {
+                return;
+            }
+            
             this.moveToGameObject = bank.GetComponent<MoveToGameObject>();
+
+            if (this.moveToGameObject == null)
+            {
+                return;
+            }
+            
             this.moveToGameObject.Velocity *= this.slowPercent;
         }
 
