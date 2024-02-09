@@ -8,29 +8,11 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private float slowPercent;
         private MoveToGameObject moveToGameObject;
 
-        /// <summary>
-        /// Percent speed after slow. Read only.
-        /// </summary>
-        public float SlowPercent
-        {
-            get { return this.slowPercent; }
-        }
-        
-        //If percent is too big/small, clamp to reasonable range.
-        public SlowCondition(float slowPercent)
-        {
-            slowPercent = Mathf.Clamp01(slowPercent);
-            this.slowPercent = slowPercent;
-        }
-
-        /// <summary>
-        /// Instance with set duration.
-        /// </summary>
+        /// <param name="duration">The duration of the condition in seconds.</param>
         /// <param name="slowPercent">Percent speed after slow.</param>
-        /// <param name="Duration">How long it lasts.</param>
-        public SlowCondition(float slowPercent, float Duration)
+        public SlowCondition(float duration, float slowPercent)
+            : base(duration)
         {
-            this.Duration = Duration;
             slowPercent = Mathf.Clamp01(slowPercent);
             this.slowPercent = slowPercent;
         }
@@ -55,6 +37,11 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         public override void OnExpired(ConditionBank bank)
         {
             this.moveToGameObject.Velocity /= this.slowPercent;
+        }
+
+        public override Condition Clone()
+        {
+            return new SlowCondition(this.Duration, this.slowPercent);
         }
     }
 }

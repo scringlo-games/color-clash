@@ -102,3 +102,5 @@ MonoBehaviour:
     entries:
     - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
       negate: 1
+  radius: 3
+  damage: 15
