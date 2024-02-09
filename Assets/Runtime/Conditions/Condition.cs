@@ -1,25 +1,30 @@
-﻿namespace ScringloGames.ColorClash.Runtime.Conditions
+﻿using ScringloGames.ColorClash.Runtime.Shared;
+using UnityEngine;
+
+namespace ScringloGames.ColorClash.Runtime.Conditions
 {
     /// <summary>
     /// Responsible for encapsulating behaviour that is common between all conditions and for defining a signature
     /// that can be used to treat conditions in the same way by certain systems (such as ConditionBank). Inheritors
     /// should override the OnApplied, OnTicked, and OnExpired methods in order to define condition-specific behavior.
     /// </summary>
-    public abstract class Condition
+    public abstract class Condition : ICloneable<Condition>
     {
         /// <summary>
         /// Determines the duration for which the condition should continue to be active.
         /// </summary>
-        public float Duration { get; set; }
+        public float Duration { get; }
         /// <summary>
-        /// The remaining time for which the condition will continue to be active. This will be initialized at Duration
-        /// and decremented every frame. When this value reaches zero, the condition will be automatically removed.
+        /// The total time for which the condition has been active. This will be initialized at zero and incremented
+        /// every frame. When this value reaches <see cref="Duration"/>, the condition will be automatically removed.
         /// </summary>
-        public float Time { get; set; }
+        public float Time { get; private set; }
         
-        protected Condition()
+        /// <param name="duration">The duration of the condition in seconds.</param>
+        protected Condition(float duration)
         {
-            this.Time = this.Duration;
+            this.Time = 0f;
+            this.Duration = duration;
         }
         
         /// <summary>
@@ -37,6 +42,7 @@
         /// <param name="deltaTime">The interval in seconds from the last frame to the current one (Read Only).</param>
         public virtual void OnTicked(ConditionBank bank, float deltaTime)
         {
+            this.Time = Mathf.Clamp(this.Time, 0f, this.Duration);
         }
 
         /// <summary>
@@ -46,5 +52,7 @@
         public virtual void OnExpired(ConditionBank bank)
         {
         }
+
+        public abstract Condition Clone();
     }
 }

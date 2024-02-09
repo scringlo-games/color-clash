@@ -47,7 +47,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
             var blueCounter = this.conditionBank.Conditions
                 .OfType<SlowCondition>()
                 .Count();
-            Color newColor = new Color();
+            var newColor = new Color();
             if (redCounter > 0 && blueCounter > 0)
             {
                 newColor = new Color(255, 0, 255, 255);

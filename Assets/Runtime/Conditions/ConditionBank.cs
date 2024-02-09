@@ -68,14 +68,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         {
             // Update the countdown
             this.countdown.Tick(Time.deltaTime);
-            
-            // Update the time of all conditions
-            foreach (var condition in this.conditions)
-            {
-                var increment = condition.Time + Time.deltaTime;
-                condition.Time = Mathf.Clamp(increment, 0f, condition.Duration);
-            }
-            
+
             // Find all conditions that have exceeded their duration and expire them
             var conditionsToExpire = this.conditions
                 .Where(c => c.Time >= c.Duration)

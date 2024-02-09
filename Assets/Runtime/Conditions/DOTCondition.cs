@@ -10,45 +10,33 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         /// <summary>
         /// Damage dealt per tick
         /// </summary>
-        private float damagePerTick;
-        private HealthHandler AffectedHealth;
-
-        /// <summary>
-        /// Damage per tick. Read only.
-        /// </summary>
-        public float DamagePerTick
-        {
-            get { return this.damagePerTick; }
-        }
-
-        /// <summary>
-        /// Creates instance of DOTCondition
-        /// </summary>
+        private readonly float damagePerTick;
+        private HealthHandler affectedHealth;
+        
+        /// <param name="duration">The duration of the condition in seconds.</param>
         /// <param name="damagePerTick">Damage per tick.</param>
-        public DOTCondition(float damagePerTick)
+        public DOTCondition(float duration, float damagePerTick)
+            : base(duration)
         {
             this.damagePerTick = damagePerTick;
         }
-        
-        /// <summary>
-        /// Instance with specific duration
-        /// </summary>
-        /// <param name="damagePerTick">Damage per tick.</param>
-        /// <param name="duration">How long it lasts.</param>
-        public DOTCondition(float damagePerTick, float duration)
-        {
-            this.Duration = duration;
-            this.damagePerTick = damagePerTick;
-        }
-        
+
         public override void OnApplied(ConditionBank bank)
         {
-            this.AffectedHealth = bank.GetComponent<HealthHandler>();
+            this.affectedHealth = bank.GetComponent<HealthHandler>();
         }
 
         public override void OnTicked(ConditionBank bank, float deltaTime)
         {
-            this.AffectedHealth.TakeDamage((int)this.damagePerTick);
+            // We need to ensure that the OnTicked() method of the base class gets updated so that Time is incremented
+            base.OnTicked(bank, deltaTime);
+            
+            this.affectedHealth.TakeDamage((int)this.damagePerTick);
+        }
+
+        public override Condition Clone()
+        {
+            return new DOTCondition(this.damagePerTick, this.Duration);
         }
     }
 }
