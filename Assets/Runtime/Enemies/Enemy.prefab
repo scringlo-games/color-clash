@@ -39,8 +39,7 @@ Transform:
   m_LocalPosition: {x: -2.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 862956642517303750}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6628604789013111976
@@ -120,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
+  registrar: {fileID: 11400000, guid: f60546eb37b6aa848a5be09bbfef3df1, type: 2}
 --- !u!114 &2007922483361088555
 MonoBehaviour:
   m_ObjectHideFlags: 0
