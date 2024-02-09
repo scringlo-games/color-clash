@@ -6,11 +6,11 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public abstract class DestroyOnCollisionEnter : MonoBehaviour
     {
-        [SerializeField]
         [Tooltip("The filter the other object must pass in order to apply these effects.")]
-        private GameObjectFilterSet filter;
         [SerializeField]
+        private GameObjectFilterSet filter;
         [Tooltip("The delay in seconds to wait before destroying the object.")]
+        [SerializeField]
         private float delay = 0.05f;
 
         protected abstract GameObject GetDestroyTarget(Collision2D collision);
@@ -30,8 +30,9 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         private IEnumerator DestroyObjectAfterSeconds(GameObject other, float seconds)
         {
             yield return new WaitForSeconds(seconds);
-            
-            Destroy(other);
+
+            var destructible = other.GetComponent<Destructible>();
+            destructible.Destroy();
         }
     }
 }

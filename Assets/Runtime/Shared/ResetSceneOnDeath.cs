@@ -1,4 +1,3 @@
-using ScringloGames.ColorClash.Runtime.Death;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +5,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public class ResetSceneOnDeath : MonoBehaviour
     {
-       public DeathHandler death;
+       public Killable death;
 
        private void OnEnable()
        {

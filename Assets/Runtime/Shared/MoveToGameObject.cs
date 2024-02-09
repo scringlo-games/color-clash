@@ -20,7 +20,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         { 
             Vector2 moveDir = this.MoveToObj.transform.position - this.gameObject.transform.position;
             moveDir = moveDir.normalized;
-            Vector2 MoveVelocity = moveDir * this.Velocity;
+            var MoveVelocity = moveDir * this.Velocity;
             this.MyRigidBody.velocity = MoveVelocity;
         }
 
