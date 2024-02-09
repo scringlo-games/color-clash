@@ -11,9 +11,9 @@ namespace ScringloGames.ColorClash.Runtime.Shared
     /// </summary>
     public abstract class ProjectileHitScript : MonoBehaviour
     {
-        [SerializeField] private TempSpriteSpawner tempSpawner;
-        
+        [SerializeField] private CreateDecalOnDestroying tempSpawner;
         private float pitchVariation = 0.2f;
+        
         public void OnCollisionEnter2D(Collision2D collision)
         {
             //We don't want paint hurting the player.
@@ -24,7 +24,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
                     audioSource.pitch = (this.pitchVariation * Random.value) + 1.0f;
                     audioSource.Play();
                 }
-                Destroy(this.gameObject);
+                
                 return;
             }
             
@@ -38,14 +38,9 @@ namespace ScringloGames.ColorClash.Runtime.Shared
             {
                 this.IfHasHealth(collision.gameObject);
             }
-            
-            if (collision.gameObject.GetComponent<ProjectileHitScript>() == null)
-            {
-                Destroy(this.gameObject); 
-            }
         }
-        
-        void OnDisable()
+
+        private void OnDisable()
         {
             this.tempSpawner.CreateNewSprite(this.transform.position);
         }

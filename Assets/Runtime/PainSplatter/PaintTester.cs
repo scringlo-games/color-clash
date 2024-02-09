@@ -9,7 +9,7 @@ namespace ScringloGames.ColorClash.Runtime.PainSplatter
         private Vector2 mousePos;
         public event Action<Vector3> SpawnSprite;
 
-        void Update()
+        private void Update()
         {
             this.mousePos = UnityEngine.Input.mousePosition;
             if (UnityEngine.Input.GetButtonDown("Fire1"))

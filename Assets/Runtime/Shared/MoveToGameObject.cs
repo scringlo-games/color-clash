@@ -10,17 +10,17 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         private Rigidbody2D MyRigidBody;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             this.MoveToObj = GameObject.FindGameObjectWithTag(this.MoveToTag);
             this.MyRigidBody = this.gameObject.GetComponent<Rigidbody2D>();
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         { 
             Vector2 moveDir = this.MoveToObj.transform.position - this.gameObject.transform.position;
             moveDir = moveDir.normalized;
-            Vector2 MoveVelocity = moveDir * this.Velocity;
+            var MoveVelocity = moveDir * this.Velocity;
             this.MyRigidBody.velocity = MoveVelocity;
         }
 
