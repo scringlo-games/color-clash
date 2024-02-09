@@ -6,7 +6,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
     {
         public void ApplyTo(GameObject gameObject, float slowPercent, float duration)
         {
-            if (gameObject.TryGetComponent<ConditionBank>(out ConditionBank bank))
+            if (gameObject.TryGetComponent<ConditionBank>(out var bank))
             {
                 var condition = new SlowCondition(slowPercent)
                 {

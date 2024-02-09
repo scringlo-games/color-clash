@@ -18,7 +18,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         /// </summary>
         public float DamagePerTick
         {
-            get { return damagePerTick; }
+            get { return this.damagePerTick; }
         }
 
         /// <summary>

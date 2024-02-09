@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -2821522090372197239}
   - component: {fileID: 6905433476626274528}
   - component: {fileID: -5477002098782717127}
+  - component: {fileID: 1575108175203909186}
   m_Layer: 3
   m_Name: PlayerProjectile
   m_TagString: Projectile
@@ -307,3 +308,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObj: {fileID: 0}
+  destructible: {fileID: 1575108175203909186}
+--- !u!114 &1575108175203909186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602228063636873149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0587c881024c69a9cc9c77bf9ccf72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

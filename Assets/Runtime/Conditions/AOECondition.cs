@@ -45,7 +45,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                     {
                         foreach (var thisCond in bank.Conditions)
                         {
-                            float duration = thisCond.Duration;
+                            var duration = thisCond.Duration;
                             Condition newCondition = null;
                             // Case uses pattern casting!
                             switch (thisCond)

@@ -13,7 +13,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         /// </summary>
         public float SlowPercent
         {
-            get { return slowPercent; }
+            get { return this.slowPercent; }
         }
         
         //If percent is too big/small, clamp to reasonable range.
@@ -37,13 +37,24 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         public override void OnApplied(ConditionBank bank)
         {
-            moveToGameObject = bank.GetComponent<MoveToGameObject>();
-            moveToGameObject.Velocity *= slowPercent;
+            if (bank == null)
+            {
+                return;
+            }
+            
+            this.moveToGameObject = bank.GetComponent<MoveToGameObject>();
+
+            if (this.moveToGameObject == null)
+            {
+                return;
+            }
+            
+            this.moveToGameObject.Velocity *= this.slowPercent;
         }
 
         public override void OnExpired(ConditionBank bank)
         {
-            moveToGameObject.Velocity /= slowPercent;
+            this.moveToGameObject.Velocity /= this.slowPercent;
         }
     }
 }
