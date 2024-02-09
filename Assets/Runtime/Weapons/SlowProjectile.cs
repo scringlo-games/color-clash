@@ -14,7 +14,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         {
             if (this.gameObject.TryGetComponent(out ApplySlowCondition condition))
             {
-                condition.ApplyTo(otherGameObject, slowPercent, duration);
+                condition.ApplyTo(otherGameObject, this.slowPercent, this.duration);
             }
 
             if (otherGameObject.GetComponent<ProjectileHitScript>() != null)
@@ -27,7 +27,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         {
             if (otherGameObject.TryGetComponent(out HealthHandler healthHandler))
             {
-                healthHandler.TakeDamage(hitDamage);
+                healthHandler.TakeDamage(this.hitDamage);
             }
         }
     }

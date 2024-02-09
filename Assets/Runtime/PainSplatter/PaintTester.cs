@@ -6,8 +6,8 @@ namespace ScringloGames.ColorClash.Runtime.PainSplatter
     public class PaintTester : MonoBehaviour
     {
         public Camera mainCamera;
-        private UnityEngine.Vector2 mousePos;
-        public event Action<UnityEngine.Vector3> SpawnSprite;
+        private Vector2 mousePos;
+        public event Action<Vector3> SpawnSprite;
 
         void Update()
         {
