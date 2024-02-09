@@ -1,7 +1,8 @@
-﻿using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
+﻿using ScringloGames.ColorClash.Runtime.Conditions;
+using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Conditions
+namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public abstract class ApplyConditionToOtherOnCollisionEnter : MonoBehaviour
     {

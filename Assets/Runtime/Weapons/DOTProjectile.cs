@@ -17,10 +17,8 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         
         protected override void ApplyProjectileEffects(GameObject otherGameObject)
         {
-            if (this.gameObject.TryGetComponent(out ApplyDOTCondition condition))
-            {
-                condition.ApplyTo(otherGameObject, this.conditionDamage, this.duration);
-            }
+            this.ApplyTo(otherGameObject, this.conditionDamage, this.duration);
+            
             // We don't want projectiles destroying projectiles, if they can collide.
             if (otherGameObject.GetComponent<ProjectileHitScript>() == null)
             {
@@ -31,6 +29,22 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         protected override void IfHasHealth(GameObject otherGameObject)
         {
             otherGameObject.GetComponent<HealthHandler>().TakeDamage(this.hitDamage);
+        }
+        
+        /// <summary>
+        /// If object has a bank, applies DOT.
+        /// </summary>
+        /// <param name="obj">The object that receives condition</param>
+        public void ApplyTo(GameObject obj, float damage, float duration)
+        {
+            if (obj.TryGetComponent<ConditionBank>(out var bank))
+            {
+                var condition = new DOTCondition(damage)
+                {
+                    Duration = duration,
+                };
+                bank.Apply(condition);
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using ScringloGames.ColorClash.Runtime.Conditions;
+using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Conditions
+namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public class ApplyDOTToOtherOnCollisionEnter : ApplyConditionToOtherOnCollisionEnter
     {

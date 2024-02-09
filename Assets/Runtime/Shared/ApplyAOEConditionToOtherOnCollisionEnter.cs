@@ -1,4 +1,6 @@
-﻿namespace ScringloGames.ColorClash.Runtime.Conditions
+﻿using ScringloGames.ColorClash.Runtime.Conditions;
+
+namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public class ApplyAOEConditionToOtherOnCollisionEnter : ApplyConditionToOtherOnCollisionEnter
     {
