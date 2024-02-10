@@ -5,6 +5,7 @@ using ScringloGames.ColorClash.Runtime.Conditions;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.ComponentModel.Design;
 
 
 namespace ScringloGames.ColorClash.Runtime
@@ -15,12 +16,12 @@ namespace ScringloGames.ColorClash.Runtime
         ConditionBank bank;
         [SerializeField]
         [Tooltip("Should be a list of 3 indicators. 0 = Yellow, 1 = Red, 2 = Blue")]
-         private List<GameObject> indicatorList;
-        private Dictionary<Condition,int> condStacks;
+        private List<GameObject> indicatorList;
+        private int[] condStacks;
         void Awake()
-        {
-            condStacks = new Dictionary<Condition,int>();
-        }
+         {
+             condStacks = new int[indicatorList.Count];
+         }
         void OnEnable()
         {
             bank.Applied += ConditionAdded;
@@ -35,19 +36,11 @@ namespace ScringloGames.ColorClash.Runtime
         {
             switch(cond)
             {
-                case AOECondition cond1:
-                    if(condStacks.TryGetValue(cond1, out var value))
-                    {
-                        value++;
-                        indicatorList[0].SetActive(true);
-                        indicatorList[0].GetComponent<TextMeshPro>().text = value.ToString();
-                    }
-                    else
-                    {
-                        condStacks.Add(cond1,1);
-                        indicatorList[0].SetActive(true);
-                        indicatorList[0].GetComponent<TextMeshPro>().text = value.ToString();
-                    }
+                case AOECondition:
+                    condStacks[0]++;
+                    indicatorList[0].SetActive(true);
+                    indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
+                    Debug.Log($"active yellow conditions: {condStacks[0]}");
                     break;
                 
 
@@ -60,7 +53,23 @@ namespace ScringloGames.ColorClash.Runtime
         }
         private void ConditionRemoved(Condition cond)
         {
-
+            Debug.Log($"{cond} removed");
+            switch(cond)
+            {
+                case AOECondition:
+                    condStacks[0] --;
+                    Debug.Log($"active yellow conditions: {condStacks[0]}");
+                    if(condStacks[0] <= 0)
+                    {
+                        indicatorList[0].SetActive(false);
+                        indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
+                    }
+                    else
+                    {
+                        indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
+                    }
+                    break;
+            }
         }
     }
 }
