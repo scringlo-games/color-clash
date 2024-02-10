@@ -6,7 +6,7 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
 {
     public class PaintMixer
     {
-        private enum MixState
+        public enum MixState
         {
             Empty,
             Mixing,
@@ -20,7 +20,6 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
             public PaintColor Result;
         }
 
-        private MixState state;
         private readonly RecipeBook book;
         private readonly List<PaintColor> palette;
 
@@ -33,12 +32,13 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
         public event Action<MixArgs> MixStarted;
         public event Action<MixArgs> MixCancelled;
         public event Action<MixArgs> MixCompleted;
+        public MixState State { get; private set; }
 
         public PaintMixer AddColor(PaintColor color)
         {
             this.UpdateCurrentState();
             
-            switch (this.state)
+            switch (this.State)
             {
                 case MixState.Empty:
                     this.palette.Add(color);
@@ -81,7 +81,7 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
 
         private void UpdateCurrentState()
         {
-            this.state = this.palette.Count switch
+            this.State = this.palette.Count switch
             {
                 0 => MixState.Empty,
                 1 => MixState.Mixing,
@@ -99,7 +99,7 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
             };
             
             this.MixStarted?.Invoke(args);
-            this.state = MixState.Empty;
+            this.State = MixState.Empty;
         }
         
         private void Continue()
@@ -112,7 +112,7 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
             };
             
             this.MixStarted?.Invoke(args);
-            this.state = MixState.Mixing;
+            this.State = MixState.Mixing;
         }
 
         private void NotifyMixCancelled()
@@ -137,7 +137,7 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
             };
             
             this.MixCompleted?.Invoke(args);
-            this.state = MixState.Mixed;
+            this.State = MixState.Mixed;
         }
     }
 }
