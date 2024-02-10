@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 namespace ScringloGames.ColorClash.Runtime
 {
     public class ConditionDrawer : MonoBehaviour
@@ -39,13 +40,13 @@ namespace ScringloGames.ColorClash.Runtime
                     {
                         value++;
                         indicatorList[0].SetActive(true);
-                        indicatorList[0].GetComponent<TextMesh>().text = value.ToString();
+                        indicatorList[0].GetComponent<TextMeshPro>().text = value.ToString();
                     }
                     else
                     {
                         condStacks.Add(cond1,1);
                         indicatorList[0].SetActive(true);
-                        indicatorList[0].GetComponent<TextMesh>().text = value.ToString();
+                        indicatorList[0].GetComponent<TextMeshPro>().text = value.ToString();
                     }
                     break;
                 
