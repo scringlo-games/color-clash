@@ -309,7 +309,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2890951322646983253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
+  firstContainer: {fileID: 3029994042560611556}
+  secondContainer: {fileID: 5829264601018385845}
 --- !u!1 &5829264601018385845
 GameObject:
   m_ObjectHideFlags: 0

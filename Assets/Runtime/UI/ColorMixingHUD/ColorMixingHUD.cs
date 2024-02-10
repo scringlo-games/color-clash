@@ -8,7 +8,11 @@ namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
     {
         [SerializeField]
         private MixingService mixingService;
-
+        [SerializeField]
+        private GameObject firstContainer;
+        [SerializeField]
+        private GameObject secondContainer;
+        
         private void OnEnable()
         {
             this.mixingService.Mixer.MixStarted += this.OnMixStarted;
@@ -25,17 +29,18 @@ namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
 
         private void OnMixStarted(PaintMixer.MixArgs args)
         {
-            Debug.Log($"Mix started! Currently mixing '{args.First}' and '{args.Second}' to make '{args.Result}'!");
+            Debug.Log($"Mix started!");
         }
         
         private void OnMixCancelled(PaintMixer.MixArgs args)
         {
-            Debug.Log($"Mix cancelled! Currently mixing '{args.First}' and '{args.Second}' to make '{args.Result}'!");
+            Debug.Log($"Mix cancelled!");
         }
         
         private void OnMixCompleted(PaintMixer.MixArgs args)
         {
-            Debug.Log($"Mix completed! Currently mixing '{args.First}' and '{args.Second}' to make '{args.Result}'!");
+            Debug.Log($"Mix completed!");
+            Debug.Log($"Result: {args.Result}");
         }
     }
 }
