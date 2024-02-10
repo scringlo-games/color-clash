@@ -21,7 +21,6 @@ namespace ScringloGames.ColorClash.Runtime.UI
         private void Awake()
         {
             this.prefabInstances = new Dictionary<HealthHandler, GameObject>();
-            this.registrar.Setup();
         }
 
         private void OnEnable()

@@ -8,6 +8,10 @@ namespace ScringloGames.ColorClash.Runtime.GameServices
         {
         }
 
+        public virtual void Tick(float deltaTime)
+        {
+        }
+
         public virtual void Teardown()
         {
         }

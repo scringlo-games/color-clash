@@ -7,10 +7,10 @@ namespace ScringloGames.ColorClash.Runtime.Mixing
     public class Recipe
     {
         [field: SerializeField]
-        public PaintColor FirstInputColor { get; set; }
+        public PaintColor FirstInput { get; set; }
         [field: SerializeField]
-        public PaintColor SecondInputColor { get; set; }
+        public PaintColor SecondInput { get; set; }
         [field: SerializeField]
-        public PaintColor OutputColor { get; set; }
+        public PaintColor Output { get; set; }
     }
 }

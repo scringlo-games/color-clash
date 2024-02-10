@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8dccd48ce493d4c8adf1f782dc252d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
 --- !u!1 &5829264601018385845
 GameObject:
   m_ObjectHideFlags: 0

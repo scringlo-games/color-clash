@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44afb68a8eeb462eb8c7db5fa425b4dd, type: 3}
   m_Name: Mixing Service
   m_EditorClassIdentifier: 
-  book: {fileID: 0}
+  table: {fileID: 11400000, guid: 64588cbb76ec3b44481f3a5922712ee8, type: 2}
+  book: {fileID: 11400000, guid: 0398beb01f8b0a845a342317140f5296, type: 2}

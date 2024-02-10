@@ -3,6 +3,7 @@
     public interface IGameService
     {
         void Setup();
+        void Tick(float deltaTime);
         void Teardown();
     }
 }
