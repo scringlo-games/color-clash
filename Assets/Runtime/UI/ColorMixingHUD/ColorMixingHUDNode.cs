@@ -23,34 +23,41 @@ namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
             this.startingPosition = this.rectTransform.anchoredPosition;
         }
 
-        public void Center()
+        public void JumpToCenter()
         {
             this.rectTransform.anchoredPosition = Vector2.zero;
         }
 
-        public void ReturnToStartingPosition()
+        public void JumpToStartingPosition()
         {
             this.rectTransform.anchoredPosition = this.startingPosition;
         }
-        
+
+        public TweenerCore<Vector3, Vector3, VectorOptions> MergeToCenter()
+        {
+            return this.rectTransform
+                .DOLocalMoveX(0f, 0.1f)
+                .From(this.startingPosition);
+        }
+
         public TweenerCore<Vector3, Vector3, VectorOptions> PushLeft()
         {
             return this.rectTransform
-                .DOLocalMoveX(this.startingPosition.x, 1f)
+                .DOLocalMoveX(this.startingPosition.x, 0.1f)
                 .From(Vector2.zero);
         }
 
         public TweenerCore<float, float, FloatOptions> FadeIn()
         {
             return this.canvasGroup
-                .DOFade(1f, 1f)
+                .DOFade(1f, 0.1f)
                 .From(0f);
         }
 
         public TweenerCore<float, float, FloatOptions> FadeOut()
         {
             return this.canvasGroup
-                .DOFade(0f, 1f)
+                .DOFade(0f, 0.1f)
                 .From(1f);
         }
 

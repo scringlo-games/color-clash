@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6128693995661933702
+--- !u!1001 &4808928957744994314
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,14 +11,10 @@ PrefabInstance:
     - target: {fileID: -5477002098782717127, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       propertyPath: spawnObj
       value: 
-      objectReference: {fileID: 5750940230600096753, guid: f24d494248539bf47b73f2c1589b045e, type: 3}
-    - target: {fileID: -4901289499542378357, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
-      propertyPath: damageToInflict
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5750940230600096753, guid: f6f43b50c1c70814fb98ca456477aa94, type: 3}
     - target: {fileID: 6602228063636873149, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       propertyPath: m_Name
-      value: YellowProjectile
+      value: GreenProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 7054305264628404065, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,38 +66,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7996520611426451061, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       propertyPath: m_Color.r
-      value: 0.9019608
+      value: 0.18039215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6602228063636873149, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8277086597011605574}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
---- !u!1 &1050092730644915003 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6602228063636873149, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
-  m_PrefabInstance: {fileID: 6128693995661933702}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8277086597011605574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050092730644915003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17464ae6298a4bfc891f4e179ef06aaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 2
-  filter:
-    operation: 0
-    entries:
-    - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
-      negate: 1
-  radius: 3
-  damage: 15

@@ -35,7 +35,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
             this.right.gameObject.SetActive(false);
             
             this.left.SetColor(args.First.Color);
-            this.left.Center();
+            this.left.JumpToCenter();
 
             DOTween.Sequence()
                 .Append(this.left.FadeIn())
@@ -53,11 +53,21 @@ namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
             
             this.left.SetColor(args.First.Color);
             this.right.SetColor(args.Second.Color);
+
             
             DOTween.Sequence()
                 .Insert(0, this.right.FadeIn())
                 .Insert(0, this.left.PushLeft())
+                .Insert(1, this.left.MergeToCenter())
+                .Insert(1, this.right.MergeToCenter())
+                .AppendCallback(OnMergeCompleted)
                 .Play();
+            
+            void OnMergeCompleted()
+            {
+                this.right.gameObject.SetActive(false);
+                this.left.SetColor(args.Result.Color);
+            }
         }
     }
 }
