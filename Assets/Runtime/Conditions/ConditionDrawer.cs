@@ -42,8 +42,16 @@ namespace ScringloGames.ColorClash.Runtime
                     indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
                     Debug.Log($"active yellow conditions: {condStacks[0]}");
                     break;
-                
-
+                case DOTCondition:
+                    condStacks[1]++;
+                    indicatorList[1].SetActive(true);
+                    indicatorList[1].GetComponentInChildren<TMP_Text>().text = condStacks[1].ToString();
+                    break;
+                case SlowCondition:
+                    condStacks[2]++;
+                    indicatorList[2].SetActive(true);
+                    indicatorList[2].GetComponentInChildren<TMP_Text>().text = condStacks[2].ToString();
+                    break;
             }
         }
 
@@ -58,17 +66,38 @@ namespace ScringloGames.ColorClash.Runtime
             {
                 case AOECondition:
                     condStacks[0] --;
-                    Debug.Log($"active yellow conditions: {condStacks[0]}");
                     if(condStacks[0] <= 0)
                     {
                         indicatorList[0].SetActive(false);
-                        indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
                     }
                     else
                     {
                         indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
                     }
                     break;
+                case DOTCondition:
+                condStacks[1] --;
+                    if(condStacks[1] <= 0)
+                    {
+                        indicatorList[1].SetActive(false);
+                    }
+                    else
+                    {
+                        indicatorList[1].GetComponentInChildren<TMP_Text>().text = condStacks[1].ToString();
+                    }
+                    break;
+                case SlowCondition:
+                condStacks[2] --;
+                    if(condStacks[2] <= 0)
+                    {
+                        indicatorList[2].SetActive(false);
+                    }
+                    else
+                    {
+                        indicatorList[2].GetComponentInChildren<TMP_Text>().text = condStacks[2].ToString();
+                    }
+                    break;
+                
             }
         }
     }

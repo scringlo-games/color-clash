@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c693db30534ab7a45b510a97fd3edfe2, type: 3}
-  m_Name: Condition Registrar
+  m_Name: ConditionRegistrar
   m_EditorClassIdentifier: 
