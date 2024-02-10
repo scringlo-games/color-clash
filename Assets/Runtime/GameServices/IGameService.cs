@@ -2,8 +2,6 @@
 {
     public interface IGameService
     {
-        bool IsSetup { get; }
-        
         void Setup();
         void Teardown();
     }

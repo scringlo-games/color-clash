@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.GameServices
@@ -14,8 +12,7 @@ namespace ScringloGames.ColorClash.Runtime.GameServices
 
         private void Awake()
         {
-            foreach (var service in this.Services
-                         .Where(s => !s.IsSetup))
+            foreach (var service in this.Services)
             {
                 service.Setup();
             }
@@ -23,8 +20,7 @@ namespace ScringloGames.ColorClash.Runtime.GameServices
 
         private void OnDestroy()
         {
-            foreach (var service in this.Services
-                         .Where(s => s.IsSetup))
+            foreach (var service in this.Services)
             {
                 service.Teardown();
             }
