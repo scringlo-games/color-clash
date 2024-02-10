@@ -1,4 +1,3 @@
-using System;
 using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 using Random = UnityEngine.Random;
