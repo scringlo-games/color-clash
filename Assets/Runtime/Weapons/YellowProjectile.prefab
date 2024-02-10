@@ -97,10 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17464ae6298a4bfc891f4e179ef06aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 2
   filter:
     operation: 0
     entries:
     - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
       negate: 1
   radius: 3
-  damage: 15
+  damage: 75
