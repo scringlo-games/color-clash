@@ -44,14 +44,14 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                 return;
             }
 
-            args.Originator.TryGetComponent(out this.healthHandler);
-
             if (this.healthHandler == null)
             {
-                return;
+                this.healthHandler = args.Originator.GetComponent<HealthHandler>();
             }
-            
-            this.healthHandler.Heal(this.amount);
+            else
+            {
+                this.healthHandler.Heal(this.amount);
+            }
         }
     }
 }

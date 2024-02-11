@@ -121,5 +121,5 @@ MonoBehaviour:
   filter:
     operation: 0
     entries: []
-  amount: 5
+  amount: 0.25
   damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
