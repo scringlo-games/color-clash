@@ -1,28 +1,54 @@
 ﻿using System;
+using System.Linq;
+using ScringloGames.ColorClash.Runtime.Mixing;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Weapons
 {
     public class ProjectileSwapper : MonoBehaviour
     {
+        [Serializable]
+        private struct Entry
+        {
+            public PaintColor PaintColor;
+            public GameObject ProjectilePrefab;
+        }
+
         [SerializeField]
-        private GameObject[] projectiles;
+        private MixingService mixingService;
         [SerializeField]
         private ProjectileLauncher launcher;
-        
-        public int CurrentIndex { get; private set; }
-        public event Action Swapped;
+        [FormerlySerializedAs("projectiles")]
+        [SerializeField]
+        private Entry[] entries;
 
-        public void SwapTo(int index)
+        private void OnEnable()
         {
-            if (index > this.projectiles.Length || index < 0)
+            this.mixingService.Mixer.MixCompleted += this.OnMixCompleted;
+        }
+
+        private void OnDisable()
+        {
+            this.mixingService.Mixer.MixCompleted -= this.OnMixCompleted;
+        }
+
+        private void OnMixCompleted(PaintMixer.MixArgs args)
+        {
+            var colorToSwapTo = args.Result;
+            var firstMatchingEntry = this.entries
+                .Where(entry => entry.PaintColor == colorToSwapTo)
+                .Cast<Entry?>()
+                .FirstOrDefault();
+
+            if (firstMatchingEntry == null)
             {
-                throw new IndexOutOfRangeException();
+                Debug.LogError(
+                    $"The color {colorToSwapTo} was not found in {this.name} (is it missing an entry?)");
+                return;
             }
-            
-            this.CurrentIndex = index;
-            this.launcher.ObjectToLaunch = this.projectiles[index];
-            this.Swapped?.Invoke();
+
+            this.launcher.ObjectToLaunch = firstMatchingEntry.Value.ProjectilePrefab;
         }
     }
 }

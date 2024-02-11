@@ -340,7 +340,7 @@ MonoBehaviour:
   mover: {fileID: 5067590674657397078}
   looker: {fileID: 1289790963788491268}
   attackBehavior: {fileID: 8302534175550803914}
-  swapper: {fileID: 7292131213452536812}
+  mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
 --- !u!114 &8302534175550803914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,11 +383,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e24f2148d24b968bdb7c91961d797e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectiles:
-  - {fileID: 1050092730644915003, guid: e8d0841c6bc806547868c81120e44dfb, type: 3}
-  - {fileID: 1050092730644915003, guid: fb8d2dd03e7ea8c49b6bc843870acb2c, type: 3}
-  - {fileID: 1050092730644915003, guid: c01830772a84fdf4cbb5ddb9111bac16, type: 3}
+  mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
   launcher: {fileID: 5989775452810852730}
+  entries:
+  - PaintColor: {fileID: 11400000, guid: ccac090ed225a8f4680b7dfcf7fe0af3, type: 2}
+    ProjectilePrefab: {fileID: 1050092730644915003, guid: e8d0841c6bc806547868c81120e44dfb, type: 3}
+  - PaintColor: {fileID: 11400000, guid: 24e529f8f1b31a747aedd46a26f15d39, type: 2}
+    ProjectilePrefab: {fileID: 1050092730644915003, guid: fb8d2dd03e7ea8c49b6bc843870acb2c, type: 3}
+  - PaintColor: {fileID: 11400000, guid: 65a49c66b0f6e824d9f92bf85c7b3c98, type: 2}
+    ProjectilePrefab: {fileID: 1050092730644915003, guid: c01830772a84fdf4cbb5ddb9111bac16, type: 3}
+  - PaintColor: {fileID: 11400000, guid: 99e20addb1b5d08449fb0adf167b1bbc, type: 2}
+    ProjectilePrefab: {fileID: 2889445819782003019, guid: 6cc973756d545dd4db4798d1ec660c10, type: 3}
+  - PaintColor: {fileID: 11400000, guid: 1043807786211e642a60b3720bfdf2be, type: 2}
+    ProjectilePrefab: {fileID: 6206456235894573108, guid: 888e21b45524712488d6a428f864d364, type: 3}
+  - PaintColor: {fileID: 11400000, guid: c3bdf1b57647918468236df6e26ed0d4, type: 2}
+    ProjectilePrefab: {fileID: 1811410330287998903, guid: 19309dd42646c644c82eeb4cf7d2faa6, type: 3}
 --- !u!114 &5067590674657397078
 MonoBehaviour:
   m_ObjectHideFlags: 0

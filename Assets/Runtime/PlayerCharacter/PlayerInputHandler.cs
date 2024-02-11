@@ -1,5 +1,6 @@
 using ScringloGames.ColorClash.Runtime.Aiming;
 using ScringloGames.ColorClash.Runtime.Input;
+using ScringloGames.ColorClash.Runtime.Mixing;
 using ScringloGames.ColorClash.Runtime.Movement;
 using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
@@ -22,7 +23,7 @@ namespace ScringloGames.ColorClash.Runtime.PlayerCharacter
         [SerializeField]
         private AttackBehavior attackBehavior;
         [SerializeField]
-        private ProjectileSwapper swapper;
+        private MixingService mixingService;
         
         private GameInput gameInput;
 
@@ -108,17 +109,20 @@ namespace ScringloGames.ColorClash.Runtime.PlayerCharacter
 
         private void OnUseWeapon1Performed(InputAction.CallbackContext context)
         {
-            this.swapper.SwapTo(0);
+            this.mixingService.Mixer
+                .AddColor(this.mixingService.Table.Red);
         }
 
         private void OnUseWeapon2Performed(InputAction.CallbackContext context)
         {
-            this.swapper.SwapTo(1);
+            this.mixingService.Mixer
+                .AddColor(this.mixingService.Table.Blue);
         }
         
         private void OnUseWeapon3Performed(InputAction.CallbackContext context)
         {
-            this.swapper.SwapTo(2);
+            this.mixingService.Mixer
+                .AddColor(this.mixingService.Table.Yellow);
         }
     }
 }
