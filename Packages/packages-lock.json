@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c075971ee469b3d0678323d4fedc80d61392c4c9"
+      "hash": "22576d61f2015c1fca115d005f8e9aaaac363a46"
     },
     "com.travisrfrench.common": {
       "version": "https://github.com/frenchtr/common.git",

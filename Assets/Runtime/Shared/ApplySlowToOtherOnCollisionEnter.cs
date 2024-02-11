@@ -1,5 +1,5 @@
 ﻿using ScringloGames.ColorClash.Runtime.Conditions;
-using ScringloGames.ColorClash.Runtime.Conditions.Unused;
+using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
@@ -13,7 +13,15 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         protected override Condition GetCondition()
         {
-            return new SlowCondition(this.duration, this.slowPercent);
+            //return new SlowCondition(this.duration, this.slowPercent);
+            
+            var modifier = new AttributeModifier()
+            {
+                Type = ModifierType.FlatMultiplicative,
+                Value = this.slowPercent,
+            };
+
+            return new ModifyMovementSpeedCondition(this.duration, modifier);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
-using Attribute = TravisRFrench.Attributes.Runtime.Attribute;
 
 namespace ScringloGames.ColorClash.Runtime.Shared.Attributes
 {
@@ -19,7 +18,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared.Attributes
         [SerializeField]
         private Attribute movementSpeedMultiplier;
 
-        public IReadOnlyAttribute MovementSpeedMultiplier => this.movementSpeedMultiplier;
+        public Attribute MovementSpeedMultiplier => this.movementSpeedMultiplier;
 
         private void OnValidate()
         {
