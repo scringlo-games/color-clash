@@ -1,56 +1,53 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using ScringloGames.ColorClash.Runtime.Conditions;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System.ComponentModel.Design;
+using UnityEngine;
 
-
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Conditions
 {
     public class ConditionDrawer : MonoBehaviour
     {
-        [SerializeField] 
-        ConditionBank bank;
+        [SerializeField]
+        private ConditionBank bank;
         [SerializeField]
         [Tooltip("Should be a list of 3 indicators. 0 = Yellow, 1 = Red, 2 = Blue")]
         private List<GameObject> indicatorList;
         private int[] condStacks;
-        void Awake()
+
+        private void Awake()
          {
-             condStacks = new int[indicatorList.Count];
+             this.condStacks = new int[this.indicatorList.Count];
          }
-        void OnEnable()
+
+        private void OnEnable()
         {
-            bank.Applied += ConditionAdded;
-            bank.Expired += ConditionRemoved;
+            this.bank.Applied += this.ConditionAdded;
+            this.bank.Expired += this.ConditionRemoved;
         }
-        void OnDisable()
+
+        private void OnDisable()
         {   
-            bank.Applied -= ConditionAdded;
-            bank.Expired -= ConditionRemoved;
+            this.bank.Applied -= this.ConditionAdded;
+            this.bank.Expired -= this.ConditionRemoved;
         }
         private void ConditionAdded(Condition cond)
         {
             switch(cond)
             {
                 case AOECondition:
-                    condStacks[0]++;
-                    indicatorList[0].SetActive(true);
-                    indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
-                    Debug.Log($"active yellow conditions: {condStacks[0]}");
+                    this.condStacks[0]++;
+                    this.indicatorList[0].SetActive(true);
+                    this.indicatorList[0].GetComponentInChildren<TMP_Text>().text = this.condStacks[0].ToString();
+                    Debug.Log($"active yellow conditions: {this.condStacks[0]}");
                     break;
                 case DOTCondition:
-                    condStacks[1]++;
-                    indicatorList[1].SetActive(true);
-                    indicatorList[1].GetComponentInChildren<TMP_Text>().text = condStacks[1].ToString();
+                    this.condStacks[1]++;
+                    this.indicatorList[1].SetActive(true);
+                    this.indicatorList[1].GetComponentInChildren<TMP_Text>().text = this.condStacks[1].ToString();
                     break;
                 case SlowCondition:
-                    condStacks[2]++;
-                    indicatorList[2].SetActive(true);
-                    indicatorList[2].GetComponentInChildren<TMP_Text>().text = condStacks[2].ToString();
+                    this.condStacks[2]++;
+                    this.indicatorList[2].SetActive(true);
+                    this.indicatorList[2].GetComponentInChildren<TMP_Text>().text = this.condStacks[2].ToString();
                     break;
             }
         }
@@ -65,39 +62,38 @@ namespace ScringloGames.ColorClash.Runtime
             switch(cond)
             {
                 case AOECondition:
-                    condStacks[0] --;
-                    if(condStacks[0] <= 0)
+                    this.condStacks[0] --;
+                    if(this.condStacks[0] <= 0)
                     {
-                        indicatorList[0].SetActive(false);
+                        this.indicatorList[0].SetActive(false);
                     }
                     else
                     {
-                        indicatorList[0].GetComponentInChildren<TMP_Text>().text = condStacks[0].ToString();
+                        this.indicatorList[0].GetComponentInChildren<TMP_Text>().text = this.condStacks[0].ToString();
                     }
                     break;
                 case DOTCondition:
-                condStacks[1] --;
-                    if(condStacks[1] <= 0)
+                this.condStacks[1] --;
+                    if(this.condStacks[1] <= 0)
                     {
-                        indicatorList[1].SetActive(false);
+                        this.indicatorList[1].SetActive(false);
                     }
                     else
                     {
-                        indicatorList[1].GetComponentInChildren<TMP_Text>().text = condStacks[1].ToString();
+                        this.indicatorList[1].GetComponentInChildren<TMP_Text>().text = this.condStacks[1].ToString();
                     }
                     break;
                 case SlowCondition:
-                condStacks[2] --;
-                    if(condStacks[2] <= 0)
+                this.condStacks[2] --;
+                    if(this.condStacks[2] <= 0)
                     {
-                        indicatorList[2].SetActive(false);
+                        this.indicatorList[2].SetActive(false);
                     }
                     else
                     {
-                        indicatorList[2].GetComponentInChildren<TMP_Text>().text = condStacks[2].ToString();
+                        this.indicatorList[2].GetComponentInChildren<TMP_Text>().text = this.condStacks[2].ToString();
                     }
                     break;
-                
             }
         }
     }

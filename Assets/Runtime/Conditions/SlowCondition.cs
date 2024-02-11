@@ -31,12 +31,12 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                 return;
             }
             
-            this.moveToGameObject.Velocity *= this.slowPercent;
+            this.moveToGameObject.velocity *= this.slowPercent;
         }
 
         public override void OnExpired(ConditionBank bank)
         {
-            this.moveToGameObject.Velocity /= this.slowPercent;
+            this.moveToGameObject.velocity /= this.slowPercent;
         }
 
         public override Condition Clone()

@@ -1,11 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using ScringloGames.ColorClash.Runtime;
 using ScringloGames.ColorClash.Runtime.Conditions;
 using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
-using ScringloGames.ColorClash.Runtime.UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.UI
 {
@@ -18,8 +15,9 @@ namespace ScringloGames.ColorClash.Runtime.UI
         private Dictionary<ConditionBank,GameObject> prefabInstances;
         [SerializeField]
         private float newSize;
+        [FormerlySerializedAs("Offset")]
         [SerializeField]
-        private Vector2 Offset; 
+        private Vector2 offset; 
         [SerializeField]
         private GameObjectFilterSet filter;
         
@@ -30,13 +28,13 @@ namespace ScringloGames.ColorClash.Runtime.UI
         }
         private void OnEnable()
         {
-            this.registrar.Registered += OnRegistered;
-            this.registrar.Deregistered += OnDeregistered;
+            this.registrar.Registered += this.OnRegistered;
+            this.registrar.Deregistered += this.OnDeregistered;
         }
         private void OnDisable()
         {
-            this.registrar.Registered -= OnRegistered;
-            this.registrar.Deregistered -= OnDeregistered;
+            this.registrar.Registered -= this.OnRegistered;
+            this.registrar.Deregistered -= this.OnDeregistered;
         }
         private void OnRegistered(ConditionBank bank)
         {
@@ -45,19 +43,19 @@ namespace ScringloGames.ColorClash.Runtime.UI
             {
                 return;
             }
-            if(!filter.Evaluate(bank.gameObject))
+            if(!this.filter.Evaluate(bank.gameObject))
             {
                 return;
             }
-            if(prefabInstances.TryGetValue(bank, out GameObject prefabInstance))
+            if(this.prefabInstances.TryGetValue(bank, out GameObject prefabInstance))
             {
                 prefabInstance.SetActive(true);
             }
             else
             {
-                GameObject instance = Instantiate(prefab, this.transform);
+                GameObject instance = Instantiate(this.prefab, this.transform);
                 RectTransform rectT = instance.GetComponent<RectTransform>();
-                rectT.sizeDelta = Vector2.one * newSize;
+                rectT.sizeDelta = Vector2.one * this.newSize;
                 rectT.anchorMin = Vector2.one / 2f;
                 rectT.anchorMax = Vector2.one / 2f;
                 rectT.pivot = Vector2.one / 2f;
@@ -68,10 +66,11 @@ namespace ScringloGames.ColorClash.Runtime.UI
                 if (instance.TryGetComponent<AttachToWorldSpaceObject>(out var target))
                 {
                     target.ObjectToFollow = bank.transform;
-                    target.Offset = this.Offset;
+                    target.Offset = this.offset;
 
                 }
-                prefabInstances.Add(bank, instance);
+
+                this.prefabInstances.Add(bank, instance);
 
             }
         }

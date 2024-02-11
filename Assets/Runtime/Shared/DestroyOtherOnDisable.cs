@@ -1,17 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOtherOnDisable : MonoBehaviour
+namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    [SerializeField]
-    private List<GameObject> others;
-
-    private void OnDisable()
+    public class DestroyOtherOnDisable : MonoBehaviour
     {
-        foreach(GameObject target in others)
+        [SerializeField]
+        private List<GameObject> others;
+
+        private void OnDisable()
         {
-            Destroy(target);
+            foreach(GameObject target in this.others)
+            {
+                Destroy(target);
+            }
         }
     }
 }

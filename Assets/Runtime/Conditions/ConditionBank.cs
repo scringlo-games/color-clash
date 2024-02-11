@@ -17,7 +17,6 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private float tickInterval;
         private List<Condition> conditions;
         private Countdown countdown;
-        [SerializeField]
         
         /// <summary>
         /// The conditions that are currently active.
