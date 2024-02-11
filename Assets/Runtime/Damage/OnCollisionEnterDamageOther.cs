@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Damage
 {
-    public class DamageOtherOnCollisionEnter : MonoBehaviour
+    public class OnCollisionEnterDamageOther : MonoBehaviour
     {
         [SerializeField]
         private GameObjectFilterSet filter;

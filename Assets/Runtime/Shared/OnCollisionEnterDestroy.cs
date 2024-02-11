@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public abstract class DestroyOnCollisionEnter : MonoBehaviour
+    public abstract class OnCollisionEnterDestroy : MonoBehaviour
     {
         [Tooltip("The filter the other object must pass in order to apply these effects.")]
         [SerializeField]

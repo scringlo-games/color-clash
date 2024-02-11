@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class ApplySlowToOtherOnCollisionEnter : ApplyConditionToOtherOnCollisionEnter
+    public class OnCollisionEnterApplySlowToOther : OnCollisionEnterApplyConditionToOther
     {
         [FormerlySerializedAs("slowPercent")]
         [Tooltip("The amount by which the other object should be slowed.")]

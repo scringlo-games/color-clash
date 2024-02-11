@@ -2,7 +2,7 @@
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class DestroySelfOnCollisionEnter : DestroyOnCollisionEnter
+    public class OnCollisionEnterDestroySelf : OnCollisionEnterDestroy
     {
         protected override GameObject GetDestroyTarget(Collision2D collision)
         {

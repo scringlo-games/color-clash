@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class PlayAudioClipOnCollisionEnter : MonoBehaviour
+    public class OnCollisionEnterPlayAudioClip : MonoBehaviour
     {
         [SerializeField]
         private AudioSource audioSource;

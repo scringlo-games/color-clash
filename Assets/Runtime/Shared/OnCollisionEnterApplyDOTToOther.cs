@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class ApplyDOTToOtherOnCollisionEnter : ApplyConditionToOtherOnCollisionEnter
+    public class OnCollisionEnterApplyDOTToOther : OnCollisionEnterApplyConditionToOther
     {
         [Tooltip("The amount of periodic damage to inflict to the other object.")]
         [SerializeField]
