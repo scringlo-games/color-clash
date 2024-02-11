@@ -3,14 +3,14 @@ using ScringloGames.ColorClash.Runtime.Health;
 
 namespace ScringloGames.ColorClash.Runtime.Conditions
 {
-    public class HealOriginatorOnDamageTakenCondition : Condition
+    public class HealOriginatorForFlatAmountOnDamageTakenCondition : Condition
     {
         private readonly DamageArgsEvent damagedEvent;
         private readonly float amount;
         private DamageReceiver damageReceiver;
         private HealthHandler healthHandler;
 
-        public HealOriginatorOnDamageTakenCondition(float duration, DamageArgsEvent damagedEvent, float amount)  : base(duration)
+        public HealOriginatorForFlatAmountOnDamageTakenCondition(float duration, DamageArgsEvent damagedEvent, float amount)  : base(duration)
         {
             this.damagedEvent = damagedEvent;
             this.amount = amount;
@@ -34,7 +34,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         public override Condition Clone()
         {
-            return new HealOriginatorOnDamageTakenCondition(this.Duration, this.damagedEvent, this.amount);
+            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.Duration, this.damagedEvent, this.amount);
         }
         
         private void OnDamaged(DamageArgs args)
