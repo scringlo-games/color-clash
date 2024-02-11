@@ -3,9 +3,9 @@ using ScringloGames.ColorClash.Runtime.Health;
 using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.UI
+namespace ScringloGames.ColorClash.Runtime.UI.Health
 {
-    public class WorldSpaceHealthDrawer : MonoBehaviour
+    public class ScreenSpaceHealthDrawer : MonoBehaviour
     {
         [SerializeField]
         private HealthRegistrar registrar;

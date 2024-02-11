@@ -1,7 +1,7 @@
 using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Conditions
+namespace ScringloGames.ColorClash.Runtime.Conditions.Unused
 {
     public class SlowCondition : Condition
     {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8249868333042063192}
   - component: {fileID: 8318178200457306923}
   m_Layer: 5
-  m_Name: EnemyHealthCanvas
+  m_Name: EnemyHealthHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7399715643858420148}
   - component: {fileID: 4973146784941125312}
   m_Layer: 5
-  m_Name: ScreenSpaceHealthManager
+  m_Name: EnemyHealthHUDManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

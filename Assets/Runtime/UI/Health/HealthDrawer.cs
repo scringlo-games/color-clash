@@ -3,7 +3,7 @@ using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ScringloGames.ColorClash.Runtime.UI
+namespace ScringloGames.ColorClash.Runtime.UI.Health
 {
     /// <summary>
     /// Updates the fillAmount of the specified <see cref="healthImageComponent"/> to reflect changes to the health of

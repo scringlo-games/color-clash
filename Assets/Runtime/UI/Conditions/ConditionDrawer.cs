@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using ScringloGames.ColorClash.Runtime.Conditions;
+using ScringloGames.ColorClash.Runtime.Conditions.Unused;
 using TMPro;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Conditions
+namespace ScringloGames.ColorClash.Runtime.UI.Conditions
 {
     public class ConditionDrawer : MonoBehaviour
     {
@@ -39,7 +41,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                     this.indicatorList[0].GetComponentInChildren<TMP_Text>().text = this.condStacks[0].ToString();
                     Debug.Log($"active yellow conditions: {this.condStacks[0]}");
                     break;
-                case DOTCondition:
+                case TakeDamageOnTickCondition:
                     this.condStacks[1]++;
                     this.indicatorList[1].SetActive(true);
                     this.indicatorList[1].GetComponentInChildren<TMP_Text>().text = this.condStacks[1].ToString();
@@ -72,7 +74,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
                         this.indicatorList[0].GetComponentInChildren<TMP_Text>().text = this.condStacks[0].ToString();
                     }
                     break;
-                case DOTCondition:
+                case TakeDamageOnTickCondition:
                 this.condStacks[1] --;
                     if(this.condStacks[1] <= 0)
                     {

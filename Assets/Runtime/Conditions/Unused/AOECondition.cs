@@ -3,7 +3,7 @@ using System.Linq;
 using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Conditions
+namespace ScringloGames.ColorClash.Runtime.Conditions.Unused
 {
     public class AOECondition : Condition
     {   

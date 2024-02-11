@@ -11,7 +11,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         protected override Condition GetCondition()
         {
-            return new DOTCondition(this.duration, this.damageToInflict);
+            return new TakeDamageOnTickCondition(this.duration, this.damageToInflict);
         }
     }
 }

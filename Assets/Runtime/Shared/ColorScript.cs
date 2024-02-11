@@ -1,7 +1,9 @@
 using System.Linq;
+using ScringloGames.ColorClash.Runtime.Conditions;
+using ScringloGames.ColorClash.Runtime.Conditions.Unused;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Conditions
+namespace ScringloGames.ColorClash.Runtime.Shared
 {
     /// <summary>
     /// Sets color to lerp between all stored colors.
@@ -42,7 +44,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private void UpdateColor()
         {
             var redCounter = this.conditionBank.Conditions
-                .OfType<DOTCondition>()
+                .OfType<TakeDamageOnTickCondition>()
                 .Count();
             var blueCounter = this.conditionBank.Conditions
                 .OfType<SlowCondition>()
