@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -5477002098782717127, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       propertyPath: spawnObj
       value: 
-      objectReference: {fileID: 3251042982205846406, guid: c1f795831309b5f4280f77a8bd985d1c, type: 3}
+      objectReference: {fileID: 5750940230600096753, guid: c1f795831309b5f4280f77a8bd985d1c, type: 3}
     - target: {fileID: 6602228063636873149, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       propertyPath: m_Name
       value: RedProjectile
@@ -93,10 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106270d06b6f4db38eb62aa98828a2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 10
   filter:
     operation: 0
     entries:
     - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
       negate: 1
   damageToInflict: 3
-  duration: 10

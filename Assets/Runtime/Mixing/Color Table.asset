@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f06a9146734012883ff2631d944ed1, type: 3}
+  m_Name: Color Table
+  m_EditorClassIdentifier: 
+  <Red>k__BackingField: {fileID: 11400000, guid: ccac090ed225a8f4680b7dfcf7fe0af3, type: 2}
+  <Blue>k__BackingField: {fileID: 11400000, guid: 24e529f8f1b31a747aedd46a26f15d39, type: 2}
+  <Yellow>k__BackingField: {fileID: 11400000, guid: 65a49c66b0f6e824d9f92bf85c7b3c98, type: 2}
