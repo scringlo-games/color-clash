@@ -25,6 +25,21 @@ namespace ScringloGames.ColorClash.Runtime.Movement
         public bool IsAccelerating { get; set; }
         public Vector2 Direction { get; set; }
         public Vector2 Acceleration { get; private set; }
+        public float SpeedCeiling
+        {
+            get => this.speedCeiling;
+            set => this.speedCeiling = value;
+        }
+        public float AccelerationIncrement
+        {
+            get => this.accelerationIncrement;
+            set => this.accelerationIncrement = value;
+        }
+        public float Friction
+        {
+            get => this.friction;
+            set => this.friction = value;
+        }
 
         private void Awake()
         {
@@ -36,28 +51,27 @@ namespace ScringloGames.ColorClash.Runtime.Movement
             if (this.IsAccelerating)
             {
                 // Apply acceleration
-                this.Acceleration += this.Direction * this.accelerationIncrement;
+                this.Acceleration += this.Direction * this.AccelerationIncrement;
             }
             else
             {
                 // This is a hacky trick to get very quick-and-dirty friction working
-                this.Acceleration = Vector2.Lerp(this.Acceleration, Vector2.zero, this.friction);
+                this.Acceleration = Vector2.Lerp(this.Acceleration, Vector2.zero, this.Friction);
             }
-            
+
             // We're not guaranteed to have an AttributeBank just because we can move, so let's check and assign
             // the value of our multiplier if successful.
             var globalMovementSpeedMultiplier = 1f;
-            
+
             if (this.attributeBank != null)
             {
                 globalMovementSpeedMultiplier = this.attributeBank.MovementSpeedMultiplier.ModifiedValue;
             }
+
+            var modifiedMovementSpeedCeiling = this.SpeedCeiling * globalMovementSpeedMultiplier;
             
             // Don't let acceleration go beyond the ceiling
-            // And also apply the global movement speed multiplier
-            this.Acceleration = 
-                Vector2.ClampMagnitude(this.Acceleration, this.speedCeiling) * 
-                globalMovementSpeedMultiplier;
+            this.Acceleration = Vector2.ClampMagnitude(this.Acceleration, modifiedMovementSpeedCeiling);
 
             // We are setting velocity directly rather than adding acceleration since we want to make sure we have
             // really tight control over how much acceleration can be applied; without this we have to do some fancy

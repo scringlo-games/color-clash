@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2007922483361088555}
   - component: {fileID: 794106027562957356}
   - component: {fileID: -1980282604639567460}
+  - component: {fileID: 8222722732700785001}
   - component: {fileID: 4012127059948271221}
   - component: {fileID: 8375541465815879914}
   - component: {fileID: 7448542892885639929}
@@ -40,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 4415491891751835744}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.75, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -154,6 +155,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickInterval: 1
+--- !u!114 &8222722732700785001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415491891751835744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18835b54877c142868352d9172b409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationIncrement: 2
+  speedCeiling: 2
+  friction: 0.025
+  rigidbody2D: {fileID: 7448542892885639929}
 --- !u!114 &4012127059948271221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveToTag: Player
-  velocity: 1
+  mover: {fileID: 8222722732700785001}
 --- !u!58 &8375541465815879914
 CircleCollider2D:
   m_ObjectHideFlags: 0

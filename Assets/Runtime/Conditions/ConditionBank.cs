@@ -52,7 +52,6 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         private void OnEnable()
         {
-            
             this.countdown.Elapsed += this.OnCountdownElapsed;
             
             this.countdown.Start();
@@ -69,7 +68,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         {
             // Update the countdown
             this.countdown.Tick(Time.deltaTime);
-
+            
             // Find all conditions that have exceeded their duration and expire them
             var conditionsToExpire = this.conditions
                 .Where(c => c.Time >= c.Duration)

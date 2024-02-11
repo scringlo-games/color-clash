@@ -1,7 +1,5 @@
 using ScringloGames.ColorClash.Runtime.Damage;
-using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
