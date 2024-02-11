@@ -40,7 +40,10 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Decal
+  - name: Environment
+    uniqueID: 1398256833
+    locked: 0
+  - name: Decals
     uniqueID: 84729379
     locked: 0
   - name: Default
