@@ -1,4 +1,4 @@
-using ScringloGames.ColorClash.Runtime.Health;
+using ScringloGames.ColorClash.Runtime.Damage;
 
 namespace ScringloGames.ColorClash.Runtime.Conditions
 {
@@ -8,31 +8,33 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
     public class TakeDamageOnTickCondition : Condition
     {
         private readonly float amount;
-        private HealthHandler healthHandler;
-        
+        private readonly DamageSource damageSource;
+        private DamageReceiver damageReceiver;
+
         /// <param name="duration">The duration of the condition in seconds.</param>
         /// <param name="amount">Amount of damage to take per tick.</param>
-        public TakeDamageOnTickCondition(float duration, float amount)
+        public TakeDamageOnTickCondition(float duration, DamageSource source, float amount)
             : base(duration)
         {
             this.amount = amount;
+            this.damageSource = source;
         }
 
         public override void OnApplied(ConditionBank bank)
         {
-            this.healthHandler = bank.GetComponent<HealthHandler>();
+            this.damageReceiver = bank.GetComponent<DamageReceiver>();
         }
 
         public override void OnTicked(ConditionBank bank, float deltaTime)
         {
             base.OnTicked(bank, deltaTime);
             
-            this.healthHandler.TakeDamage((int)this.amount);
+            this.damageReceiver.TakeDamage(this.damageSource, this.amount);
         }
 
         public override Condition Clone()
         {
-            return new TakeDamageOnTickCondition(this.Duration, this.amount);
+            return new TakeDamageOnTickCondition(this.Duration, this.damageSource, this.amount);
         }
     }
 }

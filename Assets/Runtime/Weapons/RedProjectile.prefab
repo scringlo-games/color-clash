@@ -100,3 +100,15 @@ MonoBehaviour:
     - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
       negate: 1
   damageToInflict: 3
+  damageSource: {fileID: 3525620377169585225}
+--- !u!114 &3525620377169585225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1882227865971468081, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
+  m_PrefabInstance: {fileID: 6128693995661933702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050092730644915003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855a8a821e7c4b56a233f6c1f4c91aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

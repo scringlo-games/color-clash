@@ -1,27 +1,19 @@
 ﻿using ScringloGames.ColorClash.Runtime.Conditions;
-using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public class ApplySlowToOtherOnCollisionEnter : ApplyConditionToOtherOnCollisionEnter
     {
-        [Tooltip("The percentage by which the other object should be slowed.")]
-        [Range(0f, 1f)]
+        [FormerlySerializedAs("slowPercent")]
+        [Tooltip("The amount by which the other object should be slowed.")]
         [SerializeField]
-        private float slowPercent = 1f;
+        private float amount = 1f;
 
-        protected override Condition GetCondition()
+        protected override Condition GetCondition(Collision2D collision)
         {
-            //return new SlowCondition(this.duration, this.slowPercent);
-            
-            var modifier = new AttributeModifier()
-            {
-                Type = ModifierType.FlatMultiplicative,
-                Value = this.slowPercent,
-            };
-
-            return new ModifyMovementSpeedCondition(this.duration, modifier);
+            return new SlowMovementSpeedCondition(this.duration, this.amount);
         }
     }
 }

@@ -1,16 +1,20 @@
 using System;
+using ScringloGames.ColorClash.Runtime.Damage;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Health
 {
     public class HealthHandler : MonoBehaviour
     {
-        public int Health { get; private set; }
+        public float Health { get; private set; }
         [field: SerializeField]
-        public int MaxHealth { get; private set; } = 100;
+        public float MaxHealth { get; private set; } = 100;
         [SerializeField]
         private HealthRegistrar registrar;
-        public event Action<int> HealthChanged;
+        [SerializeField]
+        private DamagedEvent damagedEvent;
+
+        public event Action<float> HealthChanged;
 
         private void Awake()
         {
@@ -20,17 +24,19 @@ namespace ScringloGames.ColorClash.Runtime.Health
         private void OnEnable()
         {
             this.registrar.Register(this);
+            this.damagedEvent.Raised += this.OnDamaged;
         }
 
         private void OnDisable()
         {
             this.registrar.Deregister(this);
+            this.damagedEvent.Raised -= this.OnDamaged;
         }
 
-        public void TakeDamage(int amount)
+        private void TakeDamage(float amount)
         {
             //checks if health is above 0 before dealing damage.
-            if (this.Health > 0)
+            if (this.Health > 0f)
             {
                 //subtracts the dmg amount from health, then invokes the currenHealth event, passing health.
                 this.Health -= amount;
@@ -38,11 +44,21 @@ namespace ScringloGames.ColorClash.Runtime.Health
             }
         }
 
-        public void Heal(int amount)
+        private void Heal(float amount)
         {
             //adds health to the health variable
             this.Health += amount;
             this.HealthChanged?.Invoke(this.Health);
+        }
+        
+        private void OnDamaged(DamageArgs args)
+        {
+            if (args.Receiver.gameObject != this.gameObject)
+            {
+                return;
+            }
+            
+            this.TakeDamage(args.Amount);
         }
     }
 }

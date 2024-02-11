@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6631468549797979530}
   - component: {fileID: 6628604789013111976}
-  - component: {fileID: -4643884984637308480}
   - component: {fileID: 7844843105748569433}
   - component: {fileID: 2007922483361088555}
   - component: {fileID: 794106027562957356}
@@ -18,11 +17,13 @@ GameObject:
   - component: {fileID: 4012127059948271221}
   - component: {fileID: 8375541465815879914}
   - component: {fileID: 7448542892885639929}
+  - component: {fileID: 1323451995461887819}
   - component: {fileID: 1920145557948646838}
   - component: {fileID: 8293753123853337145}
   - component: {fileID: 1072667444192640979}
   - component: {fileID: 4950218849291662583}
   - component: {fileID: 3856795940805475399}
+  - component: {fileID: 189309275834303609}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -98,18 +99,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4643884984637308480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4415491891751835744}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bacac8b52d0b074685fe9fd2e9877c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7844843105748569433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
   registrar: {fileID: 11400000, guid: f60546eb37b6aa848a5be09bbfef3df1, type: 2}
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &2007922483361088555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +230,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1323451995461887819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415491891751835744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855a8a821e7c4b56a233f6c1f4c91aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originator: {fileID: 4415491891751835744}
 --- !u!114 &1920145557948646838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +261,7 @@ MonoBehaviour:
     - filter: {fileID: 11400000, guid: 85015e956afc0684684557676bd228ed, type: 2}
       negate: 1
   damageToInflict: 15
+  damageSource: {fileID: 1323451995461887819}
 --- !u!114 &8293753123853337145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,12 +274,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1810106600354547b0a44f0fca400fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 7844843105748569433}
   sprite: {fileID: 6628604789013111976}
   flashLengthMax: 0.176
   flashIntensity: 0.164
   flashColor: {r: 0.9245283, g: 0.13082935, b: 0.13082935, a: 1}
   flinchScaleIntensity: 0.0536
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &1072667444192640979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +332,19 @@ MonoBehaviour:
     baseValue: 1
     modifiedValue: 1
     modifiers: []
+--- !u!114 &189309275834303609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415491891751835744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85de33ac6ed64f4bb5bdd87282fdc9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!1001 &9100789014746826996
 PrefabInstance:
   m_ObjectHideFlags: 0

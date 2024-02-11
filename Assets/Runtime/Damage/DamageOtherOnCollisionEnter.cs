@@ -1,5 +1,4 @@
-﻿using ScringloGames.ColorClash.Runtime.Health;
-using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
+﻿using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Damage
@@ -11,7 +10,10 @@ namespace ScringloGames.ColorClash.Runtime.Damage
         [SerializeField]
         [Tooltip("The amount of damage to inflict to the other object.")]
         private int damageToInflict;
-        
+        [Tooltip("The DamageSource that is inflicting this damage.")]
+        [SerializeField]
+        private DamageSource damageSource;
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             var other = collision.collider;
@@ -20,15 +22,15 @@ namespace ScringloGames.ColorClash.Runtime.Damage
             {
                 return;
             }
-            
-            var healthHandler = other.GetComponent<HealthHandler>();
 
-            if (healthHandler == null)
+            var damageReceiver = other.GetComponent<DamageReceiver>();
+
+            if (damageReceiver == null)
             {
                 return;
             }
-
-            healthHandler.TakeDamage(this.damageToInflict);
+            
+            damageReceiver.TakeDamage(this.damageSource, this.damageToInflict);
         }
     }
 }

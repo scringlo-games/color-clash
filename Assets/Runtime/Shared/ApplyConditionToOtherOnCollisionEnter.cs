@@ -27,10 +27,10 @@ namespace ScringloGames.ColorClash.Runtime.Shared
                 return;
             }
 
-            var condition = this.GetCondition();
+            var condition = this.GetCondition(collision);
             conditionBank.Apply(condition);
         }
 
-        protected abstract Condition GetCondition();
+        protected abstract Condition GetCondition(Collision2D collision);
     }
 }

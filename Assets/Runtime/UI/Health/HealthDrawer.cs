@@ -75,7 +75,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.Health
             this.Unbind();
         }
 
-        private void OnHealthChanged(int amount)
+        private void OnHealthChanged(float amount)
         {
             // If something happened to the bound entity we can't update the bar without a reference to MaxHealth
             // and unfortunately have to ignore the health change. This might be solved by passing a reference to the
@@ -88,7 +88,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.Health
             //divides the current health by max health to return a float value between 0 - 1. This value is then used to 
             //set the fill amount of the indicator image.
             
-            var fill = (float)amount/(float)this.HealthHandler.MaxHealth;
+            var fill = amount / this.HealthHandler.MaxHealth;
             this.healthImageComponent.fillAmount = fill;
         }
     }

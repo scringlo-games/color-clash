@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using ScringloGames.ColorClash.Runtime.Conditions;
-using ScringloGames.ColorClash.Runtime.Conditions.Unused;
 using TMPro;
 using UnityEngine;
 
@@ -35,18 +34,12 @@ namespace ScringloGames.ColorClash.Runtime.UI.Conditions
         {
             switch(cond)
             {
-                case AOECondition:
-                    this.condStacks[0]++;
-                    this.indicatorList[0].SetActive(true);
-                    this.indicatorList[0].GetComponentInChildren<TMP_Text>().text = this.condStacks[0].ToString();
-                    Debug.Log($"active yellow conditions: {this.condStacks[0]}");
-                    break;
                 case TakeDamageOnTickCondition:
                     this.condStacks[1]++;
                     this.indicatorList[1].SetActive(true);
                     this.indicatorList[1].GetComponentInChildren<TMP_Text>().text = this.condStacks[1].ToString();
                     break;
-                case SlowCondition:
+                case SlowMovementSpeedCondition:
                     this.condStacks[2]++;
                     this.indicatorList[2].SetActive(true);
                     this.indicatorList[2].GetComponentInChildren<TMP_Text>().text = this.condStacks[2].ToString();
@@ -63,17 +56,6 @@ namespace ScringloGames.ColorClash.Runtime.UI.Conditions
             Debug.Log($"{cond} removed");
             switch(cond)
             {
-                case AOECondition:
-                    this.condStacks[0] --;
-                    if(this.condStacks[0] <= 0)
-                    {
-                        this.indicatorList[0].SetActive(false);
-                    }
-                    else
-                    {
-                        this.indicatorList[0].GetComponentInChildren<TMP_Text>().text = this.condStacks[0].ToString();
-                    }
-                    break;
                 case TakeDamageOnTickCondition:
                 this.condStacks[1] --;
                     if(this.condStacks[1] <= 0)
@@ -85,7 +67,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.Conditions
                         this.indicatorList[1].GetComponentInChildren<TMP_Text>().text = this.condStacks[1].ToString();
                     }
                     break;
-                case SlowCondition:
+                case SlowMovementSpeedCondition:
                 this.condStacks[2] --;
                     if(this.condStacks[2] <= 0)
                     {

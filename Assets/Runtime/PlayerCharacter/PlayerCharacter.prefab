@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 1364965467275857641}
   - component: {fileID: 8195816944216508985}
   - component: {fileID: 8148909784622037114}
+  - component: {fileID: 6834735053137637967}
   - component: {fileID: 2037178647397054630}
   - component: {fileID: 7106186755801953692}
   - component: {fileID: 622157033376170197}
@@ -503,6 +504,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformsToDetach:
   - {fileID: 4135795744804194696}
+--- !u!114 &6834735053137637967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639860555464208467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85de33ac6ed64f4bb5bdd87282fdc9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &2037178647397054630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
   registrar: {fileID: 11400000, guid: f60546eb37b6aa848a5be09bbfef3df1, type: 2}
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &1361872460772382062
 MonoBehaviour:
   m_ObjectHideFlags: 0
