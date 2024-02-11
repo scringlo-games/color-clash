@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67cecd6b09a81654d96644849f86ecd5
+guid: ae7a1dd6eec132e489ba5d0385fe89a0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet-indicators01_0
+      name: spritesheet-obstacle01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5590de390e4f0948b1ff63c878f00ac
+      internalID: -783459760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-obstacle01_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee2853d9f4b05347bbea8bc3141896e
+      internalID: 1287082354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-obstacle01_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73753d9479b62d04b9eff8c811ed0655
+      internalID: 2053575642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-obstacle01_3
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea74cecaf182eb418d891d3a8e54e6b
-      internalID: -1375527412
+      spriteID: df8989edc19baaa429f9088e8f133719
+      internalID: -227928305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-indicators01_1
+      name: spritesheet-obstacle01_4
       rect:
         serializedVersion: 2
         x: 256
@@ -158,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 869445cad68005b4696eff907e49afe8
-      internalID: 1917210860
+      spriteID: 1bce445db4089314e9a77696de69b2dc
+      internalID: 331718221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-indicators01_2
+      name: spritesheet-obstacle01_5
       rect:
         serializedVersion: 2
         x: 512
@@ -179,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fab9c40dbb525e647aa47b03873e30f8
-      internalID: -1081336533
+      spriteID: ed10d5867f86403489efd612f81f4449
+      internalID: 1412928942
       vertices: []
       indices: 
       edges: []
@@ -196,9 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet-indicators01_0: -1375527412
-      spritesheet-indicators01_1: 1917210860
-      spritesheet-indicators01_2: -1081336533
+      spritesheet-obstacle01_0: -783459760
+      spritesheet-obstacle01_1: 1287082354
+      spritesheet-obstacle01_2: 2053575642
+      spritesheet-obstacle01_3: -227928305
+      spritesheet-obstacle01_4: 331718221
+      spritesheet-obstacle01_5: 1412928942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67cecd6b09a81654d96644849f86ecd5
+guid: a9225479c94940544b5dec4a0d447a83
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet-indicators01_0
+      name: spritesheet-officeproto01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd3c04cce424974d8ed837d881012a1
+      internalID: -911714064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-officeproto01_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e6597a8dde0f14a81ad170de2db6fe
+      internalID: 134244743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-officeproto01_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2844afb09ad7a4749a731d14c1e53ea2
+      internalID: -1425203014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-officeproto01_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4060f097044d3e42a7f90acab61272a
+      internalID: 525703421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-officeproto01_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0359cad5065629147b756eda7d1e86e3
+      internalID: 2093651308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-officeproto01_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd4a920f5454434d83d08707522b94b
+      internalID: -1409740765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-officeproto01_6
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea74cecaf182eb418d891d3a8e54e6b
-      internalID: -1375527412
+      spriteID: 8718308dbd919884b8b1d18a0b2b9444
+      internalID: 532030028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-indicators01_1
+      name: spritesheet-officeproto01_7
       rect:
         serializedVersion: 2
         x: 256
@@ -158,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 869445cad68005b4696eff907e49afe8
-      internalID: 1917210860
+      spriteID: 67ec94ffb903ea640a5cc3fb44ebf5d2
+      internalID: 1276597449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-indicators01_2
+      name: spritesheet-officeproto01_8
       rect:
         serializedVersion: 2
         x: 512
@@ -179,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fab9c40dbb525e647aa47b03873e30f8
-      internalID: -1081336533
+      spriteID: 94a7cdb76fb25f9439d80b9f4a4d4900
+      internalID: 1639255488
       vertices: []
       indices: 
       edges: []
@@ -196,9 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet-indicators01_0: -1375527412
-      spritesheet-indicators01_1: 1917210860
-      spritesheet-indicators01_2: -1081336533
+      spritesheet-officeproto01_0: -911714064
+      spritesheet-officeproto01_1: 134244743
+      spritesheet-officeproto01_2: -1425203014
+      spritesheet-officeproto01_3: 525703421
+      spritesheet-officeproto01_4: 2093651308
+      spritesheet-officeproto01_5: -1409740765
+      spritesheet-officeproto01_6: 532030028
+      spritesheet-officeproto01_7: 1276597449
+      spritesheet-officeproto01_8: 1639255488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
