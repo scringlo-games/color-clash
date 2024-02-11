@@ -1,8 +1,6 @@
-using System;
 using DG.Tweening;
 using ScringloGames.ColorClash.Runtime.Mixing;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
 {

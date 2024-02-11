@@ -1,6 +1,5 @@
 ﻿using TravisRFrench.Attributes.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Attribute = TravisRFrench.Attributes.Runtime.Attribute;
 
 namespace ScringloGames.ColorClash.Runtime.Shared.Attributes

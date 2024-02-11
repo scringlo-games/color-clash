@@ -1,3 +1,4 @@
+using ScringloGames.ColorClash.Runtime.Shared.Attributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,6 +12,12 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         [SerializeField] public float velocity = 1;
         private GameObject moveToObj;
         private Rigidbody2D myRigidBody;
+        private AttributeBank attributeBank;
+
+        private void Awake()
+        {
+            this.attributeBank = this.GetComponent<AttributeBank>();
+        }
 
         // Start is called before the first frame update
         private void Start()
@@ -23,11 +30,18 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         { 
             Vector2 moveDir = this.moveToObj.transform.position - this.gameObject.transform.position;
             moveDir = moveDir.normalized;
-            var moveVelocity = moveDir * this.velocity;
+            
+            // We're not guaranteed to have an AttributeBank just because we can move, so let's check and assign
+            // the value of our multiplier if successful.
+            var globalMovementSpeedMultiplier = 1f;
+            
+            if (this.attributeBank != null)
+            {
+                globalMovementSpeedMultiplier = this.attributeBank.MovementSpeedMultiplier.ModifiedValue;
+            }
+            
+            var moveVelocity = moveDir * (this.velocity * globalMovementSpeedMultiplier);
             this.myRigidBody.velocity = moveVelocity;
         }
-
-    
     }
 }
-

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScringloGames.ColorClash.Runtime.Shared.Attributes;
+using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Movement
 {
@@ -18,11 +19,17 @@ namespace ScringloGames.ColorClash.Runtime.Movement
         [Header("Dependencies")]
         [SerializeField]
         private new Rigidbody2D rigidbody2D;
-
+        private AttributeBank attributeBank;
+        
         public Vector2 Velocity { get; private set; }
         public bool IsAccelerating { get; set; }
         public Vector2 Direction { get; set; }
         public Vector2 Acceleration { get; private set; }
+
+        private void Awake()
+        {
+            this.attributeBank = this.GetComponent<AttributeBank>();
+        }
 
         private void Update()
         {
@@ -37,9 +44,21 @@ namespace ScringloGames.ColorClash.Runtime.Movement
                 this.Acceleration = Vector2.Lerp(this.Acceleration, Vector2.zero, this.friction);
             }
             
-            // Don't let acceleration go beyond the ceiling
-            this.Acceleration = Vector2.ClampMagnitude(this.Acceleration, this.speedCeiling);
+            // We're not guaranteed to have an AttributeBank just because we can move, so let's check and assign
+            // the value of our multiplier if successful.
+            var globalMovementSpeedMultiplier = 1f;
             
+            if (this.attributeBank != null)
+            {
+                globalMovementSpeedMultiplier = this.attributeBank.MovementSpeedMultiplier.ModifiedValue;
+            }
+            
+            // Don't let acceleration go beyond the ceiling
+            // And also apply the global movement speed multiplier
+            this.Acceleration = 
+                Vector2.ClampMagnitude(this.Acceleration, this.speedCeiling) * 
+                globalMovementSpeedMultiplier;
+
             // We are setting velocity directly rather than adding acceleration since we want to make sure we have
             // really tight control over how much acceleration can be applied; without this we have to do some fancy
             // dot-product math if we want to limit the player's velocity contribution from acceleration
