@@ -72,6 +72,14 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Developer-local prototyping scenes
+**/[Ss]cenes/[Pp]rototype/
+**/[Ss]cenes/[Pp]rototype.meta
+**/[Ss]cenes/[Tt]ravis/
+**/[Ss]cenes/[Tt]ravis.meta
+**/[Ss]cenes/[Ll]ance/
+**/[Ss]cenes/[Ll]ance.meta
+**/[Ss]cenes/[Tt]yler/
+**/[Ss]cenes/[Tt]yler.meta
 **/[Ss]cenes/[Pp]rototype.unity
 **/[Ss]cenes/[Tt]ravis.unity
 **/[Ss]cenes/[Ll]ance.unity
