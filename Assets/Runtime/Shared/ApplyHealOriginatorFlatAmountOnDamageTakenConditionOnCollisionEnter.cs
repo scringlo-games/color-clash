@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class ApplyHealOriginatorOnDamageTakenConditionOnCollisionEnter : ApplyConditionToOtherOnCollisionEnter
+    public class ApplyHealOriginatorFlatAmountOnDamageTakenConditionOnCollisionEnter : ApplyConditionToOtherOnCollisionEnter
     {
         [SerializeField]
         private float amount;

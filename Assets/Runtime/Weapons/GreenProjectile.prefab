@@ -77,7 +77,7 @@ PrefabInstance:
       addedObject: {fileID: -6831730217954346559}
     - targetCorrespondingSourceObject: {fileID: 6602228063636873149, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5427159914809259431}
+      addedObject: {fileID: -8686668420437914560}
   m_SourcePrefab: {fileID: 100100000, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
 --- !u!1 &1811410330287998903 stripped
 GameObject:
@@ -105,7 +105,7 @@ MonoBehaviour:
     - filter: {fileID: 11400000, guid: f8a16b536e8cc9c4089b7c90dd3e03f1, type: 2}
       negate: 1
   amount: 0.5
---- !u!114 &-5427159914809259431
+--- !u!114 &-8686668420437914560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,12 +114,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1811410330287998903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 496e408792a747c0902cc4377aeec40e, type: 3}
+  m_Script: {fileID: 11500000, guid: 392a5b7ddccf49adaedef3a303a629d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 6
   filter:
     operation: 0
-    entries: []
-  amount: 0.25
+    entries:
+    - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
+      negate: 1
+    - filter: {fileID: 11400000, guid: f8a16b536e8cc9c4089b7c90dd3e03f1, type: 2}
+      negate: 1
+  percentage: 1
   damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
