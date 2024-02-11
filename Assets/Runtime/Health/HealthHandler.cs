@@ -1,6 +1,7 @@
 using System;
 using ScringloGames.ColorClash.Runtime.Damage;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Health
 {
@@ -12,7 +13,7 @@ namespace ScringloGames.ColorClash.Runtime.Health
         [SerializeField]
         private HealthRegistrar registrar;
         [SerializeField]
-        private DamagedEvent damagedEvent;
+        private DamageArgsEvent damagedEvent;
 
         public event Action<float> HealthChanged;
 

@@ -1,12 +1,13 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Damage
 {
     public class DamageReceiver : MonoBehaviour
     {
         [SerializeField]
-        private DamagedEvent damagedEvent;
+        private DamageArgsEvent damagedEvent;
         
         public void TakeDamage([NotNull] DamageSource source, float amount)
         {

@@ -1,6 +1,7 @@
 using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
@@ -17,7 +18,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         [SerializeField][Range(0f,0.20f)]
         private float flinchScaleIntensity;
         [SerializeField]
-        private DamagedEvent damagedEvent;
+        private DamageArgsEvent damagedEvent;
         private Vector2 startScale;
         private Vector2 modScale;
         private Color startColor;
