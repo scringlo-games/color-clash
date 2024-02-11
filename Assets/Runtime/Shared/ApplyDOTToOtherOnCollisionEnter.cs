@@ -15,8 +15,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         protected override Condition GetCondition(Collision2D collision)
         {
-            
-            return new TakeDamageOnTickCondition(this.duration, this.damageSource, this.damageToInflict);
+            return new TakeDamageOnTickCondition(this.duration, this.damageSource.Originator, this.damageToInflict);
         }
     }
 }

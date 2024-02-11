@@ -9,7 +9,7 @@ namespace ScringloGames.ColorClash.Runtime.Damage
         [SerializeField]
         private DamageArgsEvent damagedEvent;
         
-        public void TakeDamage([NotNull] DamageSource source, float amount)
+        public void TakeDamage([NotNull] IDamageSource source, float amount)
         {
             var args = new DamageArgs()
             {

@@ -1,3 +1,4 @@
+using ScringloGames.ColorClash.Runtime.Damage;
 using UnityEngine;
 
 /*
@@ -31,6 +32,11 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
                 Instantiate(this.objectToLaunch, this.fireFrom.transform.position, this.transform.rotation);
             Vector2 launchSpeed = this.transform.up * this.launchVelocity;
             newProjectile.GetComponent<Rigidbody2D>().velocity = launchSpeed;
+
+            if (newProjectile.TryGetComponent<DamageSource>(out var damageSource))
+            {
+                damageSource.Originator = this.gameObject;
+            }
         }
 
     }

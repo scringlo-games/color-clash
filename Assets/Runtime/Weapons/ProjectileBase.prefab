@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855a8a821e7c4b56a233f6c1f4c91aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originator: {fileID: 6602228063636873149}
+  originator: {fileID: 0}
 --- !u!114 &-4901289499542378357
 MonoBehaviour:
   m_ObjectHideFlags: 0

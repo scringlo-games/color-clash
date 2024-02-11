@@ -44,8 +44,8 @@ namespace ScringloGames.ColorClash.Runtime.Health
                 this.HealthChanged?.Invoke(this.Health);
             }
         }
-
-        private void Heal(float amount)
+        
+        public void Heal(float amount)
         {
             //adds health to the health variable
             this.Health += amount;

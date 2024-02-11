@@ -2,7 +2,7 @@
 
 namespace ScringloGames.ColorClash.Runtime.Damage
 {
-    public class DamageSource : MonoBehaviour
+    public class DamageSource : MonoBehaviour, IDamageSource
     {
         [SerializeField]
         private GameObject originator;

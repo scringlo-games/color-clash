@@ -1,23 +1,26 @@
 using ScringloGames.ColorClash.Runtime.Damage;
+using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Conditions
 {
     /// <summary>
     /// Applies damage every tick to the affected entity.
     /// </summary>
-    public class TakeDamageOnTickCondition : Condition
+    public class TakeDamageOnTickCondition : Condition, IDamageSource
     {
         private readonly float amount;
-        private readonly DamageSource damageSource;
         private DamageReceiver damageReceiver;
+        
+        public GameObject Originator { get; set; }
 
         /// <param name="duration">The duration of the condition in seconds.</param>
+        /// <param name="originator">The originator of this damage source.</param>
         /// <param name="amount">Amount of damage to take per tick.</param>
-        public TakeDamageOnTickCondition(float duration, DamageSource source, float amount)
+        public TakeDamageOnTickCondition(float duration, GameObject originator, float amount)
             : base(duration)
         {
+            this.Originator = originator;
             this.amount = amount;
-            this.damageSource = source;
         }
 
         public override void OnApplied(ConditionBank bank)
@@ -29,12 +32,14 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         {
             base.OnTicked(bank, deltaTime);
             
-            this.damageReceiver.TakeDamage(this.damageSource, this.amount);
+            this.damageReceiver.TakeDamage(this, this.amount);
         }
 
         public override Condition Clone()
         {
-            return new TakeDamageOnTickCondition(this.Duration, this.damageSource, this.amount);
+            return new TakeDamageOnTickCondition(this.Duration, this.Originator, this.amount);
         }
+
+        
     }
 }
