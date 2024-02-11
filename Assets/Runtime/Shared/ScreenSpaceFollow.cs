@@ -12,8 +12,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         private float offsetX;
         [SerializeField]
         private float offsetY;
-        [SerializeField]
-       
+
 
         private void Start()
         {

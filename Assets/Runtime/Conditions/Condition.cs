@@ -53,6 +53,10 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         {
         }
 
+        /// <summary>
+        /// Clones the condition, creating a deep copy of it.
+        /// </summary>
+        /// <returns></returns>
         public abstract Condition Clone();
     }
 }

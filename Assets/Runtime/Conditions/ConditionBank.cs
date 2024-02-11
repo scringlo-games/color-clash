@@ -52,6 +52,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         private void OnEnable()
         {
+            
             this.countdown.Elapsed += this.OnCountdownElapsed;
             
             this.countdown.Start();
