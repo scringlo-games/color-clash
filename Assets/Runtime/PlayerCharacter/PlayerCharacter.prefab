@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 622157033376170197}
   - component: {fileID: 1361872460772382062}
   - component: {fileID: 1436296928403467597}
+  - component: {fileID: 2587887006003052656}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -652,6 +653,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2587887006003052656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639860555464208467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d7bb95d52f4790bb198192df962613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalDamageDealtMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  globalDamageTakenMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  movementSpeedMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
 --- !u!1 &6144143817728312801
 GameObject:
   m_ObjectHideFlags: 0
