@@ -10,7 +10,8 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private DamageReceiver damageReceiver;
         private HealthHandler healthHandler;
 
-        public HealOriginatorForFlatAmountOnDamageTakenCondition(float duration, DamageArgsEvent damagedEvent, float amount)  : base(duration)
+        public HealOriginatorForFlatAmountOnDamageTakenCondition(int tickDuration, DamageArgsEvent damagedEvent, float amount) 
+            : base(tickDuration)
         {
             this.damagedEvent = damagedEvent;
             this.amount = amount;
@@ -34,7 +35,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         public override Condition Clone()
         {
-            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.Duration, this.damagedEvent, this.amount);
+            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.TickDuration, this.damagedEvent, this.amount);
         }
         
         private void OnDamaged(DamageArgs args)

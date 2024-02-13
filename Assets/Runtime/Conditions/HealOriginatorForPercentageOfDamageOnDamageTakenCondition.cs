@@ -10,7 +10,8 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private DamageReceiver damageReceiver;
         private HealthHandler healthHandler;
 
-        public HealOriginatorForPercentageOfDamageOnDamageTakenCondition(float duration, DamageArgsEvent damagedEvent, float percentage)  : base(duration)
+        public HealOriginatorForPercentageOfDamageOnDamageTakenCondition(int tickDuration, DamageArgsEvent damagedEvent, float percentage) 
+            : base(tickDuration)
         {
             this.damagedEvent = damagedEvent;
             this.percentage = percentage;
@@ -34,7 +35,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         public override Condition Clone()
         {
-            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.Duration, this.damagedEvent, this.percentage);
+            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.TickDuration, this.damagedEvent, this.percentage);
         }
         
         private void OnDamaged(DamageArgs args)

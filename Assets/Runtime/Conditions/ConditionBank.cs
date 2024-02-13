@@ -78,9 +78,9 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
             
             // Find all conditions that have exceeded their duration and expire them
             var conditionsToExpire = this.conditions
-                .Where(c => c.Time >= c.Duration)
+                .Where(c => c.CurrentTick >= c.TickDuration)
                 .ToList();
-
+            
             foreach (var condition in conditionsToExpire)
             {
                 this.conditions.Remove(condition);
@@ -100,7 +100,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         {
             foreach (var condition in this.conditions)
             {
-                condition.OnTicked(this, Time.deltaTime);
+                condition.OnTicked(this);
             }
             
             count.Reset();

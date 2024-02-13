@@ -7,7 +7,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
     public abstract class OnCollisionEnterApplyConditionToOther : MonoBehaviour
     {
         [SerializeField]
-        protected float duration = 2f;
+        protected int duration = 2;
         [SerializeField]
         protected GameObjectFilterSet filter;
         

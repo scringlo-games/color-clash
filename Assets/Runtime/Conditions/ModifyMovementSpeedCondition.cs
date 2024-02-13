@@ -8,7 +8,8 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private readonly AttributeModifier modifier;
         private AttributeBank attributeBank;
 
-        public ModifyMovementSpeedCondition(float duration, AttributeModifier modifier) : base(duration)
+        public ModifyMovementSpeedCondition(int tickDuration, AttributeModifier modifier) 
+            : base(tickDuration)
         {
             this.modifier = modifier;
         }
@@ -38,7 +39,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         public override Condition Clone()
         {
-            return new ModifyMovementSpeedCondition(this.Duration, this.modifier);
+            return new ModifyMovementSpeedCondition(this.TickDuration, this.modifier);
         }
     }
 }

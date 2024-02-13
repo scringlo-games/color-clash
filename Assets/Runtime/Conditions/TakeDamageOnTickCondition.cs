@@ -16,7 +16,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         /// <param name="duration">The duration of the condition in seconds.</param>
         /// <param name="originator">The originator of this damage source.</param>
         /// <param name="amount">Amount of damage to take per tick.</param>
-        public TakeDamageOnTickCondition(float duration, GameObject originator, float amount)
+        public TakeDamageOnTickCondition(int duration, GameObject originator, float amount)
             : base(duration)
         {
             this.Originator = originator;
@@ -28,16 +28,16 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
             this.damageReceiver = bank.GetComponent<DamageReceiver>();
         }
 
-        public override void OnTicked(ConditionBank bank, float deltaTime)
+        public override void OnTicked(ConditionBank bank)
         {
-            base.OnTicked(bank, deltaTime);
+            base.OnTicked(bank);
             
             this.damageReceiver.TakeDamage(this, this.amount);
         }
 
         public override Condition Clone()
         {
-            return new TakeDamageOnTickCondition(this.Duration, this.Originator, this.amount);
+            return new TakeDamageOnTickCondition(this.TickDuration, this.Originator, this.amount);
         }
 
         

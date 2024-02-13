@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392a5b7ddccf49adaedef3a303a629d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 6
+  duration: 5
   filter:
     operation: 0
     entries:
