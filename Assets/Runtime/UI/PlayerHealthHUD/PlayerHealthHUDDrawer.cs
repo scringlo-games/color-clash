@@ -35,16 +35,15 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerHealthHUD
                 return;
             }
             
-            var healthHandler = this.BoundTo;
-            if (healthHandler == null)
+            if (this.BoundTo == null)
             {
                 return;
             }
             
             // We do a zero check on MaxHealth to prevent a DivideByZeroException
-            this.progressDrawer.Progress = healthHandler.MaxHealth == 0f
+            this.progressDrawer.Progress = this.BoundTo.MaxHealth == 0f
                 ? 0f
-                : healthHandler.Health / healthHandler.MaxHealth;
+                : this.BoundTo.Health / this.BoundTo.MaxHealth;
         }
     }
 }
