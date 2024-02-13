@@ -5,6 +5,7 @@ namespace ScringloGames.ColorClash.Runtime.UI
     /// <summary>
     /// Attaches to a world space object and maintains the specified offset from it in screen space.
     /// </summary>
+    [ExecuteAlways]
     public class AttachToWorldSpaceObject : MonoBehaviour
     {
         [SerializeField]

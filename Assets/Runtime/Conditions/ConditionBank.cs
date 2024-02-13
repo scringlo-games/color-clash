@@ -17,20 +17,18 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         private float tickInterval;
         private List<Condition> conditions;
         private Countdown countdown;
+        [SerializeField]
+        private ConditionBankRegistrar registrar;
+        [Header("Events")]
+        [SerializeField]
+        private ConditionAppliedOrExpiredEvent conditionAppliedEvent;
+        [SerializeField]
+        private ConditionAppliedOrExpiredEvent conditionExpiredEvent;
         
         /// <summary>
         /// The conditions that are currently active.
         /// </summary>
         public IEnumerable<Condition> Conditions => this.conditions;
-
-        /// <summary>
-        /// Invoked when a condition was applied to this entity.
-        /// </summary>
-        public event Action<Condition> Applied;
-        /// <summary>
-        /// Invoked when a condition expires from this entity.
-        /// </summary>
-        public event Action<Condition> Expired;
 
         /// <summary>
         /// Applies the specified condition to this entity.
@@ -41,7 +39,14 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
         {
             this.conditions.Add(condition);
             condition.OnApplied(this);
-            this.Applied?.Invoke(condition);
+
+            var args = new ConditionAppliedOrExpiredEvent.ConditionAppliedOrExpiredEventArgs()
+            {
+                ConditionBank = this,
+                Condition = condition,
+            };
+            
+            this.conditionAppliedEvent.Raise(args);
         }
 
         private void Awake()
@@ -52,6 +57,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         private void OnEnable()
         {
+            this.registrar.Register(this);
             this.countdown.Elapsed += this.OnCountdownElapsed;
             
             this.countdown.Start();
@@ -59,6 +65,7 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
 
         private void OnDisable()
         {
+            this.registrar.Deregister(this);
             this.countdown.Elapsed -= this.OnCountdownElapsed;
             
             this.countdown.Stop();
@@ -78,7 +85,14 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
             {
                 this.conditions.Remove(condition);
                 condition.OnExpired(this);
-                this.Expired?.Invoke(condition);
+                
+                var args = new ConditionAppliedOrExpiredEvent.ConditionAppliedOrExpiredEventArgs()
+                {
+                    ConditionBank = this,
+                    Condition = condition,
+                };
+            
+                this.conditionExpiredEvent.Raise(args);
             }
         }
 

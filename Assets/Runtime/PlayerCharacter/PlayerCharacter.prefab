@@ -572,6 +572,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickInterval: 1
+  registrar: {fileID: 11400000, guid: 5584a8ea79b286e4ea18466b15a54f80, type: 2}
+  conditionAppliedEvent: {fileID: 11400000, guid: 8ac3c57ef67659446af09709b94fa718, type: 2}
+  conditionExpiredEvent: {fileID: 11400000, guid: cfe5bb35f59a96a4680f6ee19e2ab214, type: 2}
 --- !u!82 &1436296928403467597
 AudioSource:
   m_ObjectHideFlags: 0
