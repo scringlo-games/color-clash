@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.PainSplatter
+namespace ScringloGames.ColorClash.Runtime.Decals
 {
     public class PaintTester : MonoBehaviour
     {

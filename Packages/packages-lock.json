@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.travisrfrench.attributes": {
+      "version": "https://github.com/frenchtr/attributes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "22576d61f2015c1fca115d005f8e9aaaac363a46"
+    },
     "com.travisrfrench.common": {
       "version": "https://github.com/frenchtr/common.git",
       "depth": 0,

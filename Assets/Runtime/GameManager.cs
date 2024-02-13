@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ScringloGames.ColorClash.Runtime.Conditions;
 using ScringloGames.ColorClash.Runtime.GameServices;
 using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
@@ -11,9 +12,12 @@ namespace ScringloGames.ColorClash.Runtime
         [Header("Registrars")]
         [SerializeField]
         private HealthRegistrar healthRegistrar;
+        [SerializeField]
+        private ConditionBankRegistrar conditionBankRegistrar;
         [Header("Services")]
         [SerializeField]
         private List<GameService> services;
+        
 
         public IEnumerable<GameService> Services => this.services;
 
@@ -22,6 +26,7 @@ namespace ScringloGames.ColorClash.Runtime
             #region REGISTRARS
             
             this.healthRegistrar.Setup();
+            this.conditionBankRegistrar.Setup();
             
             #endregion
             

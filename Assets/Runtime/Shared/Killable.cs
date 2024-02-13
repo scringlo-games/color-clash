@@ -38,7 +38,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         }
 
         //Checks if health is below or equal to zero, then invokes the 'OnKilled' event if the condition is met.
-        private void OnHealthChanged(int health)
+        private void OnHealthChanged(float health)
         {
             if (health <= 0)
             {

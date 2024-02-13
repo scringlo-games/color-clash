@@ -240,11 +240,13 @@ GameObject:
   - component: {fileID: 1364965467275857641}
   - component: {fileID: 8195816944216508985}
   - component: {fileID: 8148909784622037114}
+  - component: {fileID: 6834735053137637967}
   - component: {fileID: 2037178647397054630}
   - component: {fileID: 7106186755801953692}
   - component: {fileID: 622157033376170197}
   - component: {fileID: 1361872460772382062}
   - component: {fileID: 1436296928403467597}
+  - component: {fileID: 2587887006003052656}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -502,6 +504,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformsToDetach:
   - {fileID: 4135795744804194696}
+--- !u!114 &6834735053137637967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639860555464208467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85de33ac6ed64f4bb5bdd87282fdc9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &2037178647397054630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
   registrar: {fileID: 11400000, guid: f60546eb37b6aa848a5be09bbfef3df1, type: 2}
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &1361872460772382062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +572,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickInterval: 1
+  registrar: {fileID: 11400000, guid: 5584a8ea79b286e4ea18466b15a54f80, type: 2}
+  conditionAppliedEvent: {fileID: 11400000, guid: 8ac3c57ef67659446af09709b94fa718, type: 2}
+  conditionExpiredEvent: {fileID: 11400000, guid: cfe5bb35f59a96a4680f6ee19e2ab214, type: 2}
 --- !u!82 &1436296928403467597
 AudioSource:
   m_ObjectHideFlags: 0
@@ -652,6 +671,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2587887006003052656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639860555464208467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d7bb95d52f4790bb198192df962613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalDamageDealtMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  globalDamageTakenMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
+  movementSpeedMultiplier:
+    baseValue: 1
+    modifiedValue: 1
+    modifiers: []
 --- !u!1 &6144143817728312801
 GameObject:
   m_ObjectHideFlags: 0

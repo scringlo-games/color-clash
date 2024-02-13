@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScringloGames.ColorClash.Runtime.Shared.Attributes;
+using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Movement
 {
@@ -18,28 +19,60 @@ namespace ScringloGames.ColorClash.Runtime.Movement
         [Header("Dependencies")]
         [SerializeField]
         private new Rigidbody2D rigidbody2D;
-
+        private AttributeBank attributeBank;
+        
         public Vector2 Velocity { get; private set; }
         public bool IsAccelerating { get; set; }
         public Vector2 Direction { get; set; }
         public Vector2 Acceleration { get; private set; }
+        public float SpeedCeiling
+        {
+            get => this.speedCeiling;
+            set => this.speedCeiling = value;
+        }
+        public float AccelerationIncrement
+        {
+            get => this.accelerationIncrement;
+            set => this.accelerationIncrement = value;
+        }
+        public float Friction
+        {
+            get => this.friction;
+            set => this.friction = value;
+        }
+
+        private void Awake()
+        {
+            this.attributeBank = this.GetComponent<AttributeBank>();
+        }
 
         private void Update()
         {
             if (this.IsAccelerating)
             {
                 // Apply acceleration
-                this.Acceleration += this.Direction * this.accelerationIncrement;
+                this.Acceleration += this.Direction * this.AccelerationIncrement;
             }
             else
             {
                 // This is a hacky trick to get very quick-and-dirty friction working
-                this.Acceleration = Vector2.Lerp(this.Acceleration, Vector2.zero, this.friction);
+                this.Acceleration = Vector2.Lerp(this.Acceleration, Vector2.zero, this.Friction);
             }
+
+            // We're not guaranteed to have an AttributeBank just because we can move, so let's check and assign
+            // the value of our multiplier if successful.
+            var globalMovementSpeedMultiplier = 1f;
+
+            if (this.attributeBank != null)
+            {
+                globalMovementSpeedMultiplier = this.attributeBank.MovementSpeedMultiplier.ModifiedValue;
+            }
+
+            var modifiedMovementSpeedCeiling = this.SpeedCeiling * globalMovementSpeedMultiplier;
             
             // Don't let acceleration go beyond the ceiling
-            this.Acceleration = Vector2.ClampMagnitude(this.Acceleration, this.speedCeiling);
-            
+            this.Acceleration = Vector2.ClampMagnitude(this.Acceleration, modifiedMovementSpeedCeiling);
+
             // We are setting velocity directly rather than adding acceleration since we want to make sure we have
             // really tight control over how much acceleration can be applied; without this we have to do some fancy
             // dot-product math if we want to limit the player's velocity contribution from acceleration

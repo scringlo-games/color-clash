@@ -1,12 +1,10 @@
-using ScringloGames.ColorClash.Runtime.Health;
+using ScringloGames.ColorClash.Runtime.Damage;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public class FlinchOnDamage : MonoBehaviour
     {
-        [SerializeField]
-        private HealthHandler health;
         [SerializeField]
         private SpriteRenderer sprite;
         [SerializeField][Range(0.05f,1f)]
@@ -17,6 +15,8 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         private Color flashColor;
         [SerializeField][Range(0f,0.20f)]
         private float flinchScaleIntensity;
+        [SerializeField]
+        private DamageArgsEvent damagedEvent;
         private Vector2 startScale;
         private Vector2 modScale;
         private Color startColor;
@@ -36,12 +36,12 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         private void OnEnable()
         {
-            this.health.HealthChanged += this.Flinch;
+            this.damagedEvent.Raised += this.OnDamaged;
         }
 
         private void OnDisable()
         {
-            this.health.HealthChanged -= this.Flinch;
+            this.damagedEvent.Raised -= this.OnDamaged;
         }
 
         private void Update()
@@ -57,12 +57,22 @@ namespace ScringloGames.ColorClash.Runtime.Shared
             }
         }
 
-        private void Flinch(int currentHealth)
+        private void Flinch()
         {  
             this.isFlash = true;
             this.sprite.color = this.lerpedColor;
             this.sprite.transform.localScale = this.modScale;
             this.flashLength = this.flashLengthMax;
+        }
+        
+        private void OnDamaged(DamageArgs args)
+        {
+            if (args.Receiver.gameObject != this.gameObject)
+            {
+                return;
+            }
+            
+            this.Flinch();
         }
     }
 }

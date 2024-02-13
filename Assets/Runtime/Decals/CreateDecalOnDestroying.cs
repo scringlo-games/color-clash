@@ -2,7 +2,7 @@ using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace ScringloGames.ColorClash.Runtime.PainSplatter
+namespace ScringloGames.ColorClash.Runtime.Decals
 {
     public class CreateDecalOnDestroying : MonoBehaviour
     {
