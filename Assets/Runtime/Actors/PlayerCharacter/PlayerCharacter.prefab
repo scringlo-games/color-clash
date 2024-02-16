@@ -146,6 +146,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: speedCeiling
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: accelerationIncrement
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3304802956398066514, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: m_Color.b
       value: 0.5019608
@@ -197,9 +205,6 @@ PrefabInstance:
       addedObject: {fileID: -1991176971723866635}
     - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 13059885110786306}
-    - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5824293039305481821}
     - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       insertIndex: -1
@@ -214,11 +219,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8006731870555754545}
   m_SourcePrefab: {fileID: 100100000, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
---- !u!50 &104687984119230589 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 8581232520006413919, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
-  m_PrefabInstance: {fileID: 8531300558603984418}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2226110175882704111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
@@ -291,26 +291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: -8659394324655834379}
-  mover: {fileID: 13059885110786306}
+  mover: {fileID: 8937447852028683603}
   looker: {fileID: 2612930193349245569}
   attackBehavior: {fileID: 5824293039305481821}
   mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
---- !u!114 &13059885110786306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2226110175882704111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e18835b54877c142868352d9172b409, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accelerationIncrement: 10
-  speedCeiling: 10
-  friction: 0.5
-  rigidbody2D: {fileID: 104687984119230589}
 --- !u!114 &5824293039305481821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,6 +474,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b190824b7d1d26348be68fcbf9dce739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8937447852028683603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+  m_PrefabInstance: {fileID: 8531300558603984418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226110175882704111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18835b54877c142868352d9172b409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &9197725965112849557 stripped

@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "7766b4c8790d27fc638856d3ba51cc59d42fea04"
     },
+    "com.travisrfrench.graphing": {
+      "version": "https://github.com/frenchtr/graphing.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "78830b8a74030db2c2e6f17d8c26c183390806e0"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.4",
       "depth": 1,

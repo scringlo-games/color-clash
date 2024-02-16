@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: speedCeiling
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: accelerationIncrement
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3304802956398066514, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: m_Color.b
       value: 0.2509804
@@ -79,5 +87,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3188313645062578804}
   m_SourcePrefab: {fileID: 100100000, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+--- !u!1 &1121281290240885173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+  m_PrefabInstance: {fileID: 7425987897182514040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3188313645062578804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121281290240885173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2669375a858f4b00b5cfd27e485036ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalMover: {fileID: 7882176163810381833}
+--- !u!114 &7882176163810381833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+  m_PrefabInstance: {fileID: 7425987897182514040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121281290240885173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18835b54877c142868352d9172b409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

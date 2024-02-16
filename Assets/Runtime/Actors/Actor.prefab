@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 7297916487202149789}
   - component: {fileID: 8417116950005955709}
   - component: {fileID: 5919905306985882787}
+  - component: {fileID: 751386250146085745}
   m_Layer: 0
   m_Name: Actor
   m_TagString: Untagged
@@ -411,3 +412,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b190824b7d1d26348be68fcbf9dce739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &751386250146085745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530581257876433613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18835b54877c142868352d9172b409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationIncrement: 4
+  speedCeiling: 4
+  friction: 0.5
+  rigidbody2D: {fileID: 8581232520006413919}
