@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Attacks
 {
     public class MeleeAttackBehaviour : AttackBehaviour
     {
+        [Header("Hit Box")]
         [SerializeField]
         private GameObject hitBox;
         [SerializeField]
-        private float activeDuration = 0.15f;
+        private float hitBoxActiveDuration = 0.15f;
         
         protected override void OnAttack()
         {
@@ -18,7 +20,7 @@ namespace ScringloGames.ColorClash.Runtime.Attacks
 
         private IEnumerator HideHitBoxAfterDelay()
         {
-            yield return new WaitForSeconds(this.activeDuration);
+            yield return new WaitForSeconds(this.hitBoxActiveDuration);
 
             this.hitBox.SetActive(false);
         }
