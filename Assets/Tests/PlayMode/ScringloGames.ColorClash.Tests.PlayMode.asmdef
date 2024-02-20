@@ -1,0 +1,23 @@
+{
+    "name": "ScringloGames.ColorClash.Tests.PlayMode",
+    "rootNamespace": "ScringloGames.ColorClash.Tests.PlayMode",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "ScringloGames.ColorClash.Runtime",
+        "TravisRFrench.Attributes.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
