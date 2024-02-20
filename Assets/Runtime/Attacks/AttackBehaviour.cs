@@ -1,5 +1,4 @@
-﻿using System;
-using TravisRFrench.Common.Runtime.ScriptableEvents;
+﻿using TravisRFrench.Common.Runtime.ScriptableEvents;
 using TravisRFrench.Common.Runtime.Timing;
 using UnityEngine;
 

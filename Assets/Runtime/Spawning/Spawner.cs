@@ -6,7 +6,7 @@ namespace ScringloGames.ColorClash.Runtime.Spawning
     public class Spawner : MonoBehaviour
     {
         [SerializeField]
-        private GameObject prefabToSpawn;
+        private SpawnTable spawnTable;
         [SerializeField]
         private float interval = 10f;
 
@@ -21,7 +21,9 @@ namespace ScringloGames.ColorClash.Runtime.Spawning
             {
                 audioSource.Play();
             }
-            Instantiate(this.prefabToSpawn, this.transform.position, Quaternion.identity, null);
+
+            var prefab = this.spawnTable.Select();
+            Instantiate(prefab, this.transform.position, Quaternion.identity, null);
 
             yield return new WaitForSeconds(this.interval);
             yield return this.SpawnPrefab();
