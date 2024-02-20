@@ -1,4 +1,5 @@
-﻿using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
+﻿using System;
+using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Damage
@@ -17,7 +18,16 @@ namespace ScringloGames.ColorClash.Runtime.Damage
         private void OnCollisionEnter2D(Collision2D collision)
         {
             var other = collision.collider;
+            this.DamageOther(other);
+        }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            this.DamageOther(other);
+        }
+
+        private void DamageOther(Collider2D other)
+        {
             if (!this.filter.Evaluate(other.gameObject))
             {
                 return;
