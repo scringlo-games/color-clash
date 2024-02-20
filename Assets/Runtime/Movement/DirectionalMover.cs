@@ -68,8 +68,9 @@ namespace ScringloGames.ColorClash.Runtime.Movement
                 globalMovementSpeedMultiplier = this.attributeBank.MovementSpeedMultiplier.ModifiedValue;
             }
 
-            var modifiedMovementSpeedCeiling = this.SpeedCeiling * globalMovementSpeedMultiplier;
-            
+            // Prevent the speed from going below zero
+            var modifiedMovementSpeedCeiling = Mathf.Max(0, this.SpeedCeiling * globalMovementSpeedMultiplier);
+
             // Don't let acceleration go beyond the ceiling
             this.Acceleration = Vector2.ClampMagnitude(this.Acceleration, modifiedMovementSpeedCeiling);
 
