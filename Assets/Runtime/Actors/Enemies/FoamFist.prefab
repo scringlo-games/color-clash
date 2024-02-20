@@ -197,7 +197,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.35, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 944810338290141577}
@@ -278,7 +278,7 @@ MonoBehaviour:
     entries:
     - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
       negate: 0
-  damageToInflict: 15
+  damageToInflict: 30
   damageSource: {fileID: 5122977880180101910}
 --- !u!1 &7717208386073101480
 GameObject:
@@ -512,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7583232032342927442, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: <MaxHealth>k__BackingField
-      value: 20
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7882176163810381833, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: accelerationIncrement
@@ -631,12 +631,13 @@ MonoBehaviour:
   target: {fileID: 0}
   mover: {fileID: 7797851324913188584}
   attackBehaviour: {fileID: 1238059712656733583}
-  MaxDistMoveSpeed: 2
-  MinDistMoveSpeed: 8
-  FarSpeedUpDistance: 4
+  MaxDistMoveSpeed: 1
+  MinDistMoveSpeed: 3
+  FarSpeedUpDistance: 6
   NearSpeedUpDistance: 2
   directionalMover: {fileID: 3272919958795193493}
-  attackDistance: 1
+  attackDistance: 0.8
+  cooldownDuration: 1
 --- !u!114 &1238059712656733583
 MonoBehaviour:
   m_ObjectHideFlags: 0
