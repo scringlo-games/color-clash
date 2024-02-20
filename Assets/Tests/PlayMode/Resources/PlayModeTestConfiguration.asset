@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5289dd964984544a9a59ce7680d71b9, type: 3}
+  m_Name: PlayModeTestConfiguration
+  m_EditorClassIdentifier: 
+  Registrars:
+    HealthRegistrar: {fileID: 11400000, guid: f60546eb37b6aa848a5be09bbfef3df1, type: 2}
+    ConditionBankRegistrar: {fileID: 11400000, guid: 5584a8ea79b286e4ea18466b15a54f80, type: 2}
+  Services:
+  - {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
+  enemyPrefab: {fileID: 4415491891751835744, guid: dba85df38a82c9342bdcd8940c60bfbf, type: 3}
