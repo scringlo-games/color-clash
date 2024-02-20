@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7882176163810381833, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: accelerationIncrement
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7984828284828860879, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_LocalScale.x
@@ -631,9 +631,9 @@ MonoBehaviour:
   target: {fileID: 0}
   mover: {fileID: 7797851324913188584}
   attackBehaviour: {fileID: 1238059712656733583}
-  MaxMoveSpeed: 10
-  MinMoveSpeed: 2
-  FarSpeedUpDistance: 1
+  MaxDistMoveSpeed: 2
+  MinDistMoveSpeed: 8
+  FarSpeedUpDistance: 4
   NearSpeedUpDistance: 2
   directionalMover: {fileID: 3272919958795193493}
   attackDistance: 1

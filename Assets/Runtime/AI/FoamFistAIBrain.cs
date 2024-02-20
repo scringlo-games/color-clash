@@ -1,8 +1,10 @@
 ﻿using System;
 using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Movement;
+using TravisRFrench.Common.Runtime.Timing;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.AI
 {
@@ -14,10 +16,10 @@ namespace ScringloGames.ColorClash.Runtime.AI
         private DestinationMover mover;
         [SerializeField]
         private AttackBehaviour attackBehaviour;
-        [SerializeField] 
-        private float MaxMoveSpeed;
-        [SerializeField] 
-        private float MinMoveSpeed;
+        [FormerlySerializedAs("MaxMoveSpeed")] [SerializeField] 
+        private float MaxDistMoveSpeed;
+        [FormerlySerializedAs("MinMoveSpeed")] [SerializeField] 
+        private float MinDistMoveSpeed;
 
         /// <summary>
         /// Beyond this distance, min move speed.
@@ -38,13 +40,18 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField]
         private float attackDistance = 1f;
 
+        [SerializeField] private float cooldownDuration = 1f;
+
+        private float cooldownTimer;
+        
         private void OnEnable()
         {
             this.target = GameObject.FindWithTag("Player");
+            cooldownTimer = 0;
             
             //Math that creates variables for easy use
             SpeedUpDifferenceDist = FarSpeedUpDistance - NearSpeedUpDistance;
-            SpeedUpDifferenceSpeed = MaxMoveSpeed - MinMoveSpeed;
+            SpeedUpDifferenceSpeed = MaxDistMoveSpeed - MinDistMoveSpeed;
         }
 
         private void Update()
@@ -56,18 +63,26 @@ namespace ScringloGames.ColorClash.Runtime.AI
             //Speed up amount is the ratio of the space between thresholds.
             var SpeedUpPercent = Math.Clamp((distance - NearSpeedUpDistance) / SpeedUpDifferenceDist, 0, 1);
             //The new max speed is that ratio, times the difference in move speeds, plus the minimum.
-            var newSpeedCeiling = (SpeedUpPercent * SpeedUpDifferenceSpeed) + MinMoveSpeed;
+            var newSpeedCeiling = (SpeedUpPercent * SpeedUpDifferenceSpeed) + MinDistMoveSpeed;
             
             directionalMover.SpeedCeiling = newSpeedCeiling;
-            
-            if (distance <= this.attackDistance)
+
+            if (cooldownTimer <= 0f)
             {
-                this.attackBehaviour.Attack();
+                if (distance <= this.attackDistance)
+                {
+                    this.attackBehaviour.Attack();
+                    cooldownTimer = cooldownDuration;
+                }
+                this.mover.MoveTo(destination);
             }
             else
             {
-                this.mover.MoveTo(destination);
+                this.mover.Halt();
+                cooldownTimer -= Time.deltaTime;
             }
+            
         }
+        
     }
 }
