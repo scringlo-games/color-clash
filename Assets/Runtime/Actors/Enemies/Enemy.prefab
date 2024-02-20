@@ -95,6 +95,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3188313645062578804}
+    - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3816800159604081891}
   m_SourcePrefab: {fileID: 100100000, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
 --- !u!1 &1121281290240885173 stripped
 GameObject:
@@ -114,6 +117,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionalMover: {fileID: 7882176163810381833}
+--- !u!114 &-3816800159604081891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121281290240885173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf9405b541c2af4bb7894a49c4cfb7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 7583232032342927442}
+  damageIndicatorObject: {fileID: 55959400479069797, guid: 1c1f8f8910fbb5847b95df784af81ddd, type: 3}
+  damagedColor: {r: 1, g: 0, b: 0, a: 1}
+  healedColor: {r: 0, g: 1, b: 0.0450387, a: 1}
+  offset: {x: 0, y: 1}
+--- !u!114 &7583232032342927442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1023273685374468906, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+  m_PrefabInstance: {fileID: 7425987897182514040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121281290240885173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1476e32dd06a36f4fb2177fc5f367cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7882176163810381833 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
