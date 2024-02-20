@@ -242,6 +242,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 34791950}
     m_Modifications:
+    - target: {fileID: 78637865867421584, guid: 7bc4250d528b7ab45bbb7d00ed0d8150, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213623779365701252, guid: 7bc4250d528b7ab45bbb7d00ed0d8150, type: 3}
       propertyPath: m_Name
       value: UnitStatusFrameManager
@@ -409,6 +413,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 746654255}
     m_Modifications:
+    - target: {fileID: 5459411277451993329, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6831482529450750977, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: m_Name
       value: SpawnPoint (1)
@@ -480,7 +488,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5459411277451993329, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6831482529450750977, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: m_Name
@@ -776,6 +784,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 746654255}
     m_Modifications:
+    - target: {fileID: 5459411277451993329, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6831482529450750977, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: m_Name
       value: SpawnPoint (2)
@@ -965,6 +977,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 746654255}
     m_Modifications:
+    - target: {fileID: 5459411277451993329, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6831482529450750977, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: m_Name
       value: SpawnPoint (3)

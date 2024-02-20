@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 3952f15bc61f5e746bb441d568a44a97, type: 2}
-  strategy: {fileID: 11400000, guid: 360776d09273cc2489b355874546b09e, type: 2}
   interval: 5.5
 --- !u!82 &5459411277451993329
 AudioSource:
@@ -60,7 +59,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5648cce532aedd44487e7e5add8f6383, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
