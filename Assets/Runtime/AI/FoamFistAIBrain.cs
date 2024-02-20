@@ -1,9 +1,7 @@
 ﻿using System;
 using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Movement;
-using TravisRFrench.Common.Runtime.Timing;
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.AI

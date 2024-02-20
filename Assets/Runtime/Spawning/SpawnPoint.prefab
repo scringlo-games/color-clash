@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f576259234b994d947ab41863277d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 0}
+  spawnTable: {fileID: 11400000, guid: 3952f15bc61f5e746bb441d568a44a97, type: 2}
+  strategy: {fileID: 11400000, guid: 360776d09273cc2489b355874546b09e, type: 2}
   interval: 5.5
 --- !u!82 &5459411277451993329
 AudioSource:

@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
+﻿using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Damage
