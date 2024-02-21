@@ -3,6 +3,7 @@ using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Input;
 using ScringloGames.ColorClash.Runtime.Mixing;
 using ScringloGames.ColorClash.Runtime.Movement;
+using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,6 +25,9 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         private AttackBehaviour attackBehavior;
         [SerializeField]
         private MixingService mixingService;
+        [SerializeField]
+        private ScriptableEvent pauseToggleEvent;
+        
         
         private GameInput gameInput;
         
@@ -42,6 +46,7 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
             this.gameInput.Gameplay.UseWeapon1.performed += this.OnUseWeapon1Performed;
             this.gameInput.Gameplay.UseWeapon2.performed += this.OnUseWeapon2Performed;
             this.gameInput.Gameplay.UseWeapon3.performed += this.OnUseWeapon3Performed;
+            this.gameInput.Gameplay.Pause.performed += this.OnPausePerformed;
         }
 
         private void OnDisable()
@@ -119,6 +124,10 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         {
             this.mixingService.Mixer
                 .AddColor(this.mixingService.Table.Yellow);
+        }
+        private void OnPausePerformed(InputAction.CallbackContext context)
+        {
+            pauseToggleEvent.Raise();
         }
     }
 }

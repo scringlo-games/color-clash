@@ -302,6 +302,7 @@ MonoBehaviour:
   looker: {fileID: 2612930193349245569}
   attackBehavior: {fileID: 5824293039305481821}
   mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
+  pauseToggleEvent: {fileID: 11400000, guid: 79c6f658cfd1d8448b3f67af7662f943, type: 2}
 --- !u!114 &5824293039305481821
 MonoBehaviour:
   m_ObjectHideFlags: 0
