@@ -64,19 +64,23 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
             }
             
             var lookVector = this.gameInput.Gameplay.Look.ReadValue<Vector2>();
-            
-            switch (this.playerInput.currentControlScheme)
+
+            if (lookVector.magnitude > 0f)
             {
-                case "KeyboardAndMouse":
-                    var cam = this.playerInput.camera;
-                    var from = (Vector2) cam.WorldToScreenPoint(this.looker.transform.position);
-                    this.looker.Direction = (lookVector - from).normalized;
-                    break;
-                case "Gamepad":
-                    this.looker.Direction = lookVector.normalized;
-                    break;
-                default:
-                    break;
+                switch (this.playerInput.currentControlScheme)
+                {
+                    case "KeyboardAndMouse":
+                        var cam = this.playerInput.camera;
+                        var from = (Vector2) cam.WorldToScreenPoint(this.looker.transform.position);
+                        this.looker.Direction = (lookVector - from).normalized;
+                        break;
+                    case "Gamepad":
+                        this.looker.Direction = lookVector.normalized;
+                    
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -100,24 +104,6 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
 
         private void OnLookPerformed(InputAction.CallbackContext context)
         {
-            // Do this when a "look" input is detected
-            
-            //var input = context.ReadValue<Vector2>();
-            // var input = this.gameInput.Gameplay.Look.ReadValue<Vector2>();
-            //
-            // switch (this.playerInput.currentControlScheme)
-            // {
-            //     case "KeyboardAndMouse":
-            //         var cam = this.playerInput.camera;
-            //         var from = (Vector2) cam.WorldToScreenPoint(this.looker.transform.position);
-            //         this.looker.Direction = (input - from).normalized;
-            //         break;
-            //     case "Gamepad":
-            //         this.looker.Direction = input.normalized;
-            //         break;
-            //     default:
-            //         break;
-            // }
         }
 
         private void OnUseWeapon1Performed(InputAction.CallbackContext context)
