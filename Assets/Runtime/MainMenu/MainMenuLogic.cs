@@ -38,6 +38,7 @@ namespace ScringloGames.ColorClash.Runtime
         void LoadFirstScene()
         {   
             SceneManager.LoadScene(firstSceneName);
+            Time.timeScale = 1f;
         }
         void ToggleCreditPanel()
         {
