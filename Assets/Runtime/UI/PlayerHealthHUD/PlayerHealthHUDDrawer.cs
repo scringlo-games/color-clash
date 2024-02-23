@@ -6,7 +6,9 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerHealthHUD
     public class PlayerHealthHUDDrawer : MonoBehaviour, IBindable<HealthHandler>
     {
         [SerializeField]
-        private ProgressDrawer progressDrawer;
+        private ProgressDrawer healthProgressDrawer;
+        [SerializeField]
+        private ProgressDrawer overhealProgressDrawer;
         
         public HealthHandler BoundTo { get; private set; }
         
@@ -29,7 +31,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerHealthHUD
 
         private void Update()
         {
-            if (this.progressDrawer == null)
+            if (this.healthProgressDrawer == null)
             {
                 return;
             }
@@ -38,11 +40,22 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerHealthHUD
             {
                 return;
             }
-            
-            // We do a zero check on MaxHealth to prevent a DivideByZeroException
-            this.progressDrawer.Progress = this.BoundTo.MaxHealth == 0f
-                ? 0f
-                : this.BoundTo.Health / this.BoundTo.MaxHealth;
+            if(this.BoundTo.Health <= this.BoundTo.MaxHealth)
+            {
+                // We do a zero check on MaxHealth to prevent a DivideByZeroException
+                this.healthProgressDrawer.Progress = this.BoundTo.MaxHealth == 0f
+                    ? 0f
+                    : this.BoundTo.Health / this.BoundTo.MaxHealth;
+                this.overhealProgressDrawer.Progress = 0f;
+            }
+            if(this.BoundTo.Health > this.BoundTo.MaxHealth)
+            {
+                this.overhealProgressDrawer.Progress = (this.BoundTo.Health - this.BoundTo.MaxHealth) / this.BoundTo.MaxHealth;
+                this.healthProgressDrawer.Progress = 1f;
+
+            }
+
+        
         }
     }
 }
