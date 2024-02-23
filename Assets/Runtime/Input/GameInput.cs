@@ -40,7 +40,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                 },
                 {
                     ""name"": ""Look"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""0c9979e3-d767-4537-8de6-18f286b5764d"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
