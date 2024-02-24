@@ -17,10 +17,12 @@ namespace ScringloGames.ColorClash.Runtime
     public class RoomSpawnHandler : MonoBehaviour
     {
         [SerializeField]
+        private RoomExit exit;
+        [SerializeField]
         public WaveList waveList = new WaveList();
         private List<GameObject> currentWaveObjects;
         private int currentWaveIndex = -1;//I hate this
-        private int currentWaveCount;
+        //private int currentWaveCount;
         void Awake()
         {
             NextWave();
@@ -50,7 +52,7 @@ namespace ScringloGames.ColorClash.Runtime
             if(currentWaveIndex < waveList.waves.Count)
             {
                 currentWaveObjects = new List<GameObject>();
-                currentWaveCount = waveList.waves[currentWaveIndex].spawnList.Count;
+                //currentWaveCount = waveList.waves[currentWaveIndex].spawnList.Count;
                 foreach(SpawnPoint point in waveList.waves[currentWaveIndex].spawnList)
                 {
                     point.SpawnObject();
@@ -60,6 +62,7 @@ namespace ScringloGames.ColorClash.Runtime
             else
             {
                 //activate transition object then return
+                exit.Activate();
                 Debug.Log("ROOM COMPLETE");
             }
         }

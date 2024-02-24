@@ -8,19 +8,28 @@ namespace ScringloGames.ColorClash.Runtime
     {
         [SerializeField]
         private RoomManager manager;
-        private BoxCollider2D collider;
+        private BoxCollider2D thisCollider;
         void Awake()
         {
             if(TryGetComponent<BoxCollider2D>(out var foundCollider))
             {   
-                collider = foundCollider;
-                collider.enabled = false;
+                thisCollider = foundCollider;
+                thisCollider.enabled = false;
             }
 
         }
-        void Activate()
+        public void Activate()
         {
-            collider.enabled = true;
+            thisCollider.enabled = true;
+            this.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            if(col.gameObject.tag == "Player")
+            {
+                Debug.Log("Load Next Room");
+                manager.NextRoom();
+            }
         }
         
     }

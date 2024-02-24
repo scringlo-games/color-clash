@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.SceneManagement;
@@ -8,13 +9,14 @@ namespace ScringloGames.ColorClash.Runtime
 {
     public class RoomManager : MonoBehaviour
     {
-        public static List<string> rooms;
-        public static int roomIndex;
+        [SerializeField]
+        public List<string> rooms;
+        public static int roomIndex = 0;
 
-        void NextRoom()
+        public void NextRoom()
         {
-            SceneManager.LoadScene(rooms[roomIndex]);
             roomIndex++;
+            SceneManager.LoadScene(rooms[roomIndex]);
         }
     }
 }
