@@ -51,7 +51,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
 
             if (newProjectile.TryGetComponent<DamageSource>(out var damageSource))
             {
-                damageSource.Originator = this.gameObject;
+                damageSource.Originator = this.weapon.Owner;
             }
         }
 
