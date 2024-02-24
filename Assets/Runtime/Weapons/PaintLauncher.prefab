@@ -96,6 +96,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2021677262588663755, guid: 2252e47028165ec4d905662b40c091b6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6250975354878303001}
+    - targetCorrespondingSourceObject: {fileID: 2021677262588663755, guid: 2252e47028165ec4d905662b40c091b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3356925877636309745}
   m_SourcePrefab: {fileID: 100100000, guid: 2252e47028165ec4d905662b40c091b6, type: 3}
 --- !u!114 &3055415138624061943 stripped
 MonoBehaviour:
@@ -150,3 +153,18 @@ MonoBehaviour:
   pitchVariation: 0.5
   objectToLaunch: {fileID: 1050092730644915003, guid: e8d0841c6bc806547868c81120e44dfb, type: 3}
   fireFrom: {fileID: 985333647788429630}
+--- !u!114 &3356925877636309745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7208406307030580559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf907e6e2c64b3fafb07a093ff64933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 3055415138624061943}
+  count: 5
+  capacity: 5
