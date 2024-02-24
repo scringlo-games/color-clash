@@ -1,8 +1,7 @@
 ﻿using System;
-using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Movement;
+using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.AI
 {
@@ -13,25 +12,25 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField]
         private DestinationMover mover;
         [SerializeField]
-        private AttackBehaviour attackBehaviour;
-        [FormerlySerializedAs("MaxMoveSpeed")] [SerializeField] 
-        private float MaxDistMoveSpeed;
-        [FormerlySerializedAs("MinMoveSpeed")] [SerializeField] 
-        private float MinDistMoveSpeed;
+        private Weapon weapon;
+        [SerializeField] 
+        private float maxDistMoveSpeed;
+        [SerializeField] 
+        private float minDistMoveSpeed;
 
         /// <summary>
         /// Beyond this distance, min move speed.
         /// </summary>
-        [SerializeField] private float FarSpeedUpDistance;
+        [SerializeField] private float farSpeedUpDistance;
 
         /// <summary>
         /// At this distance or closer, max move speed.
         /// </summary>
-        [SerializeField] private float NearSpeedUpDistance;
+        [SerializeField] private float nearSpeedUpDistance;
         //Difference between Far and Near distance, or the range.
-        private float SpeedUpDifferenceDist;
+        private float speedUpDifferenceDist;
         //Difference between Far and Near speeds.
-        private float SpeedUpDifferenceSpeed;
+        private float speedUpDifferenceSpeed;
         
         [SerializeField]
         private DirectionalMover directionalMover;
@@ -45,11 +44,11 @@ namespace ScringloGames.ColorClash.Runtime.AI
         private void OnEnable()
         {
             this.target = GameObject.FindWithTag("Player");
-            cooldownTimer = 0;
+            this.cooldownTimer = 0;
             
             //Math that creates variables for easy use
-            SpeedUpDifferenceDist = FarSpeedUpDistance - NearSpeedUpDistance;
-            SpeedUpDifferenceSpeed = MaxDistMoveSpeed - MinDistMoveSpeed;
+            this.speedUpDifferenceDist = this.farSpeedUpDistance - this.nearSpeedUpDistance;
+            this.speedUpDifferenceSpeed = this.maxDistMoveSpeed - this.minDistMoveSpeed;
         }
 
         private void Update()
@@ -59,25 +58,29 @@ namespace ScringloGames.ColorClash.Runtime.AI
             
             //We want there to be a range between 2 move speeds.
             //Speed up amount is the ratio of the space between thresholds.
-            var SpeedUpPercent = Math.Clamp((distance - NearSpeedUpDistance) / SpeedUpDifferenceDist, 0, 1);
+            var speedUpPercent = Math.Clamp((distance - this.nearSpeedUpDistance) / this.speedUpDifferenceDist, 0, 1);
             //The new max speed is that ratio, times the difference in move speeds, plus the minimum.
-            var newSpeedCeiling = (SpeedUpPercent * SpeedUpDifferenceSpeed) + MinDistMoveSpeed;
-            
-            directionalMover.SpeedCeiling = newSpeedCeiling;
+            var newSpeedCeiling = (speedUpPercent * this.speedUpDifferenceSpeed) + this.minDistMoveSpeed;
 
-            if (cooldownTimer <= 0f)
+            this.directionalMover.SpeedCeiling = newSpeedCeiling;
+
+            if (this.cooldownTimer <= 0f)
             {
                 if (distance <= this.attackDistance)
                 {
-                    this.attackBehaviour.Attack();
-                    cooldownTimer = cooldownDuration;
+                    this.weapon.Trigger.Pull();
+                    this.cooldownTimer = this.cooldownDuration;
                 }
-                this.mover.MoveTo(destination);
+                else
+                {
+                    this.weapon.Trigger.Release();
+                    this.mover.MoveTo(destination);
+                }
             }
             else
             {
                 this.mover.Halt();
-                cooldownTimer -= Time.deltaTime;
+                this.cooldownTimer -= Time.deltaTime;
             }
             
         }
