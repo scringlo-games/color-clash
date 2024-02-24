@@ -18,31 +18,32 @@ namespace ScringloGames.ColorClash.Runtime
         private float startHealth;
         void Awake()
         {
-           startHealth = health.MaxHealth; 
+            this.startHealth = this.health.MaxHealth; 
         }
         void OnEnable()
         {
-            health.HealthChanged += SpawnDamageNumber;
+            this.health.HealthChanged += this.SpawnDamageNumber;
 
         }
         void OnDisable()
         {
-            health.HealthChanged -= SpawnDamageNumber;
+            this.health.HealthChanged -= this.SpawnDamageNumber;
         }
         void SpawnDamageNumber(float num)
         {
             Color indicatorColor = Color.white;
-            float damage = startHealth - num;
+            float damage = this.startHealth - num;
             if(damage >= 0)//healthhandler has taken damage.
             {
-                indicatorColor = damagedColor;
+                indicatorColor = this.damagedColor;
             }
             else if (damage <= 0)//healthhandler has healed.
             {
-                indicatorColor = healedColor;
+                indicatorColor = this.healedColor;
             }
-            startHealth -= damage;
-            GameObject damageObj = Instantiate(damageIndicatorObject,this.transform.position + (Vector3)offset, Quaternion.identity);
+
+            this.startHealth -= damage;
+            GameObject damageObj = Instantiate(this.damageIndicatorObject,this.transform.position + (Vector3)this.offset, Quaternion.identity);
             if(damageObj.TryGetComponent<DamageNumberSetup>(out var numSetup))
             {
                 numSetup.Setup(damage, indicatorColor);
