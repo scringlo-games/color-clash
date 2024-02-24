@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 5373596311622136686}
   hitBox: {fileID: 9037994556937878477}
-  duration: 0.25
+  duration: 0.125
 --- !u!114 &3953273751578616085
 MonoBehaviour:
   m_ObjectHideFlags: 0
