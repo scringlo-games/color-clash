@@ -45,11 +45,11 @@ namespace ScringloGames.ColorClash.Runtime.AI
         private void OnEnable()
         {
             this.target = GameObject.FindWithTag("Player");
-            cooldownTimer = 0;
+            this.cooldownTimer = 0;
             
             //Math that creates variables for easy use
-            SpeedUpDifferenceDist = FarSpeedUpDistance - NearSpeedUpDistance;
-            SpeedUpDifferenceSpeed = MaxDistMoveSpeed - MinDistMoveSpeed;
+            this.SpeedUpDifferenceDist = this.FarSpeedUpDistance - this.NearSpeedUpDistance;
+            this.SpeedUpDifferenceSpeed = this.MaxDistMoveSpeed - this.MinDistMoveSpeed;
         }
 
         private void Update()
@@ -59,25 +59,25 @@ namespace ScringloGames.ColorClash.Runtime.AI
             
             //We want there to be a range between 2 move speeds.
             //Speed up amount is the ratio of the space between thresholds.
-            var SpeedUpPercent = Math.Clamp((distance - NearSpeedUpDistance) / SpeedUpDifferenceDist, 0, 1);
+            var SpeedUpPercent = Math.Clamp((distance - this.NearSpeedUpDistance) / this.SpeedUpDifferenceDist, 0, 1);
             //The new max speed is that ratio, times the difference in move speeds, plus the minimum.
-            var newSpeedCeiling = (SpeedUpPercent * SpeedUpDifferenceSpeed) + MinDistMoveSpeed;
-            
-            directionalMover.SpeedCeiling = newSpeedCeiling;
+            var newSpeedCeiling = (SpeedUpPercent * this.SpeedUpDifferenceSpeed) + this.MinDistMoveSpeed;
 
-            if (cooldownTimer <= 0f)
+            this.directionalMover.SpeedCeiling = newSpeedCeiling;
+
+            if (this.cooldownTimer <= 0f)
             {
                 if (distance <= this.attackDistance)
                 {
                     this.attackBehaviour.Attack();
-                    cooldownTimer = cooldownDuration;
+                    this.cooldownTimer = this.cooldownDuration;
                 }
                 this.mover.MoveTo(destination);
             }
             else
             {
                 this.mover.Halt();
-                cooldownTimer -= Time.deltaTime;
+                this.cooldownTimer -= Time.deltaTime;
             }
             
         }

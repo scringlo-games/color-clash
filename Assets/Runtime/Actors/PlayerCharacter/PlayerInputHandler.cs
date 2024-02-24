@@ -127,7 +127,7 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         }
         private void OnPausePerformed(InputAction.CallbackContext context)
         {
-            pauseToggleEvent.Raise();
+            this.pauseToggleEvent.Raise();
         }
     }
 }

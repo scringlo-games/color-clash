@@ -14,29 +14,29 @@ namespace ScringloGames.ColorClash.Runtime
         private bool isPaused;
         void Awake()
         {
-            isPaused = false;
+            this.isPaused = false;
         }
         
         void OnEnable()
-        {   
-            pauseToggleEvent.Raised += PauseToggle;
+        {
+            this.pauseToggleEvent.Raised += this.PauseToggle;
         }
         void OnDisable()
         {
-            pauseToggleEvent.Raised -= PauseToggle;
+            this.pauseToggleEvent.Raised -= this.PauseToggle;
         }
         public void PauseToggle()
         {    
-            if(isPaused)
+            if(this.isPaused)
             {
-                isPaused = false;
-                pauseMenu.SetActive(false);
+                this.isPaused = false;
+                this.pauseMenu.SetActive(false);
                 Time.timeScale = 1f;
             }
-            else if(!isPaused)
+            else if(!this.isPaused)
             {
-                isPaused = true;
-                pauseMenu.SetActive(true);
+                this.isPaused = true;
+                this.pauseMenu.SetActive(true);
                 Time.timeScale = 0f;
             }
         }

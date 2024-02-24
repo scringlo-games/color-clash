@@ -17,22 +17,22 @@ namespace ScringloGames.ColorClash.Runtime
         [SerializeField] string mainMenuScene;
         void OnEnable()
         {
-            resumeButton.onClick.AddListener(Resume);
-            quitToMenuButton.onClick.AddListener(QuitToMenu);
+            this.resumeButton.onClick.AddListener(this.Resume);
+            this.quitToMenuButton.onClick.AddListener(this.QuitToMenu);
         }
         void OnDisable()
         {
-            resumeButton.onClick.RemoveAllListeners();
-            quitToMenuButton.onClick.RemoveAllListeners();
+            this.resumeButton.onClick.RemoveAllListeners();
+            this.quitToMenuButton.onClick.RemoveAllListeners();
         }
         void Resume()
         {
-            pauseHandler.PauseToggle();
+            this.pauseHandler.PauseToggle();
             
         }
         void QuitToMenu()
         {
-            SceneManager.LoadScene(mainMenuScene);
+            SceneManager.LoadScene(this.mainMenuScene);
         }
     }
 }
