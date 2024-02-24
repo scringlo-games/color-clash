@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room List
   m_EditorClassIdentifier: 
   roomList:
-  - 
+  - StartScene
   - 
   - 

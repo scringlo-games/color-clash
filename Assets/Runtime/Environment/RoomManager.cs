@@ -10,13 +10,13 @@ namespace ScringloGames.ColorClash.Runtime
     public class RoomManager : MonoBehaviour
     {
         [SerializeField]
-        public List<string> rooms;
+        private RoomListScriptableObject roomContainer;
         public static int roomIndex = 0;
-
+        
         public void NextRoom()
         {
             roomIndex++;
-            SceneManager.LoadScene(rooms[roomIndex]);
+            SceneManager.LoadScene(roomContainer.roomList[roomIndex]);
         }
     }
 }
