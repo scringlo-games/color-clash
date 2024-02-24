@@ -168,3 +168,4 @@ MonoBehaviour:
   weapon: {fileID: 3055415138624061943}
   count: 5
   capacity: 5
+  outOfAmmoEvent: {fileID: 11400000, guid: 57975dbeb785c9f4abef13b67b6b0f42, type: 2}

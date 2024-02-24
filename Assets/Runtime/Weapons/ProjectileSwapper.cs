@@ -22,6 +22,8 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         [FormerlySerializedAs("projectiles")]
         [SerializeField]
         private Entry[] entries;
+        [SerializeField]
+        private AmmunitionBank ammunitionBank;
 
         private void OnEnable()
         {
@@ -49,6 +51,11 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
             }
 
             this.launcher.ObjectToLaunch = firstMatchingEntry.Value.ProjectilePrefab;
+
+            if (this.ammunitionBank != null)
+            {
+                this.ammunitionBank.Reload();
+            }
         }
     }
 }
