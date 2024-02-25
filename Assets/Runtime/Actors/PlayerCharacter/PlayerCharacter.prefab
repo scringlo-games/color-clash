@@ -217,6 +217,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1965270656535857897}
+    - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1737219598290768441}
   m_SourcePrefab: {fileID: 100100000, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
 --- !u!114 &291926270297590329 stripped
 MonoBehaviour:
@@ -283,6 +286,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 27ea6c74-e014-48d4-84dc-f368112261ad
     m_ActionName: Gameplay/UseWeapon3[/Keyboard/3,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0cde0f98-34db-4ac3-8f18-6c1d02233ec3
+    m_ActionName: Gameplay/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardAndMouse
   m_DefaultActionMap: Gameplay
@@ -305,6 +312,7 @@ MonoBehaviour:
   looker: {fileID: 2612930193349245569}
   paintProjectileWeapon: {fileID: 8707092449610600663}
   mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
+  pauseToggleEvent: {fileID: 11400000, guid: 79c6f658cfd1d8448b3f67af7662f943, type: 2}
 --- !u!114 &997995007517630187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,6 +468,23 @@ MonoBehaviour:
   damagedColor: {r: 0, g: 0, b: 0, a: 0}
   healedColor: {r: 0.028004408, g: 1, b: 0, a: 1}
   offset: {x: 0, y: 0}
+--- !u!114 &1737219598290768441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226110175882704111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954b583b547367a418d64ef8225c2e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  launchVelocity: 25
+  pitchVariation: 0.5
+  objectToLaunch: {fileID: 1050092730644915003, guid: e8d0841c6bc806547868c81120e44dfb, type: 3}
+  fireFrom: {fileID: 0}
 --- !u!114 &2612930193349245569 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5919905306985882787, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}

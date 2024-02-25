@@ -169,3 +169,4 @@ MonoBehaviour:
   count: 5
   capacity: 5
   outOfAmmoEvent: {fileID: 11400000, guid: 57975dbeb785c9f4abef13b67b6b0f42, type: 2}
+  reloadEvent: {fileID: 11400000, guid: ac6bf7f8b8cb7944db7cb8c19d2919ba, type: 2}

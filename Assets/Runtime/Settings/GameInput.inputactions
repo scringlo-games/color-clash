@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "Look",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "0c9979e3-d767-4537-8de6-18f286b5764d",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -54,6 +54,15 @@
                     "name": "UseWeapon3",
                     "type": "Button",
                     "id": "27ea6c74-e014-48d4-84dc-f368112261ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "0cde0f98-34db-4ac3-8f18-6c1d02233ec3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -245,6 +254,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "UseWeapon3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8a96b67-8568-4eb8-9127-1440afdc035a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ebefcadd-2599-4de0-9bc6-0c9a68b3cce3",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
