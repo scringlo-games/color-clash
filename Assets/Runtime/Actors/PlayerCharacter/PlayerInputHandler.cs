@@ -1,8 +1,8 @@
 using ScringloGames.ColorClash.Runtime.Aiming;
-using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Input;
 using ScringloGames.ColorClash.Runtime.Mixing;
 using ScringloGames.ColorClash.Runtime.Movement;
+using ScringloGames.ColorClash.Runtime.Weapons;
 using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,7 +22,7 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         [SerializeField]
         private DirectionalLooker looker;
         [SerializeField]
-        private AttackBehaviour attackBehavior;
+        private Weapon paintProjectileWeapon;
         [SerializeField]
         private MixingService mixingService;
         [SerializeField]
@@ -65,7 +65,11 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         {
             if (this.gameInput.Gameplay.Fire.phase == InputActionPhase.Performed)
             {
-                this.attackBehavior.Attack();
+                this.paintProjectileWeapon.Trigger.Pull();
+            }
+            else
+            {
+                this.paintProjectileWeapon.Trigger.Release();
             }
             
             var lookVector = this.gameInput.Gameplay.Look.ReadValue<Vector2>();
