@@ -1445,10 +1445,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 34791950}
     m_Modifications:
-    - target: {fileID: 1411375278112174393, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2477163601732672019, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1529,17 +1525,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2477163601732672019, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2849130973532563044, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
       propertyPath: m_Name
       value: PlayerHealthHUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 3172448402774742930, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
