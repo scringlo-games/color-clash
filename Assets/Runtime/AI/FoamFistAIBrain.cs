@@ -1,8 +1,7 @@
 ﻿using System;
-using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Movement;
+using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.AI
 {
@@ -13,25 +12,25 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField]
         private DestinationMover mover;
         [SerializeField]
-        private AttackBehaviour attackBehaviour;
-        [FormerlySerializedAs("MaxMoveSpeed")] [SerializeField] 
-        private float MaxDistMoveSpeed;
-        [FormerlySerializedAs("MinMoveSpeed")] [SerializeField] 
-        private float MinDistMoveSpeed;
+        private Weapon weapon;
+        [SerializeField] 
+        private float maxDistMoveSpeed;
+        [SerializeField] 
+        private float minDistMoveSpeed;
 
         /// <summary>
         /// Beyond this distance, min move speed.
         /// </summary>
-        [SerializeField] private float FarSpeedUpDistance;
+        [SerializeField] private float farSpeedUpDistance;
 
         /// <summary>
         /// At this distance or closer, max move speed.
         /// </summary>
-        [SerializeField] private float NearSpeedUpDistance;
+        [SerializeField] private float nearSpeedUpDistance;
         //Difference between Far and Near distance, or the range.
-        private float SpeedUpDifferenceDist;
+        private float speedUpDifferenceDist;
         //Difference between Far and Near speeds.
-        private float SpeedUpDifferenceSpeed;
+        private float speedUpDifferenceSpeed;
         
         [SerializeField]
         private DirectionalMover directionalMover;
@@ -48,8 +47,8 @@ namespace ScringloGames.ColorClash.Runtime.AI
             this.cooldownTimer = 0;
             
             //Math that creates variables for easy use
-            this.SpeedUpDifferenceDist = this.FarSpeedUpDistance - this.NearSpeedUpDistance;
-            this.SpeedUpDifferenceSpeed = this.MaxDistMoveSpeed - this.MinDistMoveSpeed;
+            this.speedUpDifferenceDist = this.farSpeedUpDistance - this.nearSpeedUpDistance;
+            this.speedUpDifferenceSpeed = this.maxDistMoveSpeed - this.minDistMoveSpeed;
         }
 
         private void Update()
@@ -59,9 +58,9 @@ namespace ScringloGames.ColorClash.Runtime.AI
             
             //We want there to be a range between 2 move speeds.
             //Speed up amount is the ratio of the space between thresholds.
-            var SpeedUpPercent = Math.Clamp((distance - this.NearSpeedUpDistance) / this.SpeedUpDifferenceDist, 0, 1);
+            var speedUpPercent = Math.Clamp((distance - this.nearSpeedUpDistance) / this.speedUpDifferenceDist, 0, 1);
             //The new max speed is that ratio, times the difference in move speeds, plus the minimum.
-            var newSpeedCeiling = (SpeedUpPercent * this.SpeedUpDifferenceSpeed) + this.MinDistMoveSpeed;
+            var newSpeedCeiling = (speedUpPercent * this.speedUpDifferenceSpeed) + this.minDistMoveSpeed;
 
             this.directionalMover.SpeedCeiling = newSpeedCeiling;
 
@@ -69,10 +68,14 @@ namespace ScringloGames.ColorClash.Runtime.AI
             {
                 if (distance <= this.attackDistance)
                 {
-                    this.attackBehaviour.Attack();
+                    this.weapon.Trigger.Pull();
                     this.cooldownTimer = this.cooldownDuration;
                 }
-                this.mover.MoveTo(destination);
+                else
+                {
+                    this.weapon.Trigger.Release();
+                    this.mover.MoveTo(destination);
+                }
             }
             else
             {
