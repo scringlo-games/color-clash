@@ -17,10 +17,11 @@ public class PencilPusherAIBrain : MonoBehaviour
 
     private GameObject target;
     [SerializeField] private DirectionalLooker looker;
-    [SerializeField] private ProjectileLauncher projectileLauncher;
+    [SerializeField] private Weapon weapon;
     void OnEnable()
     {
         target = GameObject.FindWithTag("Player");
+        
     }
 
     // Update is called once per frame
@@ -29,6 +30,6 @@ public class PencilPusherAIBrain : MonoBehaviour
         var targetPosition = this.target.transform.position;
         var direction = (targetPosition - this.transform.position).normalized;
         looker.Direction = direction;
-        
+        weapon.Trigger.Pull();
     }
 }
