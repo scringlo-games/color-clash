@@ -40,7 +40,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                 },
                 {
                     ""name"": ""Look"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""0c9979e3-d767-4537-8de6-18f286b5764d"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -78,6 +78,15 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""name"": ""UseWeapon3"",
                     ""type"": ""Button"",
                     ""id"": ""27ea6c74-e014-48d4-84dc-f368112261ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""0cde0f98-34db-4ac3-8f18-6c1d02233ec3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -271,6 +280,28 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""action"": ""UseWeapon3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d8a96b67-8568-4eb8-9127-1440afdc035a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ebefcadd-2599-4de0-9bc6-0c9a68b3cce3"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -313,6 +344,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
             m_Gameplay_UseWeapon1 = m_Gameplay.FindAction("UseWeapon1", throwIfNotFound: true);
             m_Gameplay_UseWeapon2 = m_Gameplay.FindAction("UseWeapon2", throwIfNotFound: true);
             m_Gameplay_UseWeapon3 = m_Gameplay.FindAction("UseWeapon3", throwIfNotFound: true);
+            m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -380,6 +412,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
         private readonly InputAction m_Gameplay_UseWeapon1;
         private readonly InputAction m_Gameplay_UseWeapon2;
         private readonly InputAction m_Gameplay_UseWeapon3;
+        private readonly InputAction m_Gameplay_Pause;
         public struct GameplayActions
         {
             private @GameInput m_Wrapper;
@@ -390,6 +423,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
             public InputAction @UseWeapon1 => m_Wrapper.m_Gameplay_UseWeapon1;
             public InputAction @UseWeapon2 => m_Wrapper.m_Gameplay_UseWeapon2;
             public InputAction @UseWeapon3 => m_Wrapper.m_Gameplay_UseWeapon3;
+            public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -417,6 +451,9 @@ namespace ScringloGames.ColorClash.Runtime.Input
                 @UseWeapon3.started += instance.OnUseWeapon3;
                 @UseWeapon3.performed += instance.OnUseWeapon3;
                 @UseWeapon3.canceled += instance.OnUseWeapon3;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
 
             private void UnregisterCallbacks(IGameplayActions instance)
@@ -439,6 +476,9 @@ namespace ScringloGames.ColorClash.Runtime.Input
                 @UseWeapon3.started -= instance.OnUseWeapon3;
                 @UseWeapon3.performed -= instance.OnUseWeapon3;
                 @UseWeapon3.canceled -= instance.OnUseWeapon3;
+                @Pause.started -= instance.OnPause;
+                @Pause.performed -= instance.OnPause;
+                @Pause.canceled -= instance.OnPause;
             }
 
             public void RemoveCallbacks(IGameplayActions instance)
@@ -482,6 +522,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
             void OnUseWeapon1(InputAction.CallbackContext context);
             void OnUseWeapon2(InputAction.CallbackContext context);
             void OnUseWeapon3(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }

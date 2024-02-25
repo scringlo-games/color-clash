@@ -3,6 +3,7 @@ using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Input;
 using ScringloGames.ColorClash.Runtime.Mixing;
 using ScringloGames.ColorClash.Runtime.Movement;
+using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,6 +25,9 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         private AttackBehaviour attackBehavior;
         [SerializeField]
         private MixingService mixingService;
+        [SerializeField]
+        private ScriptableEvent pauseToggleEvent;
+        
         
         private GameInput gameInput;
         
@@ -42,6 +46,7 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
             this.gameInput.Gameplay.UseWeapon1.performed += this.OnUseWeapon1Performed;
             this.gameInput.Gameplay.UseWeapon2.performed += this.OnUseWeapon2Performed;
             this.gameInput.Gameplay.UseWeapon3.performed += this.OnUseWeapon3Performed;
+            this.gameInput.Gameplay.Pause.performed += this.OnPausePerformed;
         }
 
         private void OnDisable()
@@ -61,6 +66,26 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
             if (this.gameInput.Gameplay.Fire.phase == InputActionPhase.Performed)
             {
                 this.attackBehavior.Attack();
+            }
+            
+            var lookVector = this.gameInput.Gameplay.Look.ReadValue<Vector2>();
+
+            if (lookVector.magnitude > 0f)
+            {
+                switch (this.playerInput.currentControlScheme)
+                {
+                    case "KeyboardAndMouse":
+                        var cam = this.playerInput.camera;
+                        var from = (Vector2) cam.WorldToScreenPoint(this.looker.transform.position);
+                        this.looker.Direction = (lookVector - from).normalized;
+                        break;
+                    case "Gamepad":
+                        this.looker.Direction = lookVector.normalized;
+                    
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -84,23 +109,6 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
 
         private void OnLookPerformed(InputAction.CallbackContext context)
         {
-            // Do this when a "look" input is detected
-
-            var input = context.ReadValue<Vector2>();
-            
-            switch (this.playerInput.currentControlScheme)
-            {
-                case "KeyboardAndMouse":
-                    var cam = this.playerInput.camera;
-                    var from = (Vector2) cam.WorldToScreenPoint(this.looker.transform.position);
-                    this.looker.Direction = (input - from).normalized;
-                    break;
-                case "Gamepad":
-                    this.looker.Direction = input.normalized;
-                    break;
-                default:
-                    break;
-            }
         }
 
         private void OnUseWeapon1Performed(InputAction.CallbackContext context)
@@ -119,6 +127,10 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         {
             this.mixingService.Mixer
                 .AddColor(this.mixingService.Table.Yellow);
+        }
+        private void OnPausePerformed(InputAction.CallbackContext context)
+        {
+            this.pauseToggleEvent.Raise();
         }
     }
 }

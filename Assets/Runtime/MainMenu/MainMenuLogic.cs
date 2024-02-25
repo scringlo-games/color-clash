@@ -22,32 +22,33 @@ namespace ScringloGames.ColorClash.Runtime
         private string firstSceneName;
         void OnEnable()
         {
-            startButton.onClick.AddListener(LoadFirstScene);
-            creditButton.onClick.AddListener(ToggleCreditPanel);
-            credittReturnButton.onClick.AddListener(ToggleCreditPanel);
-            quitButton.onClick.AddListener(AppQuit);
-            creditPanel.SetActive(false);
+            this.startButton.onClick.AddListener(this.LoadFirstScene);
+            this.creditButton.onClick.AddListener(this.ToggleCreditPanel);
+            this.credittReturnButton.onClick.AddListener(this.ToggleCreditPanel);
+            this.quitButton.onClick.AddListener(this.AppQuit);
+            this.creditPanel.SetActive(false);
         }
         void OnDisable()
         {
-            startButton.onClick.RemoveAllListeners();
-            creditButton.onClick.RemoveAllListeners();
-            credittReturnButton.onClick.RemoveAllListeners();
-            quitButton.onClick.RemoveAllListeners();
+            this.startButton.onClick.RemoveAllListeners();
+            this.creditButton.onClick.RemoveAllListeners();
+            this.credittReturnButton.onClick.RemoveAllListeners();
+            this.quitButton.onClick.RemoveAllListeners();
         }
         void LoadFirstScene()
         {   
-            SceneManager.LoadScene(firstSceneName);
+            SceneManager.LoadScene(this.firstSceneName);
+            Time.timeScale = 1f;
         }
         void ToggleCreditPanel()
         {
-            if(creditPanel.activeSelf)
+            if(this.creditPanel.activeSelf)
             {
-                creditPanel.SetActive(false);
+                this.creditPanel.SetActive(false);
             }
-            else if (!creditPanel.activeSelf)
+            else if (!this.creditPanel.activeSelf)
             {
-                creditPanel.SetActive(true);
+                this.creditPanel.SetActive(true);
             }
             
         }
