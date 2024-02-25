@@ -104,9 +104,25 @@ PrefabInstance:
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 7213826117672142581}
+    - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4097710136188086268, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861819270567017982, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: damageToInflict
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6848697756835719668, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive

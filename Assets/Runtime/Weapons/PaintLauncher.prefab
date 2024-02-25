@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown:
-    <Time>k__BackingField: 0.25
-    <Duration>k__BackingField: 0.25
+    <Time>k__BackingField: 0.3
+    <Duration>k__BackingField: 0.3
 --- !u!114 &6250975354878303001
 MonoBehaviour:
   m_ObjectHideFlags: 0

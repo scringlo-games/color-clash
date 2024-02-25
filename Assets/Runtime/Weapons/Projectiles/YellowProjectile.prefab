@@ -101,4 +101,4 @@ MonoBehaviour:
       negate: 1
     - filter: {fileID: 11400000, guid: f8a16b536e8cc9c4089b7c90dd3e03f1, type: 2}
       negate: 1
-  amount: 0.15
+  amount: 0.3

@@ -115,5 +115,5 @@ MonoBehaviour:
       negate: 1
     - filter: {fileID: 11400000, guid: f8a16b536e8cc9c4089b7c90dd3e03f1, type: 2}
       negate: 1
-  percentage: 1
+  percentage: 3
   damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}

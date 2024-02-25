@@ -121,11 +121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: speedCeiling
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 751386250146085745, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: accelerationIncrement
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3304802956398066514, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: m_Color.b
@@ -178,6 +178,14 @@ PrefabInstance:
     - target: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243951049751122971, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: launchVelocity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243951049751122971, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: pitchVariation
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8369497415239883723, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: m_Color.b
@@ -484,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decayFrequency: 0.1
-  decayAmount: 1
+  decayAmount: 0.5
   damageSource: {fileID: 4052006709715301733}
 --- !u!114 &4052006709715301733
 MonoBehaviour:
