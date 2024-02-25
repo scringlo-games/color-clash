@@ -225,6 +225,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4805901277728710020, guid: ee40d71235bf292438ace5f932667fee, type: 3}
+      propertyPath: roomContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: f33029fba7357824b9d887a18e1c7b36, type: 2}
     - target: {fileID: 5013306971712546210, guid: ee40d71235bf292438ace5f932667fee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
