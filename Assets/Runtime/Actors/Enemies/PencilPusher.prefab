@@ -273,3 +273,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   looker: {fileID: 4951815679078561698}
   weapon: {fileID: 1742702041556327924}
+  reloadTime: 5

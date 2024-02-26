@@ -32,7 +32,7 @@ public class PencilPusherAIBrain : MonoBehaviour
         {
             Debug.Log("Cannot find ammo bank.");
         }
-        reloadTimer = reloadTimer;
+        reloadTimer = reloadTime;
     }
 
     // Update is called once per frame
@@ -58,6 +58,8 @@ public class PencilPusherAIBrain : MonoBehaviour
             }
             else
             {
+                reloadTimerOn = false;
+                reloadTimer = reloadTime;
                 ammo.Reload();
             }
         }
