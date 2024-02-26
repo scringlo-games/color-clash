@@ -97,16 +97,16 @@ PrefabInstance:
       value: PencilPusher
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
-      propertyPath: fireFrom
-      value: 
-      objectReference: {fileID: 6521241064372854861}
-    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: objectToLaunch
       value: 
       objectReference: {fileID: 4112347388748418690, guid: d88947d037e3dfb4ba55aadef07e06dc, type: 3}
     - target: {fileID: 2868941154306890037, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653559205716784452, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Time>k__BackingField
@@ -119,6 +119,18 @@ PrefabInstance:
     - target: {fileID: 6848697756835719668, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206986753372270333, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206986753372270333, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206986753372270333, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7876747178249291403, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_Enabled
@@ -174,6 +186,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2936618522860305983}
+    - targetCorrespondingSourceObject: {fileID: 5653559205716784452, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6174489192271966051}
   m_SourcePrefab: {fileID: 100100000, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
 --- !u!114 &1742702041556327924 stripped
 MonoBehaviour:
@@ -191,6 +206,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4932270703576949652, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
   m_PrefabInstance: {fileID: 8183515756559988857}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4604026941743467837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5653559205716784452, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+  m_PrefabInstance: {fileID: 8183515756559988857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1773428102 &6174489192271966051
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604026941743467837}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 1, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffsets:
+  - {x: 0, y: 1, z: 0}
+  m_RotationOffsets:
+  - {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 6162536946886730256}
+    weight: 1
 --- !u!114 &4951815679078561698 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3830824023592144859, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
@@ -202,9 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b190824b7d1d26348be68fcbf9dce739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6521241064372854861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3103448580362573876, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+--- !u!4 &6162536946886730256 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2599714477317724777, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
   m_PrefabInstance: {fileID: 8183515756559988857}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &9087744376142592460 stripped
