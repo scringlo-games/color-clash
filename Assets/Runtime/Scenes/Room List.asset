@@ -15,5 +15,6 @@ MonoBehaviour:
   roomList:
   - StartScene
   - FoamFistScene
+  - PencilPusherScene
   - InternFoamScene
   - BossBattle

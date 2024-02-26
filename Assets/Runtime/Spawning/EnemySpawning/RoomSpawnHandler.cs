@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using ScringloGames.ColorClash.Runtime.Environment;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Spawning.EnemySpawning
 {
     [System.Serializable]
     public class Wave
@@ -25,44 +25,44 @@ namespace ScringloGames.ColorClash.Runtime
         //private int currentWaveCount;
         void Awake()
         {
-            NextWave();
+            this.NextWave();
         }
         void Update()
         {
-            if(currentWaveIndex < waveList.waves.Count)
+            if(this.currentWaveIndex < this.waveList.waves.Count)
             {
-                foreach(GameObject enemy in currentWaveObjects)
+                foreach(var enemy in this.currentWaveObjects)
                 {
                     if(enemy == null)
                     {
-                        currentWaveObjects.Remove(enemy);
-                        Debug.Log($"Remaining Enemies: {currentWaveObjects.Count}");
+                        this.currentWaveObjects.Remove(enemy);
+                        Debug.Log($"Remaining Enemies: {this.currentWaveObjects.Count}");
                     } 
                 }
-                if(currentWaveObjects.Count <= 0)
+                if(this.currentWaveObjects.Count <= 0)
                 {
-                    NextWave();
+                    this.NextWave();
                 }
             }
         }
         void NextWave()
         {
-            currentWaveIndex++;//I hate this too
-            Debug.Log($"current wave Index: {currentWaveIndex}");
-            if(currentWaveIndex < waveList.waves.Count)
+            this.currentWaveIndex++;//I hate this too
+            
+            if(this.currentWaveIndex < this.waveList.waves.Count)
             {
-                currentWaveObjects = new List<GameObject>();
-                //currentWaveCount = waveList.waves[currentWaveIndex].spawnList.Count;
-                foreach(SpawnPoint point in waveList.waves[currentWaveIndex].spawnList)
+                this.currentWaveObjects = new List<GameObject>();
+                
+                foreach(var point in this.waveList.waves[this.currentWaveIndex].spawnList)
                 {
                     point.SpawnObject();
-                    currentWaveObjects.Add(point.spawnedObj);
+                    this.currentWaveObjects.Add(point.spawnedObj);
                 }
             }
             else
             {
                 //activate transition object then return
-                exit.Activate();
+                this.exit.Activate();
                 Debug.Log("ROOM COMPLETE");
             }
         }

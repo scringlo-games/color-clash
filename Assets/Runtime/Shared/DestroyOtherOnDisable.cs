@@ -10,7 +10,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         private void OnDisable()
         {
-            foreach(GameObject target in this.others)
+            foreach(var target in this.others)
             {
                 Destroy(target);
             }

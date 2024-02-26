@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.SceneManagement;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Environment
 {
     public class RoomManager : MonoBehaviour
     {
@@ -16,7 +12,7 @@ namespace ScringloGames.ColorClash.Runtime
         public void NextRoom()
         {
             roomIndex++;
-            SceneManager.LoadScene(roomContainer.roomList[roomIndex]);
+            SceneManager.LoadScene(this.roomContainer.roomList[roomIndex]);
         }
     }
 }

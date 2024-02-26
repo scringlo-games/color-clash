@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
 {
     public class PlayerOverheaDecay : MonoBehaviour
     {
