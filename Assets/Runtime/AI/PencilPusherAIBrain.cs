@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using ScringloGames.ColorClash.Runtime.Aiming;
+using ScringloGames.ColorClash.Runtime.Movement;
 using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
 
@@ -20,10 +21,14 @@ public class PencilPusherAIBrain : MonoBehaviour
     [SerializeField] private DirectionalLooker looker;
     [SerializeField] private Weapon weapon;
     private AmmunitionBank ammo;
+    [SerializeField]
+    private DestinationMover mover;
 
     private bool reloadTimerOn = false;
     [SerializeField] private float reloadTime = 0.5f;
+    [SerializeField] private GameObject laserFrom;
     private float reloadTimer;
+    private Ray laser;
     void OnEnable()
     {
         target = GameObject.FindWithTag("Player");
@@ -32,6 +37,7 @@ public class PencilPusherAIBrain : MonoBehaviour
         {
             Debug.Log("Cannot find ammo bank.");
         }
+        
         reloadTimer = reloadTime;
     }
 
@@ -41,6 +47,7 @@ public class PencilPusherAIBrain : MonoBehaviour
         var targetPosition = this.target.transform.position;
         var direction = (targetPosition - this.transform.position).normalized;
         looker.Direction = direction;
+        Debug.DrawRay(this.transform.position, this.transform.up);
         if (ammo.Evaluate())
         {
             weapon.Trigger.Pull();
@@ -63,5 +70,7 @@ public class PencilPusherAIBrain : MonoBehaviour
                 ammo.Reload();
             }
         }
+        
+        this.mover.MoveTo(target.transform.position);
     }
 }
