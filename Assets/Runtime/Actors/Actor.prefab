@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 8417116950005955709}
   - component: {fileID: 5919905306985882787}
   - component: {fileID: 751386250146085745}
+  - component: {fileID: 946339885246569150}
   m_Layer: 0
   m_Name: Actor
   m_TagString: Untagged
@@ -547,6 +548,33 @@ MonoBehaviour:
   speedCeiling: 4
   friction: 0.5
   rigidbody2D: {fileID: 8581232520006413919}
+--- !u!114 &946339885246569150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530581257876433613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e22a28261b476cb7d43dc490bd20f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAnimation:
+    Ease: 35
+    Duration: 0.125
+    Magnitude: 0.15
+    Vibrato: 10
+    Randomness: 90
+    Snapping: 0
+    FadeOut: 1
+    RandomnessMode: 0
+  colorizeAnimation:
+    Duration: 0.125
+    Color: {r: 1, g: 0, b: 0, a: 1}
+    Ease: 35
+  spriteRenderer: {fileID: 3304802956398066514}
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!1 &8299837787280820504
 GameObject:
   m_ObjectHideFlags: 0

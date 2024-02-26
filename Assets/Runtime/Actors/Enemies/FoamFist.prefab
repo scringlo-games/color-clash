@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoamFist
       objectReference: {fileID: 0}
+    - target: {fileID: 2501950078464004566, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 3203647713582220256}
     - target: {fileID: 2639877302723506167, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -104,6 +108,18 @@ PrefabInstance:
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 7213826117672142581}
+    - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4097710136188086268, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -120,6 +136,10 @@ PrefabInstance:
       propertyPath: <MaxHealth>k__BackingField
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 7650625902653354438, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 3203647713582220256}
     - target: {fileID: 7882176163810381833, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: accelerationIncrement
       value: 0.1
