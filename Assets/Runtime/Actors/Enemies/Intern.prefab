@@ -120,6 +120,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5861819270567017982, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: damageToInflict
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6848697756835719668, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive
       value: 0
