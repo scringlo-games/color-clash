@@ -2,7 +2,7 @@
 
 namespace ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters
 {
-    [CreateAssetMenu(menuName = "Scriptables/Collision Filters/IsProjectile")]
+    [CreateAssetMenu(menuName = "Scriptables/GameObject Filters/IsProjectile")]
     public class IsProjectile : GameObjectFilter
     {
         public override bool Evaluate(GameObject gameObject)

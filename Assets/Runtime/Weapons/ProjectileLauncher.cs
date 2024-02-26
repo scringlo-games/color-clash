@@ -45,8 +45,8 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
                 audioSource.Play();
             }
             var newProjectile = 
-                Instantiate(this.objectToLaunch, this.fireFrom.transform.position, this.transform.rotation);
-            Vector2 launchSpeed = this.transform.up * this.launchVelocity;
+                Instantiate(this.objectToLaunch, this.fireFrom.transform.position, this.fireFrom.transform.rotation);
+            Vector2 launchSpeed = this.fireFrom.transform.up * this.launchVelocity;
             newProjectile.GetComponent<Rigidbody2D>().velocity = launchSpeed;
 
             if (newProjectile.TryGetComponent<DamageSource>(out var damageSource))

@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.UI
 {
     public class PauseHandler : MonoBehaviour
     {

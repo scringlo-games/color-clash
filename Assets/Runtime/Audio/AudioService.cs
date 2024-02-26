@@ -13,14 +13,7 @@ namespace ScringloGames.ColorClash.Runtime.Audio
             this.manager = manager;
         }
 
-        public void PlayClipAtPosition(AudioClip clip, Vector3 position)
-        {
-            if (this.manager == null)
-            {
-                return;
-            }
-            
-            this.manager.PlayClipAtPosition(clip, position);
-        }
+        public void PlayClipAtPosition(AudioClip clip, Vector3 position, float pitch = 1f) => 
+            this.manager.PlayClipAtPosition(clip, position, pitch);
     }
 }
