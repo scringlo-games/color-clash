@@ -8,6 +8,8 @@ namespace ScringloGames.ColorClash.Runtime
     {
         [SerializeField]
         private RoomManager manager;
+        [SerializeField]
+        private Sprite activeSprite;
         private BoxCollider2D thisCollider;
         void Awake()
         {
@@ -21,7 +23,7 @@ namespace ScringloGames.ColorClash.Runtime
         public void Activate()
         {
             thisCollider.enabled = true;
-            this.GetComponent<SpriteRenderer>().color = Color.green;
+            this.GetComponent<SpriteRenderer>().sprite = activeSprite;
         }
         void OnTriggerEnter2D(Collider2D col)
         {
