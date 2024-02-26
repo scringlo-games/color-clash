@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -18,10 +19,20 @@ public class PencilPusherAIBrain : MonoBehaviour
     private GameObject target;
     [SerializeField] private DirectionalLooker looker;
     [SerializeField] private Weapon weapon;
+    private AmmunitionBank ammo;
+
+    private bool reloadTimerOn = false;
+    [SerializeField] private float reloadTime = 0.5f;
+    private float reloadTimer;
     void OnEnable()
     {
         target = GameObject.FindWithTag("Player");
-        
+        ammo = weapon.GetComponent<AmmunitionBank>();
+        if (ammo == null)
+        {
+            Debug.Log("Cannot find ammo bank.");
+        }
+        reloadTimer = reloadTimer;
     }
 
     // Update is called once per frame
@@ -30,6 +41,25 @@ public class PencilPusherAIBrain : MonoBehaviour
         var targetPosition = this.target.transform.position;
         var direction = (targetPosition - this.transform.position).normalized;
         looker.Direction = direction;
-        weapon.Trigger.Pull();
+        if (ammo.Evaluate())
+        {
+            weapon.Trigger.Pull();
+        }
+        else if (!reloadTimerOn)
+        {
+            reloadTimerOn = true;
+        }
+
+        if (reloadTimerOn)
+        {
+            if (reloadTimer > 0)
+            {
+                reloadTimer -= Time.deltaTime;
+            }
+            else
+            {
+                ammo.Reload();
+            }
+        }
     }
 }
