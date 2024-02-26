@@ -46,8 +46,7 @@ namespace ScringloGames.ColorClash.Runtime.Health
         
         public void Heal(float amount)
         {
-            var changed = Mathf.Clamp(this.Health + amount, 0, this.MaxHealth);
-            
+            var changed = Mathf.Clamp(this.Health + amount, 0, this.MaxHealth*2f);
             this.Health = changed;
             this.HealthChanged?.Invoke(this.Health);
         }

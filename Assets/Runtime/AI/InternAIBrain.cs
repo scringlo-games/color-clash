@@ -1,6 +1,7 @@
-﻿using ScringloGames.ColorClash.Runtime.Attacks;
-using ScringloGames.ColorClash.Runtime.Movement;
+﻿using ScringloGames.ColorClash.Runtime.Movement;
+using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.AI
 {
@@ -10,8 +11,9 @@ namespace ScringloGames.ColorClash.Runtime.AI
         private GameObject target;
         [SerializeField]
         private DestinationMover mover;
+        [FormerlySerializedAs("attackBehaviour")]
         [SerializeField]
-        private AttackBehaviour attackBehaviour;
+        private Weapon weapon;
         [SerializeField]
         private float attackDistance = 1f;
 
@@ -27,10 +29,11 @@ namespace ScringloGames.ColorClash.Runtime.AI
             
             if (distance <= this.attackDistance)
             {
-                this.attackBehaviour.Attack();
+                this.weapon.Trigger.Pull();
             }
             else
             {
+                this.weapon.Trigger.Release();
                 this.mover.MoveTo(destination);
             }
         }

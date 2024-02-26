@@ -14,34 +14,35 @@ public class DamageNumberSetup : MonoBehaviour
   float posY;
   public void Setup(float damage, Color color)
   {
-    text = GetComponent<TextMeshPro>();
+    this.text = this.GetComponent<TextMeshPro>();
     if(damage>= 0)//damaged
     {
-      text.SetText($"-{MathF.Abs(damage).ToString()}");
+      this.text.SetText($"-{MathF.Abs(damage).ToString()}");
     }
     if(damage<=0)//healed
     {
-      text.SetText($"+{MathF.Abs(damage).ToString()}");
+      this.text.SetText($"+{MathF.Abs(damage).ToString()}");
     }
-    text.color = color;
-    thisColor = color;
-    active = true;
-    aliveTime = aliveTimeMax;
-    colorAlpha = text.color.a;
-    posY = transform.position.y;
+
+    this.text.color = color;
+    this.thisColor = color;
+    this.active = true;
+    this.aliveTime = this.aliveTimeMax;
+    this.colorAlpha = this.text.color.a;
+    this.posY = this.transform.position.y;
   }
   void Update()
   {
-    if(active)
+    if(this.active)
     {
-      aliveTime -= Time.deltaTime; 
-      float t = aliveTime/aliveTimeMax;
+      this.aliveTime -= Time.deltaTime; 
+      float t = this.aliveTime/ this.aliveTimeMax;
       //changes the alpha value of the gradually over the number's lifetime. 
-      text.color = new Color(thisColor.r,thisColor.g,thisColor.b,Mathf.Lerp(colorAlpha/4, colorAlpha, t));
+      this.text.color = new Color(this.thisColor.r, this.thisColor.g, this.thisColor.b,Mathf.Lerp(this.colorAlpha/4, this.colorAlpha, t));
       float thisScale = Mathf.Lerp(1.5f,1f,t);
-      transform.localScale = new Vector2(thisScale,thisScale);
-      transform.position = new Vector2(transform.position.x, Mathf.Lerp(posY +1f, posY, t));
-      if(aliveTime <= 0)
+      this.transform.localScale = new Vector2(thisScale,thisScale);
+      this.transform.position = new Vector2(this.transform.position.x, Mathf.Lerp(this.posY +1f, this.posY, t));
+      if(this.aliveTime <= 0)
       {
         Destroy(this.gameObject);
       }

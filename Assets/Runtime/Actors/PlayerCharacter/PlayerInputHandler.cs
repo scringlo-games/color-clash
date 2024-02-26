@@ -1,8 +1,9 @@
 using ScringloGames.ColorClash.Runtime.Aiming;
-using ScringloGames.ColorClash.Runtime.Attacks;
 using ScringloGames.ColorClash.Runtime.Input;
 using ScringloGames.ColorClash.Runtime.Mixing;
 using ScringloGames.ColorClash.Runtime.Movement;
+using ScringloGames.ColorClash.Runtime.Weapons;
+using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,9 +22,12 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         [SerializeField]
         private DirectionalLooker looker;
         [SerializeField]
-        private AttackBehaviour attackBehavior;
+        private Weapon paintProjectileWeapon;
         [SerializeField]
         private MixingService mixingService;
+        [SerializeField]
+        private ScriptableEvent pauseToggleEvent;
+        
         
         private GameInput gameInput;
         
@@ -42,6 +46,7 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
             this.gameInput.Gameplay.UseWeapon1.performed += this.OnUseWeapon1Performed;
             this.gameInput.Gameplay.UseWeapon2.performed += this.OnUseWeapon2Performed;
             this.gameInput.Gameplay.UseWeapon3.performed += this.OnUseWeapon3Performed;
+            this.gameInput.Gameplay.Pause.performed += this.OnPausePerformed;
         }
 
         private void OnDisable()
@@ -60,7 +65,11 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         {
             if (this.gameInput.Gameplay.Fire.phase == InputActionPhase.Performed)
             {
-                this.attackBehavior.Attack();
+                this.paintProjectileWeapon.Trigger.Pull();
+            }
+            else
+            {
+                this.paintProjectileWeapon.Trigger.Release();
             }
             
             var lookVector = this.gameInput.Gameplay.Look.ReadValue<Vector2>();
@@ -122,6 +131,10 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         {
             this.mixingService.Mixer
                 .AddColor(this.mixingService.Table.Yellow);
+        }
+        private void OnPausePerformed(InputAction.CallbackContext context)
+        {
+            this.pauseToggleEvent.Raise();
         }
     }
 }
