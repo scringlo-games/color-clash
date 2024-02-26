@@ -1,4 +1,5 @@
-﻿using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
+﻿using ScringloGames.ColorClash.Runtime.Audio;
+using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,7 +8,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
     public class OnCollisionEnterPlayAudioClip : MonoBehaviour
     {
         [SerializeField]
-        private AudioSource audioSource;
+        private AudioService service;
         [SerializeField]
         private AudioClip clip;
         [SerializeField]
@@ -22,14 +23,8 @@ namespace ScringloGames.ColorClash.Runtime.Shared
                 return;
             }
             
-            // If this specific audio source is already playing a clip we don't want to interrupt it
-            if (this.audioSource.isPlaying)
-            {
-                return;
-            }
-            
-            this.audioSource.pitch = (this.pitchVariation * Random.value) + 1.0f;
-            this.audioSource.PlayOneShot(this.clip);
+            var pitch = (this.pitchVariation * Random.value) + 1.0f;
+            this.service.PlayClipAtPosition(this.clip, this.transform.position, pitch);
         }
     }
 }

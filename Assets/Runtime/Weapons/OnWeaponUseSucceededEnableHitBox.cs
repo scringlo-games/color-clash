@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Weapons
 {
-    public class OnWeaponSuccessEnableHitBox : MonoBehaviour
+    public class OnWeaponUseSucceededEnableHitBox : MonoBehaviour
     {
         [SerializeField]
         private Weapon weapon;
