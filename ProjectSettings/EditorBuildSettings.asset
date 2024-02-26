@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Runtime/Scenes/FoamFistScene.unity
     guid: 895d735ddbc8d2840ab32f9e9a94a947
   - enabled: 1
+    path: Assets/Runtime/Scenes/PencilPusherScene.unity
+    guid: b0a627f8500ae9540a538a662a349e8c
+  - enabled: 1
     path: Assets/Runtime/Scenes/InternFoamScene.unity
     guid: c80db430e50ef124e97fb3b442e38d4c
+  - enabled: 1
+    path: Assets/Runtime/Scenes/BossBattle.unity
+    guid: 9ddce88a32900c94e90c297e089e444a
   m_configObjects: {}

@@ -1,7 +1,7 @@
 using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.UI
 {
     public class ShowDamageOnHit : MonoBehaviour
     {
@@ -31,8 +31,8 @@ namespace ScringloGames.ColorClash.Runtime
         }
         void SpawnDamageNumber(float num)
         {
-            Color indicatorColor = Color.white;
-            float damage = this.startHealth - num;
+            var indicatorColor = Color.white;
+            var damage = this.startHealth - num;
             if(damage >= 0)//healthhandler has taken damage.
             {
                 indicatorColor = this.damagedColor;
@@ -43,7 +43,7 @@ namespace ScringloGames.ColorClash.Runtime
             }
 
             this.startHealth -= damage;
-            GameObject damageObj = Instantiate(this.damageIndicatorObject,this.transform.position + (Vector3)this.offset, Quaternion.identity);
+            var damageObj = Instantiate(this.damageIndicatorObject,this.transform.position + (Vector3)this.offset, Quaternion.identity);
             if(damageObj.TryGetComponent<DamageNumberSetup>(out var numSetup))
             {
                 numSetup.Setup(damage, indicatorColor);

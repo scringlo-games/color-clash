@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Environment
 {
     public class RoomExit : MonoBehaviour
     {
@@ -13,24 +11,24 @@ namespace ScringloGames.ColorClash.Runtime
         private BoxCollider2D thisCollider;
         void Awake()
         {
-            if(TryGetComponent<BoxCollider2D>(out var foundCollider))
-            {   
-                thisCollider = foundCollider;
-                thisCollider.enabled = false;
+            if(this.TryGetComponent<BoxCollider2D>(out var foundCollider))
+            {
+                this.thisCollider = foundCollider;
+                this.thisCollider.enabled = false;
             }
 
         }
         public void Activate()
         {
-            thisCollider.enabled = true;
-            this.GetComponent<SpriteRenderer>().sprite = activeSprite;
+            this.thisCollider.enabled = true;
+            this.GetComponent<SpriteRenderer>().sprite = this.activeSprite;
         }
         void OnTriggerEnter2D(Collider2D col)
         {
             if(col.gameObject.tag == "Player")
             {
                 Debug.Log("Load Next Room");
-                manager.NextRoom();
+                this.manager.NextRoom();
             }
         }
         
