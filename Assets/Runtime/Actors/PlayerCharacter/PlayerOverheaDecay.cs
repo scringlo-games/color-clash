@@ -20,25 +20,25 @@ namespace ScringloGames.ColorClash.Runtime
         private DamageReceiver damageReceiver;
         void Awake()
         {
-            decayFrequencyCurrent = decayFrequency;
-            if(TryGetComponent<HealthHandler>(out var handler))
+            this.decayFrequencyCurrent = this.decayFrequency;
+            if(this.TryGetComponent<HealthHandler>(out var handler))
             {
                 this.healthHandler = handler;
             }
-            if(TryGetComponent<DamageReceiver>(out var receiver))
+            if(this.TryGetComponent<DamageReceiver>(out var receiver))
             {
                 this.damageReceiver = receiver;
             }
         }
         void Update()
         {
-            if(healthHandler.Health > healthHandler.MaxHealth)
+            if(this.healthHandler.Health > this.healthHandler.MaxHealth)
             {
-                decayFrequencyCurrent -= Time.deltaTime;
-                if(decayFrequencyCurrent <= 0f)
+                this.decayFrequencyCurrent -= Time.deltaTime;
+                if(this.decayFrequencyCurrent <= 0f)
                 {
-                    decayFrequencyCurrent = decayFrequency;
-                    damageReceiver.TakeDamage(this.damageSource,decayAmount);
+                    this.decayFrequencyCurrent = this.decayFrequency;
+                    this.damageReceiver.TakeDamage(this.damageSource, this.decayAmount);
                     
                 }
 

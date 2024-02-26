@@ -31,14 +31,14 @@ public class PencilPusherAIBrain : MonoBehaviour
     private Ray laser;
     void OnEnable()
     {
-        target = GameObject.FindWithTag("Player");
-        ammo = weapon.GetComponent<AmmunitionBank>();
-        if (ammo == null)
+        this.target = GameObject.FindWithTag("Player");
+        this.ammo = this.weapon.GetComponent<AmmunitionBank>();
+        if (this.ammo == null)
         {
             Debug.Log("Cannot find ammo bank.");
         }
-        
-        reloadTimer = reloadTime;
+
+        this.reloadTimer = this.reloadTime;
     }
 
     // Update is called once per frame
@@ -46,31 +46,31 @@ public class PencilPusherAIBrain : MonoBehaviour
     {
         var targetPosition = this.target.transform.position;
         var direction = (targetPosition - this.transform.position).normalized;
-        looker.Direction = direction;
+        this.looker.Direction = direction;
         Debug.DrawRay(this.transform.position, this.transform.up);
-        if (ammo.Evaluate())
+        if (this.ammo.Evaluate())
         {
-            weapon.Trigger.Pull();
+            this.weapon.Trigger.Pull();
         }
-        else if (!reloadTimerOn)
+        else if (!this.reloadTimerOn)
         {
-            reloadTimerOn = true;
+            this.reloadTimerOn = true;
         }
 
-        if (reloadTimerOn)
+        if (this.reloadTimerOn)
         {
-            if (reloadTimer > 0)
+            if (this.reloadTimer > 0)
             {
-                reloadTimer -= Time.deltaTime;
+                this.reloadTimer -= Time.deltaTime;
             }
             else
             {
-                reloadTimerOn = false;
-                reloadTimer = reloadTime;
-                ammo.Reload();
+                this.reloadTimerOn = false;
+                this.reloadTimer = this.reloadTime;
+                this.ammo.Reload();
             }
         }
         
-        this.mover.MoveTo(target.transform.position);
+        this.mover.MoveTo(this.target.transform.position);
     }
 }
