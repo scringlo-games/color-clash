@@ -10,16 +10,18 @@ namespace ScringloGames.ColorClash.Runtime.UI
         [SerializeField]
         private ScriptableEvent pauseToggleEvent;
         private bool isPaused;
-        void Awake()
+
+        private void Awake()
         {
             this.isPaused = false;
         }
-        
-        void OnEnable()
+
+        private void OnEnable()
         {
             this.pauseToggleEvent.Raised += this.PauseToggle;
         }
-        void OnDisable()
+
+        private void OnDisable()
         {
             this.pauseToggleEvent.Raised -= this.PauseToggle;
         }

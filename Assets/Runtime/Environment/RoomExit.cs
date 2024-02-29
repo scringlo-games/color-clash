@@ -1,3 +1,4 @@
+using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Environment
@@ -9,7 +10,8 @@ namespace ScringloGames.ColorClash.Runtime.Environment
         [SerializeField]
         private Sprite activeSprite;
         private BoxCollider2D thisCollider;
-        void Awake()
+
+        private void Awake()
         {
             if(this.TryGetComponent<BoxCollider2D>(out var foundCollider))
             {
@@ -23,14 +25,13 @@ namespace ScringloGames.ColorClash.Runtime.Environment
             this.thisCollider.enabled = true;
             this.GetComponent<SpriteRenderer>().sprite = this.activeSprite;
         }
-        void OnTriggerEnter2D(Collider2D col)
+
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            if(col.gameObject.tag == "Player")
+            if(col.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Load Next Room");
                 this.manager.NextRoom();
             }
         }
-        
     }
 }

@@ -10,6 +10,8 @@ namespace ScringloGames.ColorClash.Runtime.UI.Windows
         private string title = "Window";
         [Header("Dependencies")]
         [SerializeField]
+        private GameObject mainContainer;
+        [SerializeField]
         private TextMeshProUGUI titleTextComponent;
 
         public string Title
@@ -26,6 +28,16 @@ namespace ScringloGames.ColorClash.Runtime.UI.Windows
             }
             
             this.titleTextComponent.text = this.title;
+        }
+
+        public void Show()
+        {
+            this.mainContainer.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            this.mainContainer.SetActive(false);
         }
     }
 }

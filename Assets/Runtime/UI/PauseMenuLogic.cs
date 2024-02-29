@@ -12,23 +12,28 @@ namespace ScringloGames.ColorClash.Runtime.UI
         private Button resumeButton;
         [SerializeField]
         private Button quitToMenuButton;
-        [SerializeField] string mainMenuScene;
-        void OnEnable()
+        [SerializeField]
+        private string mainMenuScene;
+
+        private void OnEnable()
         {
             this.resumeButton.onClick.AddListener(this.Resume);
             this.quitToMenuButton.onClick.AddListener(this.QuitToMenu);
         }
-        void OnDisable()
+
+        private void OnDisable()
         {
             this.resumeButton.onClick.RemoveAllListeners();
             this.quitToMenuButton.onClick.RemoveAllListeners();
         }
-        void Resume()
+
+        private void Resume()
         {
             this.pauseHandler.PauseToggle();
             
         }
-        void QuitToMenu()
+
+        private void QuitToMenu()
         {
             SceneManager.LoadScene(this.mainMenuScene);
         }
