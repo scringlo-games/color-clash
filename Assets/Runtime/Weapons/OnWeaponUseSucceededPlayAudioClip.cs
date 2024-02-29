@@ -1,8 +1,6 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Audio;
+﻿using ScringloGames.ColorClash.Runtime.Audio;
 using ScringloGames.ColorClash.Runtime.Weapons.Framework;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace ScringloGames.ColorClash.Runtime.Weapons
