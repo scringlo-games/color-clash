@@ -1,15 +1,18 @@
-﻿using Pathfinding;
+﻿using System;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Movement
 {
-    public class DirectDestinationMover : MonoBehaviour, IDestinationMover
+    public class DestinationMover : MonoBehaviour, IDestinationMover
     {
         [SerializeField]
         private DirectionalMover directionalMover;
+        [SerializeField]
+        private float stoppingDistance = 0.05f;
 
         public bool IsMoving { get; private set; }
         public Vector2 Destination { get; private set; }
+        public event Action Arrived;
 
         public void MoveTo(Vector2 destination)
         {
@@ -34,8 +37,16 @@ namespace ScringloGames.ColorClash.Runtime.Movement
             {
                 var from = (Vector2)this.transform.position;
                 var to = this.Destination;
+                var distance = Vector3.Distance(from, to);
+                
+                if (distance <= this.stoppingDistance)
+                {
+                    this.Halt();
+                    this.Arrived?.Invoke();
+                }
+
                 this.directionalMover.Direction = (to - from);
-            
+
                 if (!this.directionalMover.IsAccelerating)
                 {
                     this.directionalMover.StartAccelerating();
