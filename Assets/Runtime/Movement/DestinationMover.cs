@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using Pathfinding;
+using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Movement
 {
-    public class DestinationMover : MonoBehaviour, IDestinationMover
+    public class DirectDestinationMover : MonoBehaviour, IDestinationMover
     {
         [SerializeField]
         private DirectionalMover directionalMover;
-        
+
         public bool IsMoving { get; private set; }
         public Vector2 Destination { get; private set; }
 
@@ -34,7 +35,7 @@ namespace ScringloGames.ColorClash.Runtime.Movement
                 var from = (Vector2)this.transform.position;
                 var to = this.Destination;
                 this.directionalMover.Direction = (to - from);
-
+            
                 if (!this.directionalMover.IsAccelerating)
                 {
                     this.directionalMover.StartAccelerating();
