@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthRegistrar: {fileID: 11400000, guid: f60546eb37b6aa848a5be09bbfef3df1, type: 2}
   conditionBankRegistrar: {fileID: 11400000, guid: 5584a8ea79b286e4ea18466b15a54f80, type: 2}
+  gameObjectRegistrars:
+  - {fileID: 11400000, guid: 77839e1e690e18b499711f8be3e24645, type: 2}
   services:
   - {fileID: 11400000, guid: 89cbf91d2957ffe4a8bae1d2d733b56c, type: 2}
   - {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}

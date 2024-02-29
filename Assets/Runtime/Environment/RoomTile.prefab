@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476530481931166484}
   - component: {fileID: 5843185316877762388}
+  - component: {fileID: 4618778806703849674}
   m_Layer: 0
   m_Name: RoomTile
   m_TagString: Untagged
@@ -47,6 +48,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &4618778806703849674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288272847332372094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f9b381aebe4a89a2a582aa29194c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decalSizeContribution: 0.75
+  floorTilemap: {fileID: 5030134334077345988}
+  decalRegistrar: {fileID: 11400000, guid: 77839e1e690e18b499711f8be3e24645, type: 2}
 --- !u!1 &3031261258544847499
 GameObject:
   m_ObjectHideFlags: 0
