@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Weapons;
+﻿using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.UI.PlayerAmmoHUD

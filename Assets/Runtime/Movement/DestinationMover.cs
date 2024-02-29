@@ -10,20 +10,45 @@ namespace ScringloGames.ColorClash.Runtime.Movement
         [SerializeField]
         private float stoppingDistance = 0.05f;
 
-        public bool IsMoving { get; private set; }
+        public bool HasPath { get; private set; }
+        public bool IsMovingOnPath { get; private set; }
         public Vector2 Destination { get; private set; }
+        public event Action Started;
         public event Action Arrived;
+        public event Action Terminated;
 
         public void MoveTo(Vector2 destination)
         {
             this.Destination = destination;
-            this.IsMoving = true;
+            
+            var from = (Vector2)this.transform.position;
+            var to = this.Destination;
+            var direction = (to - from).normalized;
+            
+            this.directionalMover.Direction = direction;
+            this.directionalMover.StartAccelerating();
+            
+            this.HasPath = true;
+            this.IsMovingOnPath = true;
+            this.Started?.Invoke();
         }
 
         public void Halt()
         {
-            this.Destination = this.transform.position;
-            this.IsMoving = false;
+            this.directionalMover.StopAccelerating();
+            this.IsMovingOnPath = false;
+        }
+
+        public void Resume()
+        {
+            this.IsMovingOnPath = true;
+        }
+
+        public void Cancel()
+        {
+            this.Halt();
+            this.HasPath = false;
+            this.Terminated?.Invoke();
         }
 
         private void Update()
@@ -32,31 +57,20 @@ namespace ScringloGames.ColorClash.Runtime.Movement
             {
                 return;
             }
-            
-            if (this.IsMoving)
+
+            if (this.HasPath)
             {
-                var from = (Vector2)this.transform.position;
-                var to = this.Destination;
-                var distance = Vector3.Distance(from, to);
+                if (this.IsMovingOnPath)
+                {
+                    var from = (Vector2)this.transform.position;
+                    var to = this.Destination;
+                    var distance = Vector3.Distance(from, to);
                 
-                if (distance <= this.stoppingDistance)
-                {
-                    this.Halt();
-                    this.Arrived?.Invoke();
-                }
-
-                this.directionalMover.Direction = (to - from);
-
-                if (!this.directionalMover.IsAccelerating)
-                {
-                    this.directionalMover.StartAccelerating();
-                }
-            }
-            else
-            {
-                if (this.directionalMover.IsAccelerating)
-                {
-                    this.directionalMover.StopAccelerating();
+                    if (distance <= this.stoppingDistance)
+                    {
+                        this.Arrived?.Invoke();
+                        this.Cancel();
+                    }
                 }
             }
         }

@@ -1,7 +1,6 @@
 ﻿using ScringloGames.ColorClash.Runtime.Movement;
 using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.AI
 {
@@ -10,8 +9,7 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField]
         private GameObject target;
         [SerializeField]
-        private DestinationMover mover;
-        [FormerlySerializedAs("attackBehaviour")]
+        private AStarDestinationMover mover;
         [SerializeField]
         private Weapon weapon;
         [SerializeField]
@@ -39,3 +37,4 @@ namespace ScringloGames.ColorClash.Runtime.AI
         }
     }
 }
+

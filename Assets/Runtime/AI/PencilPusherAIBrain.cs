@@ -20,7 +20,7 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField] private Weapon weapon;
         private AmmunitionBank ammo;
         [SerializeField]
-        private DestinationMover mover;
+        private AStarDestinationMover mover;
 
         private bool reloadTimerOn = false;
         [SerializeField] private float reloadTime = 0.5f;

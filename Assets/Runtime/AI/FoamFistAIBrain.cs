@@ -10,7 +10,7 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField]
         private GameObject target;
         [SerializeField]
-        private DestinationMover mover;
+        private AStarDestinationMover mover;
         [SerializeField]
         private Weapon weapon;
         [SerializeField] 
