@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ScringloGames.ColorClash.Runtime.Shared;
+using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,14 +12,15 @@ namespace ScringloGames.ColorClash.Runtime.PaintCoverage
         [Range(0f, 1f)]
         [SerializeField]
         private float decalSizeContribution = 1f;
+        [Header("Dependencies")]
+        [SerializeField]
+        private ScriptableVariable<float> coverageVariable;
         [SerializeField]
         private Tilemap floorTilemap;
         [SerializeField]
         private GameObjectRegistrar decalRegistrar;
         private Dictionary<Vector3Int, bool> coveredTiles;
-
-        public float Coverage { get; private set; }
-
+        
         private void Awake()
         {
             this.coveredTiles = new Dictionary<Vector3Int, bool>();
@@ -92,7 +94,7 @@ namespace ScringloGames.ColorClash.Runtime.PaintCoverage
         
         private void OnDecalRegistered(GameObject obj)
         {
-            this.Coverage = this.CalculateDecalCoverageArea();
+            this.coverageVariable.Value = this.CalculateDecalCoverageArea();
         }
     }
 }

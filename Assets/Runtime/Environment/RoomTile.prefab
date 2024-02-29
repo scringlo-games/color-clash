@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decalSizeContribution: 0.75
+  coverageVariable: {fileID: 11400000, guid: 6f67ea5f78bce7a44be3335ff9ddea96, type: 2}
   floorTilemap: {fileID: 5030134334077345988}
   decalRegistrar: {fileID: 11400000, guid: 77839e1e690e18b499711f8be3e24645, type: 2}
 --- !u!1 &3031261258544847499
