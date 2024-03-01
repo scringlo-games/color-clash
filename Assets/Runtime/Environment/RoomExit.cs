@@ -1,4 +1,3 @@
-using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Environment

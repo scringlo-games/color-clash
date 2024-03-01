@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Mixing
 {
-    [CreateAssetMenu(menuName = "Scriptables/Services/Mixing Service")]
+    [CreateAssetMenu(menuName = "Scriptables/Game Services/Mixing Service")]
     public class MixingService : GameService
     {
         [SerializeField]

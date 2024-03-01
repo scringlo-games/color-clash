@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6efd1f791ed34167b0e8d6ae5cc8b97b, type: 3}
-  m_Name: UnPaused
+  m_Script: {fileID: 11500000, guid: 75d4dfce7eb3483e8278bb253b2d7183, type: 3}
+  m_Name: Scene Service
   m_EditorClassIdentifier: 
-  raised:
-    m_PersistentCalls:
-      m_Calls: []
+  titleScene: {fileID: 102900000, guid: aa1a0a2e600d44140810c84709a0bddd, type: 3}

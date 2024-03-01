@@ -57,7 +57,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UseWeapon1"",
+                    ""name"": ""EquipWeaponSlot1"",
                     ""type"": ""Button"",
                     ""id"": ""243b5605-0482-4950-aaac-ad901aa2bb3c"",
                     ""expectedControlType"": ""Button"",
@@ -66,7 +66,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UseWeapon2"",
+                    ""name"": ""EquipWeaponSlot2"",
                     ""type"": ""Button"",
                     ""id"": ""1017d9d0-278c-45b9-b76d-93393480b91f"",
                     ""expectedControlType"": ""Button"",
@@ -75,7 +75,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UseWeapon3"",
+                    ""name"": ""EquipWeaponSlot3"",
                     ""type"": ""Button"",
                     ""id"": ""27ea6c74-e014-48d4-84dc-f368112261ad"",
                     ""expectedControlType"": ""Button"",
@@ -222,7 +222,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UseWeapon1"",
+                    ""action"": ""EquipWeaponSlot1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -233,7 +233,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UseWeapon1"",
+                    ""action"": ""EquipWeaponSlot1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -244,7 +244,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UseWeapon2"",
+                    ""action"": ""EquipWeaponSlot2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -255,7 +255,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UseWeapon2"",
+                    ""action"": ""EquipWeaponSlot2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -266,7 +266,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UseWeapon3"",
+                    ""action"": ""EquipWeaponSlot3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -277,7 +277,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UseWeapon3"",
+                    ""action"": ""EquipWeaponSlot3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -341,9 +341,9 @@ namespace ScringloGames.ColorClash.Runtime.Input
             m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
             m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
             m_Gameplay_Fire = m_Gameplay.FindAction("Fire", throwIfNotFound: true);
-            m_Gameplay_UseWeapon1 = m_Gameplay.FindAction("UseWeapon1", throwIfNotFound: true);
-            m_Gameplay_UseWeapon2 = m_Gameplay.FindAction("UseWeapon2", throwIfNotFound: true);
-            m_Gameplay_UseWeapon3 = m_Gameplay.FindAction("UseWeapon3", throwIfNotFound: true);
+            m_Gameplay_EquipWeaponSlot1 = m_Gameplay.FindAction("EquipWeaponSlot1", throwIfNotFound: true);
+            m_Gameplay_EquipWeaponSlot2 = m_Gameplay.FindAction("EquipWeaponSlot2", throwIfNotFound: true);
+            m_Gameplay_EquipWeaponSlot3 = m_Gameplay.FindAction("EquipWeaponSlot3", throwIfNotFound: true);
             m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         }
 
@@ -409,9 +409,9 @@ namespace ScringloGames.ColorClash.Runtime.Input
         private readonly InputAction m_Gameplay_Move;
         private readonly InputAction m_Gameplay_Look;
         private readonly InputAction m_Gameplay_Fire;
-        private readonly InputAction m_Gameplay_UseWeapon1;
-        private readonly InputAction m_Gameplay_UseWeapon2;
-        private readonly InputAction m_Gameplay_UseWeapon3;
+        private readonly InputAction m_Gameplay_EquipWeaponSlot1;
+        private readonly InputAction m_Gameplay_EquipWeaponSlot2;
+        private readonly InputAction m_Gameplay_EquipWeaponSlot3;
         private readonly InputAction m_Gameplay_Pause;
         public struct GameplayActions
         {
@@ -420,9 +420,9 @@ namespace ScringloGames.ColorClash.Runtime.Input
             public InputAction @Move => m_Wrapper.m_Gameplay_Move;
             public InputAction @Look => m_Wrapper.m_Gameplay_Look;
             public InputAction @Fire => m_Wrapper.m_Gameplay_Fire;
-            public InputAction @UseWeapon1 => m_Wrapper.m_Gameplay_UseWeapon1;
-            public InputAction @UseWeapon2 => m_Wrapper.m_Gameplay_UseWeapon2;
-            public InputAction @UseWeapon3 => m_Wrapper.m_Gameplay_UseWeapon3;
+            public InputAction @EquipWeaponSlot1 => m_Wrapper.m_Gameplay_EquipWeaponSlot1;
+            public InputAction @EquipWeaponSlot2 => m_Wrapper.m_Gameplay_EquipWeaponSlot2;
+            public InputAction @EquipWeaponSlot3 => m_Wrapper.m_Gameplay_EquipWeaponSlot3;
             public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
@@ -442,15 +442,15 @@ namespace ScringloGames.ColorClash.Runtime.Input
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
-                @UseWeapon1.started += instance.OnUseWeapon1;
-                @UseWeapon1.performed += instance.OnUseWeapon1;
-                @UseWeapon1.canceled += instance.OnUseWeapon1;
-                @UseWeapon2.started += instance.OnUseWeapon2;
-                @UseWeapon2.performed += instance.OnUseWeapon2;
-                @UseWeapon2.canceled += instance.OnUseWeapon2;
-                @UseWeapon3.started += instance.OnUseWeapon3;
-                @UseWeapon3.performed += instance.OnUseWeapon3;
-                @UseWeapon3.canceled += instance.OnUseWeapon3;
+                @EquipWeaponSlot1.started += instance.OnEquipWeaponSlot1;
+                @EquipWeaponSlot1.performed += instance.OnEquipWeaponSlot1;
+                @EquipWeaponSlot1.canceled += instance.OnEquipWeaponSlot1;
+                @EquipWeaponSlot2.started += instance.OnEquipWeaponSlot2;
+                @EquipWeaponSlot2.performed += instance.OnEquipWeaponSlot2;
+                @EquipWeaponSlot2.canceled += instance.OnEquipWeaponSlot2;
+                @EquipWeaponSlot3.started += instance.OnEquipWeaponSlot3;
+                @EquipWeaponSlot3.performed += instance.OnEquipWeaponSlot3;
+                @EquipWeaponSlot3.canceled += instance.OnEquipWeaponSlot3;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -467,15 +467,15 @@ namespace ScringloGames.ColorClash.Runtime.Input
                 @Fire.started -= instance.OnFire;
                 @Fire.performed -= instance.OnFire;
                 @Fire.canceled -= instance.OnFire;
-                @UseWeapon1.started -= instance.OnUseWeapon1;
-                @UseWeapon1.performed -= instance.OnUseWeapon1;
-                @UseWeapon1.canceled -= instance.OnUseWeapon1;
-                @UseWeapon2.started -= instance.OnUseWeapon2;
-                @UseWeapon2.performed -= instance.OnUseWeapon2;
-                @UseWeapon2.canceled -= instance.OnUseWeapon2;
-                @UseWeapon3.started -= instance.OnUseWeapon3;
-                @UseWeapon3.performed -= instance.OnUseWeapon3;
-                @UseWeapon3.canceled -= instance.OnUseWeapon3;
+                @EquipWeaponSlot1.started -= instance.OnEquipWeaponSlot1;
+                @EquipWeaponSlot1.performed -= instance.OnEquipWeaponSlot1;
+                @EquipWeaponSlot1.canceled -= instance.OnEquipWeaponSlot1;
+                @EquipWeaponSlot2.started -= instance.OnEquipWeaponSlot2;
+                @EquipWeaponSlot2.performed -= instance.OnEquipWeaponSlot2;
+                @EquipWeaponSlot2.canceled -= instance.OnEquipWeaponSlot2;
+                @EquipWeaponSlot3.started -= instance.OnEquipWeaponSlot3;
+                @EquipWeaponSlot3.performed -= instance.OnEquipWeaponSlot3;
+                @EquipWeaponSlot3.canceled -= instance.OnEquipWeaponSlot3;
                 @Pause.started -= instance.OnPause;
                 @Pause.performed -= instance.OnPause;
                 @Pause.canceled -= instance.OnPause;
@@ -519,9 +519,9 @@ namespace ScringloGames.ColorClash.Runtime.Input
             void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
-            void OnUseWeapon1(InputAction.CallbackContext context);
-            void OnUseWeapon2(InputAction.CallbackContext context);
-            void OnUseWeapon3(InputAction.CallbackContext context);
+            void OnEquipWeaponSlot1(InputAction.CallbackContext context);
+            void OnEquipWeaponSlot2(InputAction.CallbackContext context);
+            void OnEquipWeaponSlot3(InputAction.CallbackContext context);
             void OnPause(InputAction.CallbackContext context);
         }
     }

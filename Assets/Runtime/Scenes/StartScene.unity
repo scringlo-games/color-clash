@@ -11983,10 +11983,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomKit 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7821572896911537687, guid: ee40d71235bf292438ace5f932667fee, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8305493534979235056, guid: ee40d71235bf292438ace5f932667fee, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
