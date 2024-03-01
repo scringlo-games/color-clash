@@ -1,5 +1,4 @@
 ﻿using ScringloGames.ColorClash.Runtime.GameServices;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,15 +8,10 @@ namespace ScringloGames.ColorClash.Runtime.Shared
     public class SceneService : GameService
     {
         [SerializeField]
-        private SceneAsset titleScene;
+        private string titleSceneName;
         
         public Scene CurrentScene => SceneManager.GetActiveScene();
-
-        public void LoadScene(SceneAsset sceneAsset)
-        {
-            this.LoadScene(sceneAsset.name);
-        }
-
+        
         public void LoadScene(Scene scene)
         {
             this.LoadScene(scene.name);
@@ -35,7 +29,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         public void ReturnToTitleScene()
         {
-            this.LoadScene(this.titleScene);
+            this.LoadScene(this.titleSceneName);
         }
     }
 }
