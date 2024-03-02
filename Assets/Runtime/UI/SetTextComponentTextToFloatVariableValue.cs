@@ -1,34 +1,13 @@
-﻿using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.UI
 {
     [ExecuteAlways]
-    public class SetTextComponentTextToFloatVariableValue : MonoBehaviour
+    public class SetTextComponentTextToFloatVariableValue : SetTextComponentTextToScriptableVariableValue<float>
     {
-        [TextArea]
-        [SerializeField]
-        private string formatString = "{0}";
-        [Header("Dependencies")]
-        [SerializeField]
-        private TextMeshProUGUI textMeshComponent;
-        [SerializeField]
-        private FloatVariable floatVariable;
-
-        private void Update()
+        protected override string GetFormatted(float value, string formatString)
         {
-            if (this.textMeshComponent.text == null)
-            {
-                return;
-            }
-
-            if (this.floatVariable == null)
-            {
-                return;
-            }
-
-            this.textMeshComponent.text = string.Format(this.formatString, this.floatVariable.Value);
+            return string.Format(formatString, value);
         }
     }
 }

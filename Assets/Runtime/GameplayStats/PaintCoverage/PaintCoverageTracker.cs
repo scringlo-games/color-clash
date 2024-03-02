@@ -5,7 +5,7 @@ using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace ScringloGames.ColorClash.Runtime.PaintCoverage
+namespace ScringloGames.ColorClash.Runtime.GameplayStats.PaintCoverage
 {
     public class PaintCoverageTracker : MonoBehaviour
     {
