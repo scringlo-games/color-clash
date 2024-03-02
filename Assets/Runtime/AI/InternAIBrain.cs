@@ -1,40 +1,74 @@
-﻿using ScringloGames.ColorClash.Runtime.Movement;
+﻿using ScringloGames.ColorClash.Runtime.AI.FSM;
+using ScringloGames.ColorClash.Runtime.Movement;
 using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.AI
 {
-    public class InternAIBrain : MonoBehaviour
+    public class InternAIBrain : AIBrain
     {
         [SerializeField]
-        private GameObject target;
-        [SerializeField]
-        private AStarDestinationMover mover;
+        private float range = 1f;
+        [Header("Dependencies")]
         [SerializeField]
         private Weapon weapon;
         [SerializeField]
-        private float attackDistance = 1f;
+        private AStarDestinationMover mover;
+        private StateMachine stateMachine;
 
-        private void OnEnable()
+        protected override IStateMachine StateMachine => this.stateMachine;
+
+        private void Awake()
         {
-            this.target = GameObject.FindWithTag("Player");
+            var idleState = new State()
+            {
+                OnEntered = this.OnIdleEntered,
+            };
+
+            var seekState = new State()
+            {
+                OnUpdated = this.OnSeekUpdated,
+            };
+
+            this.stateMachine = new StateMachine(idleState);
+            
+            var idleToSeekTransition = new Transition()
+            {
+                From = idleState,
+                To = seekState,
+                Condition = this.OnIdleToSeekTransitionEvaluated,
+            };
+
+            var seekToIdleTransition = new Transition()
+            {
+                From = seekState,
+                To = idleState,
+                Condition = this.OnSeekToIdleTransitionEvaluated
+            };
+            
+            this.stateMachine.AddTransition(idleToSeekTransition);
+            this.stateMachine.AddTransition(seekToIdleTransition);
         }
 
-        private void Update()
+        private void OnIdleEntered()
         {
-            var destination = this.target.transform.position;
-            var distance = Vector2.Distance(this.transform.position, destination);
-            
-            if (distance <= this.attackDistance)
-            {
-                this.weapon.Trigger.Pull();
-            }
-            else
-            {
-                this.weapon.Trigger.Release();
-                this.mover.MoveTo(destination);
-            }
+            this.mover.Halt();
+        }
+        
+        private void OnSeekUpdated()
+        {
+            this.MoveTowardPlayer(this.mover);
+            this.AttackPlayerIfInRange(this.weapon, this.range);
+        }
+        
+        private bool OnIdleToSeekTransitionEvaluated()
+        {
+            return this.GetPlayer() != null;
+        }
+        
+        private bool OnSeekToIdleTransitionEvaluated()
+        {
+            return this.GetPlayer() == null;
         }
     }
 }
-

@@ -1,89 +1,49 @@
-﻿using System;
+﻿using ScringloGames.ColorClash.Runtime.AI.FSM;
 using ScringloGames.ColorClash.Runtime.Movement;
-using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.AI
 {
-    public class FoamFistAIBrain : MonoBehaviour
+    public class FoamFistAIBrain : AIBrain
     {
-        [SerializeField]
-        private GameObject target;
+        private IStateMachine stateMachine;
         [SerializeField]
         private AStarDestinationMover mover;
-        [SerializeField]
-        private Weapon weapon;
-        [SerializeField] 
-        private float maxDistMoveSpeed;
-        [SerializeField] 
-        private float minDistMoveSpeed;
 
-        /// <summary>
-        /// Beyond this distance, min move speed.
-        /// </summary>
-        [SerializeField] private float farSpeedUpDistance;
+        protected override IStateMachine StateMachine => this.stateMachine;
 
-        /// <summary>
-        /// At this distance or closer, max move speed.
-        /// </summary>
-        [SerializeField] private float nearSpeedUpDistance;
-        //Difference between Far and Near distance, or the range.
-        private float speedUpDifferenceDist;
-        //Difference between Far and Near speeds.
-        private float speedUpDifferenceSpeed;
-        
-        [SerializeField]
-        private DirectionalMover directionalMover;
-        [SerializeField]
-        private float attackDistance = 1f;
-
-        [SerializeField] private float cooldownDuration = 1f;
-
-        private float cooldownTimer;
-        
-        private void OnEnable()
+        private void Awake()
         {
-            this.target = GameObject.FindWithTag("Player");
-            this.cooldownTimer = 0;
+            var idleState = new State()
+            {
+                OnEntered = this.OnIdleEntered,
+            };
+
+            var seekState = new State()
+            {
+                OnUpdated = this.OnSeekUpdated,
+            };
             
-            //Math that creates variables for easy use
-            this.speedUpDifferenceDist = this.farSpeedUpDistance - this.nearSpeedUpDistance;
-            this.speedUpDifferenceSpeed = this.maxDistMoveSpeed - this.minDistMoveSpeed;
+            this.stateMachine = new StateMachine();
         }
 
-        private void Update()
+        private bool OnIdleToSeekTransitionEvaluated()
         {
-            var destination = this.target.transform.position;
-            var distance = Vector2.Distance(this.transform.position, destination);
-            
-            //We want there to be a range between 2 move speeds.
-            //Speed up amount is the ratio of the space between thresholds.
-            var speedUpPercent = Math.Clamp((distance - this.nearSpeedUpDistance) / this.speedUpDifferenceDist, 0, 1);
-            //The new max speed is that ratio, times the difference in move speeds, plus the minimum.
-            var newSpeedCeiling = (speedUpPercent * this.speedUpDifferenceSpeed) + this.minDistMoveSpeed;
-
-            this.directionalMover.SpeedCeiling = newSpeedCeiling;
-
-            if (this.cooldownTimer <= 0f)
-            {
-                if (distance <= this.attackDistance)
-                {
-                    this.weapon.Trigger.Pull();
-                    this.cooldownTimer = this.cooldownDuration;
-                }
-                else
-                {
-                    this.weapon.Trigger.Release();
-                    this.mover.MoveTo(destination);
-                }
-            }
-            else
-            {
-                this.mover.Halt();
-                this.cooldownTimer -= Time.deltaTime;
-            }
-            
+            return this.GetPlayer() != null;
         }
         
+        private bool OnSeekToIdleTransitionEvaluated()
+        {
+            return this.GetPlayer() == null;
+        }
+        
+        private void OnIdleEntered()
+        {
+            this.mover.Halt();
+        }
+        
+        private void OnSeekUpdated()
+        {
+        }
     }
 }
