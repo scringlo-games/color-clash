@@ -10,20 +10,20 @@ public class DestroysSelfOnTimer : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        lifeLeft = Lifetime;
+        this.lifeLeft = this.Lifetime;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lifeLeft <= 0)
+        if (this.lifeLeft <= 0)
         {
-            destructible.Destroy();
+            this.destructible.Destroy();
         }
         else
         {
-            lifeLeft -= Time.deltaTime;
+            this.lifeLeft -= Time.deltaTime;
         }
     }
 }

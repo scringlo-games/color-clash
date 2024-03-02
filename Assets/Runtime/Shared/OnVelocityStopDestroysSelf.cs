@@ -10,15 +10,15 @@ public class OnVelocityStopDestroysSelf : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        me = this.GetComponent<Rigidbody2D>();
+        this.me = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<Rigidbody2D>().velocity.magnitude <= minimumSpeed)
+        if (this.GetComponent<Rigidbody2D>().velocity.magnitude <= this.minimumSpeed)
         {
-            destructible.Destroy();
+            this.destructible.Destroy();
         }
     }
 }

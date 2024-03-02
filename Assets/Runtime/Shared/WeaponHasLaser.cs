@@ -8,25 +8,25 @@ public class WeaponHasLaser : MonoBehaviour
 
     void OnUpdate()
     {
-        ShootLaser();
+        this.ShootLaser();
     }
     void ShootLaser()
     {
-        if (Physics2D.Raycast(laserFrom.transform.position, laserFrom.transform.up))
+        if (Physics2D.Raycast(this.laserFrom.transform.position, this.laserFrom.transform.up))
         {
-            RaycastHit2D hit = Physics2D.Raycast(laserFrom.transform.position, laserFrom.transform.up);
-            Draw2DRay(laserFrom.transform.position, hit.transform.position);
+            RaycastHit2D hit = Physics2D.Raycast(this.laserFrom.transform.position, this.laserFrom.transform.up);
+            this.Draw2DRay(this.laserFrom.transform.position, hit.transform.position);
         }
         else
         {
-            Draw2DRay(laserFrom.transform.position, laserFrom.transform.up * laserDist);
+            this.Draw2DRay(this.laserFrom.transform.position, this.laserFrom.transform.up * this.laserDist);
         }
         
     }
 
     private void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
-        lineRenderer.SetPosition(0, startPos);
-        lineRenderer.SetPosition(1, endPos);
+        this.lineRenderer.SetPosition(0, startPos);
+        this.lineRenderer.SetPosition(1, endPos);
     }
 }
