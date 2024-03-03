@@ -48,6 +48,7 @@ MonoBehaviour:
   exit: {fileID: 0}
   waveList:
     waves: []
+  roomClearedEvent: {fileID: 11400000, guid: 6f6877cb886daa14fa58aa5fd28694d7, type: 2}
 --- !u!114 &3513902588269800642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,4 +61,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cf55555f2c29d45996b3e4ad1490a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms: []
+  roomContainer: {fileID: 11400000, guid: f33029fba7357824b9d887a18e1c7b36, type: 2}

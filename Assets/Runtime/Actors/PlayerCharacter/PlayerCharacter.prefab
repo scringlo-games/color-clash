@@ -319,11 +319,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: -8659394324655834379}
+  inputService: {fileID: 11400000, guid: c4cea19e51cbbbf4086720589e7f6e4a, type: 2}
   mover: {fileID: 8937447852028683603}
   looker: {fileID: 2612930193349245569}
   paintProjectileWeapon: {fileID: 8707092449610600663}
   mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
-  pauseToggleEvent: {fileID: 11400000, guid: 79c6f658cfd1d8448b3f67af7662f943, type: 2}
 --- !u!114 &997995007517630187
 MonoBehaviour:
   m_ObjectHideFlags: 0

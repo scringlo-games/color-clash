@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using ScringloGames.ColorClash.Runtime.Environment;
+using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Spawning.EnemySpawning
@@ -20,23 +22,26 @@ namespace ScringloGames.ColorClash.Runtime.Spawning.EnemySpawning
         private RoomExit exit;
         [SerializeField]
         public WaveList waveList = new WaveList();
+        [Header("Events")]
+        [SerializeField]
+        private ScriptableEvent roomClearedEvent;
         private List<GameObject> currentWaveObjects;
         private int currentWaveIndex = -1;//I hate this
         //private int currentWaveCount;
-        void Awake()
+        private void Awake()
         {
             this.NextWave();
         }
-        void Update()
+
+        private void Update()
         {
             if(this.currentWaveIndex < this.waveList.waves.Count)
             {
-                foreach(var enemy in this.currentWaveObjects)
+                foreach(var enemy in this.currentWaveObjects.ToList())
                 {
                     if(enemy == null)
                     {
                         this.currentWaveObjects.Remove(enemy);
-                        Debug.Log($"Remaining Enemies: {this.currentWaveObjects.Count}");
                     } 
                 }
                 if(this.currentWaveObjects.Count <= 0)
@@ -45,9 +50,10 @@ namespace ScringloGames.ColorClash.Runtime.Spawning.EnemySpawning
                 }
             }
         }
-        void NextWave()
+
+        private void NextWave()
         {
-            this.currentWaveIndex++;//I hate this too
+            this.currentWaveIndex++;//I hate this too <= It's okay buddy we've all been there :D -TRF
             
             if(this.currentWaveIndex < this.waveList.waves.Count)
             {
@@ -61,9 +67,8 @@ namespace ScringloGames.ColorClash.Runtime.Spawning.EnemySpawning
             }
             else
             {
-                //activate transition object then return
+                this.roomClearedEvent.Raise();
                 this.exit.Activate();
-                Debug.Log("ROOM COMPLETE");
             }
         }
     }

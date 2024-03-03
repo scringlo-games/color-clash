@@ -1,25 +1,29 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
     public class ResetSceneOnDeath : MonoBehaviour
     {
-       public Killable death;
+        [Header("Dependencies")]
+        [SerializeField]
+        private Killable death;
+        [Header("Services")]
+        [SerializeField]
+        private SceneService sceneService;
 
-       private void OnEnable()
-       {
-            this.death.Killed += this.ResetScene;
-       }
+        private void OnEnable()
+        {
+          this.death.Killed += this.ResetScene;
+        }
 
-       private void OnDisable()
-       {
-            this.death.Killed -= this.ResetScene;
-       }
+        private void OnDisable()
+        {
+          this.death.Killed -= this.ResetScene;
+        }
 
-       private void ResetScene()
-       {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-       }
+        private void ResetScene()
+        {
+          this.sceneService.ReloadCurrentScene();
+        }
     }
 }
