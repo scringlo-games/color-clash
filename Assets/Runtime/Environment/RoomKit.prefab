@@ -13031,6 +13031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitStatusFrameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4213623779365701252, guid: 7bc4250d528b7ab45bbb7d00ed0d8150, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6749276699044383067, guid: 7bc4250d528b7ab45bbb7d00ed0d8150, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
