@@ -19,57 +19,39 @@ namespace ScringloGames.ColorClash.Runtime
 
         private GameObject target;
         [SerializeField] private DirectionalLooker looker;
-        [SerializeField] private Weapon weapon;
         private AmmunitionBank ammo;
         [SerializeField]
         private DestinationMover mover;
 
-        private bool reloadTimerOn = false;
-        [SerializeField] private float reloadTime = 0.5f;
-        private float reloadTimer;
+        [SerializeField] private GameObject[] spawners;
+        [SerializeField] private float firstSpawnDelay = .1f;
+        private float firstSpawnTimer;
+        private bool spawnersActive = false;
         
         void OnEnable()
         {
             this.target = GameObject.FindWithTag("Player");
-            this.ammo = this.weapon.GetComponent<AmmunitionBank>();
-            if (this.ammo == null)
-            {
-                Debug.Log("Cannot find ammo bank.");
-            }
-
-            this.reloadTimer = this.reloadTime;
+            firstSpawnTimer = firstSpawnDelay;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (!spawnersActive)
+            {
+                if (firstSpawnTimer <= 0)
+                {
+                    spawnersActive = true;
+                    foreach (GameObject o in spawners)
+                    {
+                        o.SetActive(true);
+                    }
+                }
+                firstSpawnTimer -= Time.deltaTime;
+            }
             var targetPosition = this.target.transform.position;
             var direction = (targetPosition - this.transform.position).normalized;
             this.looker.Direction = direction;
-            Debug.DrawRay(this.transform.position, this.transform.up);
-            if (this.ammo.Evaluate())
-            {
-                this.weapon.Trigger.Pull();
-            }
-            else if (!this.reloadTimerOn)
-            {
-                this.reloadTimerOn = true;
-            }
-
-            if (this.reloadTimerOn)
-            {
-                if (this.reloadTimer > 0)
-                {
-                    this.reloadTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    this.reloadTimerOn = false;
-                    this.reloadTimer = this.reloadTime;
-                    this.ammo.Reload();
-                }
-            }
-        
             this.mover.MoveTo(this.target.transform.position);
         }
     }
