@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &220455742112960439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6304624612194509227}
+  - component: {fileID: 1028735967383306401}
+  m_Layer: 7
+  m_Name: SpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6304624612194509227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220455742112960439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1731329344723708261}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1028735967383306401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220455742112960439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f576259234b994d947ab41863277d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTable: {fileID: 11400000, guid: 454bd63074127f0469cce8357411986b, type: 2}
+  interval: 5
+  spawnAmount: 1
 --- !u!1 &1630384287222104711
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 1630384287222104711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1, z: 0}
+  m_LocalPosition: {x: 1, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 454bd63074127f0469cce8357411986b, type: 2}
   interval: 5
-  spawnAmount: 2
+  spawnAmount: 1
 --- !u!1 &4298455368521629746
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 4865423612680010753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1, z: 0}
+  m_LocalPosition: {x: -1, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -177,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 454bd63074127f0469cce8357411986b, type: 2}
   interval: 5
-  spawnAmount: 2
+  spawnAmount: 1
 --- !u!1001 &4328768854588257036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,6 +236,14 @@ PrefabInstance:
     - target: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_Name
       value: MicroManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423687104716592901, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: globalDamageTakenMultiplier.baseValue
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423687104716592901, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: globalDamageTakenMultiplier.modifiedValue
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: objectToLaunch
@@ -274,6 +329,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2599714477317724777, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6635258355231391772}
+    - targetCorrespondingSourceObject: {fileID: 2599714477317724777, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6304624612194509227}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       insertIndex: -1
@@ -331,6 +389,7 @@ MonoBehaviour:
   spawners:
   - {fileID: 1630384287222104711}
   - {fileID: 4865423612680010753}
+  - {fileID: 220455742112960439}
   firstSpawnDelay: 0.5
 --- !u!1 &8243727459118384712 stripped
 GameObject:
