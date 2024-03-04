@@ -9,8 +9,6 @@ namespace ScringloGames.ColorClash.Runtime.AI
     {
         [SerializeField]
         private GameObject target;
-
-        [SerializeField] private Rigidbody2D rigidbody2D;
         [SerializeField]
         private DestinationMover mover;
         [FormerlySerializedAs("attackBehaviour")]
@@ -22,7 +20,6 @@ namespace ScringloGames.ColorClash.Runtime.AI
         private void OnEnable()
         {
             this.target = GameObject.FindWithTag("Player");
-            rigidbody2D.transform.rotation.SetLookRotation(Vector3.up);
         }
 
         private void Update()
