@@ -46,6 +46,11 @@ namespace ScringloGames.ColorClash.Runtime.AI
             this.target = GameObject.FindWithTag("Player");
             this.cooldownTimer = 0;
             
+            SetUpSpeedUpWithDistance();
+        }
+
+        private void SetUpSpeedUpWithDistance()
+        {
             //Math that creates variables for easy use
             this.speedUpDifferenceDist = this.farSpeedUpDistance - this.nearSpeedUpDistance;
             this.speedUpDifferenceSpeed = this.maxDistMoveSpeed - this.minDistMoveSpeed;
@@ -56,6 +61,11 @@ namespace ScringloGames.ColorClash.Runtime.AI
             var destination = this.target.transform.position;
             var distance = Vector2.Distance(this.transform.position, destination);
             
+            SpeedUpWithDistance(distance, destination);
+        }
+
+        private void SpeedUpWithDistance(float distance, Vector3 destination)
+        {
             //We want there to be a range between 2 move speeds.
             //Speed up amount is the ratio of the space between thresholds.
             var speedUpPercent = Math.Clamp((distance - this.nearSpeedUpDistance) / this.speedUpDifferenceDist, 0, 1);
@@ -82,8 +92,6 @@ namespace ScringloGames.ColorClash.Runtime.AI
                 this.mover.Halt();
                 this.cooldownTimer -= Time.deltaTime;
             }
-            
         }
-        
     }
 }
