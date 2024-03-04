@@ -13,6 +13,10 @@ namespace ScringloGames.ColorClash.Runtime.AI
         private DestinationMover mover;
         [SerializeField]
         private Weapon weapon;
+        
+        // In the future, should make SpeedUpWithDist into seperate component
+        // Did this to make that easier!
+        // VVV Variables related to the SpeedUpWithDist function!
         [SerializeField] 
         private float maxDistMoveSpeed;
         [SerializeField] 
@@ -31,6 +35,8 @@ namespace ScringloGames.ColorClash.Runtime.AI
         private float speedUpDifferenceDist;
         //Difference between Far and Near speeds.
         private float speedUpDifferenceSpeed;
+        
+        //^^^ Variables related to the SpeedUpWithDist function!
         
         [SerializeField]
         private DirectionalMover directionalMover;
@@ -64,6 +70,7 @@ namespace ScringloGames.ColorClash.Runtime.AI
             SpeedUpWithDistance(distance, destination);
         }
 
+        //In the future, should pop out into seperate script, refactored to make this easier later.
         private void SpeedUpWithDistance(float distance, Vector3 destination)
         {
             //We want there to be a range between 2 move speeds.
