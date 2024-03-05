@@ -1,19 +1,20 @@
 ﻿using ScringloGames.ColorClash.Runtime.Conditions;
+using ScringloGames.ColorClash.Runtime.Shared.Contact;
 using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public abstract class OnCollisionEnterApplyConditionToOther : MonoBehaviour
+    public abstract class OnCollisionEnterApplyConditionToOther : ContactBehaviour
     {
         [SerializeField]
         protected int duration = 2;
         [SerializeField]
         protected GameObjectFilterSet filter;
-        
-        private void OnCollisionEnter2D(Collision2D collision)
+
+        public override void OnCollisionEntered(Collision2D collision2D)
         {
-            var other = collision.collider;
+            var other = collision2D.collider;
 
             if (!this.filter.Evaluate(other.gameObject))
             {
@@ -27,7 +28,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
                 return;
             }
 
-            var condition = this.GetCondition(collision);
+            var condition = this.GetCondition(collision2D);
             conditionBank.Apply(condition);
         }
 

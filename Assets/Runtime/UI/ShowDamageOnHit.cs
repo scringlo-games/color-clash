@@ -46,7 +46,7 @@ namespace ScringloGames.ColorClash.Runtime.UI
             var damageObj = Instantiate(this.damageIndicatorObject,this.transform.position + (Vector3)this.offset, Quaternion.identity);
             if(damageObj.TryGetComponent<DamageNumberSetup>(out var numSetup))
             {
-                numSetup.Setup(damage, indicatorColor);
+                numSetup.Setup((float)System.Math.Round(damage, 1), indicatorColor);
             }
         }
         

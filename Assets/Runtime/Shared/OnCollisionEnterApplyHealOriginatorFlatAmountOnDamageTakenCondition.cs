@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class OnCollisionEnterApplyHealOriginatorFlatAmountOnDamageTakenCondition : OnCollisionEnterApplyConditionToOther
+    public class OnCollisionEnterApplyHealOriginatorFlatAmountOnDamageTakenCondition 
+        : OnCollisionEnterApplyConditionToOther
     {
         [SerializeField]
         private float amount;
@@ -13,7 +14,10 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         protected override Condition GetCondition(Collision2D collision)
         {
-            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.duration, this.damagedEvent, this.amount);
+            return new HealOriginatorForFlatAmountOnDamageTakenCondition(
+                this.duration, 
+                this.damagedEvent, 
+                this.amount);
         }
     }
 }

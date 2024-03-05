@@ -328,8 +328,9 @@ GameObject:
   - component: {fileID: 703027326113196727}
   - component: {fileID: 6077634381810947512}
   - component: {fileID: 8581232520006413919}
-  - component: {fileID: 8023546599079323498}
+  - component: {fileID: 3922671672579099863}
   - component: {fileID: 1471673880509005849}
+  - component: {fileID: 8023546599079323498}
   - component: {fileID: 3557315789921260124}
   - component: {fileID: 1023273685374468906}
   - component: {fileID: 7297916487202149789}
@@ -424,7 +425,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8023546599079323498
+--- !u!114 &3922671672579099863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,10 +434,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7530581257876433613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85de33ac6ed64f4bb5bdd87282fdc9b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 93ceed786e2943b68a0c8fec307d802b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
+  receivers: []
 --- !u!114 &1471673880509005849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +453,19 @@ MonoBehaviour:
   destroyDelay: 0.25
   healthHandler: {fileID: 1023273685374468906}
   destructible: {fileID: 3557315789921260124}
+--- !u!114 &8023546599079323498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530581257876433613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85de33ac6ed64f4bb5bdd87282fdc9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &3557315789921260124
 MonoBehaviour:
   m_ObjectHideFlags: 0
