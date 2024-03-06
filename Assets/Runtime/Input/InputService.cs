@@ -38,8 +38,8 @@ namespace ScringloGames.ColorClash.Runtime.Input
         {
             this.gameInput = new GameInput();
             this.gameInput.Gameplay.SetCallbacks(this);
-            
-            this.gameInput.Gameplay.Enable();
+
+            this.EnableGameplayInput();
         }
 
         public override void Tick(float deltaTime)
@@ -48,6 +48,7 @@ namespace ScringloGames.ColorClash.Runtime.Input
 
         public override void Teardown()
         {
+            this.gameInput.Gameplay.RemoveCallbacks(this);
         }
 
         public void EnableAllInput()
