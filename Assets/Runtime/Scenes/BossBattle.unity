@@ -11395,7 +11395,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: interval
-      value: 6
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
+      propertyPath: spawnAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11717,7 +11721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: interval
-      value: 10
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
+      propertyPath: spawnAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11783,7 +11791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: interval
-      value: 10
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
+      propertyPath: spawnAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12009,9 +12021,9 @@ Transform:
   m_Children:
   - {fileID: 746654255}
   - {fileID: 1025038071}
+  - {fileID: 1417680033}
   - {fileID: 2110555595}
   - {fileID: 1533117293}
-  - {fileID: 1417680033}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2031176545
@@ -12170,7 +12182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
       propertyPath: interval
-      value: 10
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217718896102968191, guid: 1374b8e30c87e1248b8ada4cd11adadd, type: 3}
+      propertyPath: spawnAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

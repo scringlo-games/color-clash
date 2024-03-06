@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969472434280330446, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: <MaxHealth>k__BackingField
-      value: 10000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 3370782882846563667, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: m_LocalPosition.x
