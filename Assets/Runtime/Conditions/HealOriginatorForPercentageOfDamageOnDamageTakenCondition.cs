@@ -49,11 +49,9 @@ namespace ScringloGames.ColorClash.Runtime.Conditions
             {
                 this.healthHandler = args.Originator.GetComponent<HealthHandler>();
             }
-            else
-            {
-                var damage = args.Amount;
-                this.healthHandler.Heal(damage * this.percentage);
-            }
+            
+            var damage = args.Amount;
+            this.healthHandler.Heal(damage * this.percentage);
         }
     }
 }

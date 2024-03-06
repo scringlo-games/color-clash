@@ -10,6 +10,8 @@ namespace ScringloGames.ColorClash.Runtime.Spawning
         [SerializeField]
         private float interval = 10f;
 
+        [SerializeField] private int spawnAmount = 1;
+
         private void OnEnable()
         {
             this.StartCoroutine(this.SpawnPrefab());
@@ -22,8 +24,12 @@ namespace ScringloGames.ColorClash.Runtime.Spawning
                 audioSource.Play();
             }
 
-            var prefab = this.spawnTable.Select();
-            Instantiate(prefab, this.transform.position, Quaternion.identity, null);
+            for (int i = 0; i < spawnAmount; i++)
+            {
+                var prefab = this.spawnTable.Select();
+                Instantiate(prefab, this.transform.position, Quaternion.identity, null);
+            }
+            
 
             yield return new WaitForSeconds(this.interval);
             yield return this.SpawnPrefab();
