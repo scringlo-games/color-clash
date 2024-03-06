@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969472434280330446, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: <MaxHealth>k__BackingField
-      value: 10000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 3370782882846563667, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -76,6 +76,13 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3913832061939086673, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"SeekTargetBehaviour","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Behaviour,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AttackBehaviour","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Behaviour,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AttackRange","value":{"$content":1.25,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
     - target: {fileID: 5224154990367454698, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5
@@ -99,6 +106,14 @@ PrefabInstance:
     - target: {fileID: 5989971135137819695, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: m_Color.r
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269875658658703586, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269875658658703586, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6269875658658703586, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -136,7 +151,8 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 233329512807378268, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

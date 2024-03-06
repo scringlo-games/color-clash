@@ -429,6 +429,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2429451594675748488, guid: ee40d71235bf292438ace5f932667fee, type: 3}
+      propertyPath: data.dataString
+      value: UEsDBBQAAAgIAACAn+v0zrvmawIAACMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjE/PVW2sI6SEJE9rJxRfZWmMNsuSR5ADJ8N+7km3skumJ5e3b3bcf8ifh0lSQWaU3mrMnxYB8HxFnk2+j3vkIJ7pXcsc/oOO8cWYLR6Ke80otV4iHLsyoEqzm2Q+5F44cIFhLnitdrtkeYmWsQTinwgC6tLIuWiL0OSIn/BkvXcgZrcncWR9oLYPRBc0MpAXdUzti2NIaVi0zQcsKmJPck8NFy154lsReWkJwN3XJlRDctFKIPVe+1ZhWpsZGkMA4xdZ8/fBu4kIK4PvCOqXD+Jc8N2BbeZqeV1zjkJrE5KdqJldSc2i0vVNRu1KzyOtqcj59cY9D7861Kh+7smHgStiCZ4dXes6osYPJDuHVQLqf0JGKA00FvBUgn9VGq1oydFpdu9DawGTV/712FheQHXq8kXoD1tXX/Uzu7hdRuJjdz9bjYN4uyzV08ZM4xYKXqV9E1AA7ofz4/SmAxlX9QvX+UEybF1En6Y+B33Q/vKjW8cC1sehqW5ZOa6pq7ahk7QfoWqttrLQEPcxQgaTCnreYx97u88b3/6gH6h5PW731dW/iJsTDPT8IblxbdbyuzhTq+ASmeKmt4BL6uTvHMw4qVlI25zZsqQvb1Tqn2SBsX3P276ERGizZZL6IIkrZMk0X4yydRukyT6csm88gj4i/RC6xTyq2jdB2PLg22SeXeHXdN2W00bTyp880PW74R6lMz+QyV7tMA8iXJsNVOGgsgu+UrRnHAe3AWi79wslnQoTKDsCSa6LEd7o+WU2TPktCKv6urEMSEvuPSEIcfL3srYZ3DkdXvEt2IZe/UEsDBBQAAAgIAACAn+uMAOH8bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSooFlipG5hYlJYmKKZVKShW5ykqlJkmVakmlKsrlZapqJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACAn+v0zrvmawIAACMFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACAn+uMAOH8bQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
     - target: {fileID: 2659344032755018060, guid: ee40d71235bf292438ace5f932667fee, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8683,6 +8686,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfb8f19481fe0241acb4a22d3a78c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1312508209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312508212}
+  - component: {fileID: 1312508211}
+  - component: {fileID: 1312508210}
+  m_Layer: 0
+  m_Name: VisualScripting SceneVariables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1312508210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312508209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1312508211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312508209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!4 &1312508212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312508209}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1645623532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8806,3 +8869,4 @@ SceneRoots:
   - {fileID: 1734069279}
   - {fileID: 88144240}
   - {fileID: 1051298653}
+  - {fileID: 1312508212}

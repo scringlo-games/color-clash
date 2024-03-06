@@ -85,6 +85,7 @@ MonoBehaviour:
   stopwatch:
     <Time>k__BackingField: 0
   time: {fileID: 11400000, guid: c947606cbd81c3549a54e3ead9b272cf, type: 2}
+  roomClearedEvent: {fileID: 11400000, guid: 6f6877cb886daa14fa58aa5fd28694d7, type: 2}
 --- !u!114 &9076513937065024321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3887b97be77854dbdea2205139ab31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDamageTakenVariable: {fileID: 11400000, guid: fddbbeb8556d2604b8d716360a1999c0, type: 2}
+  damageTakenEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
 --- !u!114 &5332738013296184265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,8 +107,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3025042422665932780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffad7fa5f8796f44e8c32ef165be01cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealingReceivedVariable: {fileID: 11400000, guid: 268a5a85231f27647b18b2d6729b18c2, type: 2}
+  healingReceivedEvent: {fileID: 0}
