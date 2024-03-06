@@ -1,9 +1,10 @@
-﻿using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
+﻿using ScringloGames.ColorClash.Runtime.Shared.Contact;
+using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Damage
 {
-    public class OnCollisionEnterDamageOther : MonoBehaviour
+    public class OnCollisionEnterDamageOther : ContactBehaviour
     {
         [SerializeField]
         private GameObjectFilterSet filter;
@@ -14,15 +15,15 @@ namespace ScringloGames.ColorClash.Runtime.Damage
         [SerializeField]
         private DamageSource damageSource;
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        public override void OnCollisionEntered(Collision2D collision2D)
         {
-            var other = collision.collider;
+            var other = collision2D.collider;
             this.DamageOther(other);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public override void OnTriggerEntered(Collider2D collider2D)
         {
-            this.DamageOther(other);
+            this.DamageOther(collider2D);
         }
 
         private void DamageOther(Collider2D other)
