@@ -27,7 +27,8 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField] private GameObject laserFrom;
         private float reloadTimer;
         private Ray laser;
-        void OnEnable()
+
+        private void OnEnable()
         {
             this.target = GameObject.FindWithTag("Player");
             this.ammo = this.weapon.GetComponent<AmmunitionBank>();
@@ -40,7 +41,7 @@ namespace ScringloGames.ColorClash.Runtime.AI
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             var targetPosition = this.target.transform.position;
             var direction = (targetPosition - this.transform.position).normalized;
