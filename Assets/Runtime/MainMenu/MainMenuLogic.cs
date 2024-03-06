@@ -18,7 +18,8 @@ namespace ScringloGames.ColorClash.Runtime.MainMenu
         private GameObject creditPanel;
         [SerializeField]
         private string firstSceneName;
-        void OnEnable()
+
+        private void OnEnable()
         {
             this.startButton.onClick.AddListener(this.LoadFirstScene);
             this.creditButton.onClick.AddListener(this.ToggleCreditPanel);
@@ -26,19 +27,22 @@ namespace ScringloGames.ColorClash.Runtime.MainMenu
             this.quitButton.onClick.AddListener(this.AppQuit);
             this.creditPanel.SetActive(false);
         }
-        void OnDisable()
+
+        private void OnDisable()
         {
             this.startButton.onClick.RemoveAllListeners();
             this.creditButton.onClick.RemoveAllListeners();
             this.credittReturnButton.onClick.RemoveAllListeners();
             this.quitButton.onClick.RemoveAllListeners();
         }
-        void LoadFirstScene()
+
+        private void LoadFirstScene()
         {   
             SceneManager.LoadScene(this.firstSceneName);
             Time.timeScale = 1f;
         }
-        void ToggleCreditPanel()
+
+        private void ToggleCreditPanel()
         {
             if(this.creditPanel.activeSelf)
             {
@@ -50,7 +54,8 @@ namespace ScringloGames.ColorClash.Runtime.MainMenu
             }
             
         }
-        void AppQuit()
+
+        private void AppQuit()
         {
             Application.Quit(); 
         }

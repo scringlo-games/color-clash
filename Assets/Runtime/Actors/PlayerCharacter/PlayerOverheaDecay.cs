@@ -15,7 +15,8 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
         private float decayFrequencyCurrent;
         private HealthHandler healthHandler;
         private DamageReceiver damageReceiver;
-        void Awake()
+
+        private void Awake()
         {
             this.decayFrequencyCurrent = this.decayFrequency;
             if(this.TryGetComponent<HealthHandler>(out var handler))
@@ -27,7 +28,8 @@ namespace ScringloGames.ColorClash.Runtime.Actors.PlayerCharacter
                 this.damageReceiver = receiver;
             }
         }
-        void Update()
+
+        private void Update()
         {
             if(this.healthHandler.Health > this.healthHandler.MaxHealth)
             {

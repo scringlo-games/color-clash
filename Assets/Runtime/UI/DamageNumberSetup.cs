@@ -9,11 +9,11 @@ namespace ScringloGames.ColorClash.Runtime.UI
     private bool active;
     private TextMeshPro text;
     [SerializeField]
-    float aliveTimeMax;
-    float aliveTime;
-    Color thisColor;
-    float colorAlpha;
-    float posY;
+    private float aliveTimeMax;
+    private float aliveTime;
+    private Color thisColor;
+    private float colorAlpha;
+    private float posY;
     public void Setup(float damage, Color color)
     {
       this.text = this.GetComponent<TextMeshPro>();
@@ -33,7 +33,8 @@ namespace ScringloGames.ColorClash.Runtime.UI
       this.colorAlpha = this.text.color.a;
       this.posY = this.transform.position.y;
     }
-    void Update()
+
+    private void Update()
     {
       if(this.active)
       {
