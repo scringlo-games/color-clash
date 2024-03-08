@@ -71,6 +71,10 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# Transient Visual Scripting files
+/[Aa]ssets/Unity.VisualScripting.Generated
+/[Aa]ssets/Unity.VisualScripting.Generated.meta
+
 # Developer-local prototyping scenes
 **/[Ss]cenes/[Pp]rototype/
 **/[Ss]cenes/[Pp]rototype.meta
