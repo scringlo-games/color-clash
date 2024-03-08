@@ -309,11 +309,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
---- !u!20 &4765798029938777458 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2405864770707588594, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
-  m_PrefabInstance: {fileID: 7151959534509414528}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7341897181378251701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 478355571827331893, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
@@ -500,6 +495,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4052006709715301733}
+    - targetCorrespondingSourceObject: {fileID: 7530581257876433613, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 285623463900306277}
   m_SourcePrefab: {fileID: 100100000, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
 --- !u!114 &291926270297590329 stripped
 MonoBehaviour:
@@ -574,7 +572,7 @@ MonoBehaviour:
   m_DefaultControlScheme: KeyboardAndMouse
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 4765798029938777458}
+  m_Camera: {fileID: 0}
 --- !u!114 &-1991176971723866635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,10 +586,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: -8659394324655834379}
-  inputService: {fileID: 11400000, guid: c4cea19e51cbbbf4086720589e7f6e4a, type: 2}
   mover: {fileID: 8937447852028683603}
   looker: {fileID: 2612930193349245569}
   paintProjectileWeapon: {fileID: 8707092449610600663}
+  inputService: {fileID: 11400000, guid: c4cea19e51cbbbf4086720589e7f6e4a, type: 2}
   mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
 --- !u!114 &997995007517630187
 MonoBehaviour:
@@ -776,6 +774,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originator: {fileID: 2226110175882704111}
+--- !u!114 &285623463900306277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226110175882704111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece85b561ff74a2f8c3047833c81c91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraVariable: {fileID: 11400000, guid: ac77abe8eb985be49b658c29fb83c39e, type: 2}
+  playerInput: {fileID: -8659394324655834379}
 --- !u!114 &2612930193349245569 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5919905306985882787, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
