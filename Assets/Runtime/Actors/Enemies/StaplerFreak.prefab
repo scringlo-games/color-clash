@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 0dfe8261ef72ac147be2a354ae6fdcfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,6 +96,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: StaplerFreak
       objectReference: {fileID: 0}
+    - target: {fileID: 1660615054540043390, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660615054540043390, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660615054540043390, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
@@ -108,6 +120,22 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 5861819270567017982, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: damageToInflict
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096387732057868822, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: _data._json
+      value: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096387732057868822, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: _data._objectReferences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096387732057868822, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: _data._objectReferences.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8762d5a76e7988f4285ddd230148cbb6, type: 2}
     - target: {fileID: 6848697756835719668, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -156,6 +184,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8527596333343173069, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"SeekTargetBehaviour","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Behaviour,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AttackBehaviour","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Behaviour,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AttackRange","value":{"$content":1.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Weapon","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"ScringloGames.ColorClash.Runtime.Weapons.Weapon,
+        ScringloGames.ColorClash.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689181145356377693, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: behaviours.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689181145356377693, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: behaviours.Array.data[1]
+      value: 
+      objectReference: {fileID: 6134322360635172482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -163,9 +207,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3609332675891889718}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8818581848488023220}
     - targetCorrespondingSourceObject: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2874507520387373696}
@@ -182,28 +223,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b190824b7d1d26348be68fcbf9dce739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1567182491362222389 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3400283312474764390, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
-  m_PrefabInstance: {fileID: 4219867920498709843}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a810e8d2d44ea9ba51a2b36eecbbb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1635037399876122407 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3188313645062578804, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
-  m_PrefabInstance: {fileID: 4219867920498709843}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3819172195863483622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2669375a858f4b00b5cfd27e485036ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2468097226614729110 stripped
@@ -235,22 +254,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
   m_PrefabInstance: {fileID: 4219867920498709843}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8818581848488023220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3819172195863483622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec66dcbe20104b5b954d99b61780a227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  mover: {fileID: 1635037399876122407}
-  weapon: {fileID: 1567182491362222389}
-  attackDistance: 1
 --- !u!114 &2874507520387373696
 MonoBehaviour:
   m_ObjectHideFlags: 0

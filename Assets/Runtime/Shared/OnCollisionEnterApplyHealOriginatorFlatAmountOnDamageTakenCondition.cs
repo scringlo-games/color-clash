@@ -12,7 +12,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         [SerializeField]
         private DamageArgsEvent damagedEvent;
 
-        protected override Condition GetCondition(Collision2D collision)
+        protected override Condition GetCondition(Collider2D collider2D)
         {
             return new HealOriginatorForFlatAmountOnDamageTakenCondition(
                 this.duration, 
