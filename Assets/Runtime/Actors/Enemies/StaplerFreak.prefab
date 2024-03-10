@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.65
       objectReference: {fileID: 0}
+    - target: {fileID: 2278556885959722315, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075541974774178924, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
@@ -122,6 +126,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5861819270567017982, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: damageToInflict
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925465237544140071, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6096387732057868822, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
@@ -248,7 +256,7 @@ MonoBehaviour:
     entries:
     - filter: {fileID: 11400000, guid: f774a6789cc1f754a95c354a6d96f334, type: 2}
       negate: 0
-  amount: 0.5
+  amount: 0.3
 --- !u!1 &3819172195863483622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
