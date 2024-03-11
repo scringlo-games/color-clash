@@ -68,6 +68,42 @@ namespace ScringloGames.ColorClash.Runtime.AI
                 this.reloadTimerOn = true;
             }
 
+            ReloadHandler();
+        
+            this.mover.MoveTo(this.target.transform.position);
+        }
+
+        /// <summary>
+        /// When ready to fire, prevents aim from updating.
+        /// Handles timer for duration of being locked in.
+        /// </summary>
+        private void LockInAim(Vector3 direction)
+        {
+            if (!ReadyToFire)
+            {
+                this.looker.Direction = direction;
+            }
+            else
+            {
+                if (FireDelayTimer > 0)
+                {
+                    FireDelayTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    this.weapon.Trigger.Pull();
+                    FireDelayTimer = FireDelay;
+                    ReadyToFire = false;
+                    this.weapon.Trigger.Release();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Holds timer code for reloading.
+        /// </summary>
+        private void ReloadHandler()
+        {
             if (this.reloadTimerOn)
             {
                 if (this.reloadTimer > 0)
@@ -81,8 +117,6 @@ namespace ScringloGames.ColorClash.Runtime.AI
                     this.ammo.Reload();
                 }
             }
-        
-            this.mover.MoveTo(this.target.transform.position);
         }
     }
 }
