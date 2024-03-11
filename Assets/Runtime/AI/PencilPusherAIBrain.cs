@@ -27,10 +27,23 @@ namespace ScringloGames.ColorClash.Runtime.AI
         [SerializeField] private GameObject laserFrom;
         private float reloadTimer;
         private Ray laser;
+
+        /// <summary>
+        /// Delay before shooting.
+        /// </summary>
+        [SerializeField] private float FireDelay = 1.0f;
+        private float FireDelayTimer;
+        /// <summary>
+        /// Stores state of Ready to Fire.
+        /// When true, the gun is locked in position.
+        /// When false, the gun can aim.
+        /// </summary>
+        private bool ReadyToFire;
         void OnEnable()
         {
             this.target = GameObject.FindWithTag("Player");
             this.ammo = this.weapon.GetComponent<AmmunitionBank>();
+            FireDelayTimer = FireDelay;
             if (this.ammo == null)
             {
                 Debug.Log("Cannot find ammo bank.");

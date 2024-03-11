@@ -97,6 +97,10 @@ PrefabInstance:
       value: PencilPusher
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: launchVelocity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: objectToLaunch
       value: 
       objectReference: {fileID: 4112347388748418690, guid: d88947d037e3dfb4ba55aadef07e06dc, type: 3}
@@ -114,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Duration>k__BackingField
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6848697756835719668, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive
@@ -134,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7876747178249291403, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7882176163810381833, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: speedCeiling
