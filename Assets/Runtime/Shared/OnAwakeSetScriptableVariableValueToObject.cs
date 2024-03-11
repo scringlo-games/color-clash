@@ -1,5 +1,7 @@
-﻿using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
+﻿using System;
+using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
@@ -12,6 +14,16 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         private ScriptableVariable<TObject> variable;
 
         protected virtual void Awake()
+        {
+            this.SetScriptableVariableValueToObject();
+        }
+
+        protected void OnEnable()
+        {
+            this.SetScriptableVariableValueToObject();
+        }
+
+        private void SetScriptableVariableValueToObject()
         {
             this.variable.Value = this.objectToAssign;
         }

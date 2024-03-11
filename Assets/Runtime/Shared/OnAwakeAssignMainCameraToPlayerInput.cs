@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
+﻿using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +13,20 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         private void Awake()
         {
-            this.playerInput.camera = this.mainCameraVariable.Value;
+            this.AssignMainCameraToPlayerInput();
+        }
+
+        private void OnEnable()
+        {
+            this.AssignMainCameraToPlayerInput();
+        }
+
+        private void AssignMainCameraToPlayerInput()
+        {
+            if (this.playerInput.camera == null)
+            {
+                this.playerInput.camera = this.mainCameraVariable.Value;
+            }
         }
     }
 }
