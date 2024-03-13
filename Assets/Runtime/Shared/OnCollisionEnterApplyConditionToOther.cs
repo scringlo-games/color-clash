@@ -14,7 +14,17 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         public override void OnCollisionEntered(Collision2D collision2D)
         {
-            var other = collision2D.collider;
+            this.ApplyConditionToCollider(collision2D.collider);
+        }
+
+        public override void OnTriggerEntered(Collider2D collider2D)
+        {
+            this.ApplyConditionToCollider(collider2D);
+        }
+
+        private void ApplyConditionToCollider(Collider2D collider2D)
+        {
+            var other = collider2D;
 
             if (!this.filter.Evaluate(other.gameObject))
             {
@@ -28,10 +38,10 @@ namespace ScringloGames.ColorClash.Runtime.Shared
                 return;
             }
 
-            var condition = this.GetCondition(collision2D);
+            var condition = this.GetCondition(other);
             conditionBank.Apply(condition);
         }
 
-        protected abstract Condition GetCondition(Collision2D collision);
+        protected abstract Condition GetCondition(Collider2D collider2D);
     }
 }
