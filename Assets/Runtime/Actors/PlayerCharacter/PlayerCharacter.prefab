@@ -379,6 +379,14 @@ PrefabInstance:
       propertyPath: accelerationIncrement
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1023273685374468906, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: interval.<Time>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023273685374468906, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: interval.<Duration>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3304802956398066514, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: m_Color.b
       value: 0.5019608
@@ -588,10 +596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: -8659394324655834379}
-  inputService: {fileID: 11400000, guid: c4cea19e51cbbbf4086720589e7f6e4a, type: 2}
   mover: {fileID: 8937447852028683603}
   looker: {fileID: 2612930193349245569}
   paintProjectileWeapon: {fileID: 8707092449610600663}
+  inputService: {fileID: 11400000, guid: c4cea19e51cbbbf4086720589e7f6e4a, type: 2}
   mixingService: {fileID: 11400000, guid: 8f3a1c4c04e0bda49b2e11cf760f9934, type: 2}
 --- !u!114 &997995007517630187
 MonoBehaviour:
