@@ -1,9 +1,7 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Weapons.Framework;
+﻿using ScringloGames.ColorClash.Runtime.Weapons.Framework;
 using TravisRFrench.Common.Runtime.ScriptableEvents;
 using TravisRFrench.Common.Runtime.Timing;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScringloGames.ColorClash.Runtime.Weapons
 {
