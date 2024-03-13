@@ -24,7 +24,10 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
 
         private void OnEnable()
         {
-            var boss = GameObject.Find("BIGBOSS");
+            // By virtue of bosses being the first enemy in a boss room, this should be effective without requiring
+            // more super niche code.
+            // For the record - I hate this.
+            var boss = GameObject.FindWithTag("Enemy");
             var healthHandler = boss.GetComponent<HealthHandler>();
             this.Bind(healthHandler);
         }
