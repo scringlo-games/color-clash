@@ -11,7 +11,7 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         [SerializeField]
         private float amount = 1f;
 
-        protected override Condition GetCondition(Collision2D collision)
+        protected override Condition GetCondition(Collider2D collider2D)
         {
             return new SlowMovementSpeedCondition(this.duration, this.amount);
         }
