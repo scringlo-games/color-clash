@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4664e13dcd5a7d94aaa73ccd192634cb, type: 3}
-  m_Name: Room List
+  m_Script: {fileID: 11500000, guid: e42cf244f43e422a9c59524b58b43710, type: 3}
+  m_Name: SpawnTable_Intern
   m_EditorClassIdentifier: 
-  roomList:
-  - MovementAim
-  - PaintUse
-  - InternIntro
-  - MixingUse
-  - InternBoss
+  prefabsToSpawn:
+  - {fileID: 5730607658778991913, guid: 086b8dc5a12bbe24eb0ede588752e555, type: 3}
