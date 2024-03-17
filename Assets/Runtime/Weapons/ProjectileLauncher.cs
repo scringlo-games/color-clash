@@ -1,3 +1,4 @@
+using ScringloGames.ColorClash.Runtime.Aiming;
 using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Weapons.Framework;
 using UnityEngine;
@@ -20,7 +21,19 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         private GameObject objectToLaunch;
         [SerializeField]
         private GameObject fireFrom;
-
+        
+        /// <summary>
+        /// Does this fire on delay?
+        /// </summary>
+        [SerializeField] private bool hasDelay = false;
+        /// <summary>
+        /// If this fires on delay, it lasts this long.
+        /// </summary>
+        [SerializeField] private float fireDelay = 0;
+        private bool isDelayed = false;
+        private float delayCounter = 0;
+        
+        private DirectionalLooker looker;
         public GameObject ObjectToLaunch
         {
             get => this.objectToLaunch;
@@ -30,6 +43,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         private void OnEnable()
         {
             this.weapon.UseSucceeded += this.OnWeaponUseSucceeded;
+            looker = this.GetComponentInParent<DirectionalLooker>();
         }
 
         private void OnDisable()
@@ -55,9 +69,36 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
             }
         }
 
+        private void Update()
+        {
+            if (isDelayed)
+            {
+                if (delayCounter < fireDelay)
+                {
+                    delayCounter += Time.deltaTime;
+                }
+                else
+                {
+                    this.Launch();
+                    delayCounter = 0;
+                    isDelayed = false;
+                    this.looker.UnlockRotation();
+                }
+            }
+        }
+
         private void OnWeaponUseSucceeded(WeaponUsedArgs<WeaponContext> args)
         {
-            this.Launch();
+            if (hasDelay)
+            {
+                isDelayed = true;
+                looker.LockRotation();
+            }
+            else
+            {
+                this.Launch(); 
+            }
+            
         }
     }
 }

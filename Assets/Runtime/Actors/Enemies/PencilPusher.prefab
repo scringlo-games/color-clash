@@ -97,6 +97,14 @@ PrefabInstance:
       value: PencilPusher
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: hasDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: fireDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: launchVelocity
       value: 50
       objectReference: {fileID: 0}
@@ -114,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Time>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Duration>k__BackingField
@@ -434,3 +442,4 @@ MonoBehaviour:
   mover: {fileID: 6750502657941412365}
   reloadTime: 4
   laserFrom: {fileID: 6521241064372854861}
+  FireDelay: 1
