@@ -24,7 +24,6 @@ namespace ScringloGames.ColorClash.Runtime.AI
 
         private bool reloadTimerOn = false;
         [SerializeField] private float reloadTime = 0.5f;
-        [SerializeField] private GameObject laserFrom;
         private float reloadTimer;
         private Ray laser;
 
@@ -72,33 +71,7 @@ namespace ScringloGames.ColorClash.Runtime.AI
         
             this.mover.MoveTo(this.target.transform.position);
         }
-
-        /// <summary>
-        /// When ready to fire, prevents aim from updating.
-        /// Handles timer for duration of being locked in.
-        /// </summary>
-        private void LockInAim(Vector3 direction)
-        {
-            if (!ReadyToFire)
-            {
-                this.looker.Direction = direction;
-            }
-            else
-            {
-                if (FireDelayTimer > 0)
-                {
-                    FireDelayTimer -= Time.deltaTime;
-                }
-                else
-                {
-                    this.weapon.Trigger.Pull();
-                    FireDelayTimer = FireDelay;
-                    ReadyToFire = false;
-                    this.weapon.Trigger.Release();
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Holds timer code for reloading.
         /// </summary>

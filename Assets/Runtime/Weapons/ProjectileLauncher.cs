@@ -1,7 +1,9 @@
 using ScringloGames.ColorClash.Runtime.Aiming;
 using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Weapons.Framework;
+using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
+using UnityEngine.Networking;
 using Random = UnityEngine.Random;
 
 namespace ScringloGames.ColorClash.Runtime.Weapons
@@ -21,7 +23,9 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         private GameObject objectToLaunch;
         [SerializeField]
         private GameObject fireFrom;
-        
+
+        [SerializeField] private bool laserOnDelay = false;
+        [SerializeField] private WeaponHasLaser laser;
         /// <summary>
         /// Does this fire on delay?
         /// </summary>
@@ -71,8 +75,14 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
 
         private void Update()
         {
+            // Firing delay
             if (isDelayed)
             {
+                if (!laser.turnedOn)
+                {
+                    laser.TurnLaserOn();
+                    laser.ShootLaser();
+                }
                 if (delayCounter < fireDelay)
                 {
                     delayCounter += Time.deltaTime;
@@ -82,6 +92,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
                     this.Launch();
                     delayCounter = 0;
                     isDelayed = false;
+                    laser.TurnLaserOff();
                     this.looker.UnlockRotation();
                 }
             }

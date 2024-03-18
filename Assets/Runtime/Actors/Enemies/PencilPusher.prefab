@@ -97,12 +97,20 @@ PrefabInstance:
       value: PencilPusher
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 1345154248942061340}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: hasDelay
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: fireDelay
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: laserOnDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: launchVelocity
@@ -122,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Time>k__BackingField
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Duration>k__BackingField
@@ -293,7 +301,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6215309431679738188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -401,15 +409,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726336c8d62fe88409fd9261488b26fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alwaysOn: 1
+  alwaysOn: 0
   laserDist: 5000
   laserFrom: {fileID: 4604026941743467837}
   lineRenderer: {fileID: 5684397651061912577}
---- !u!1 &6521241064372854861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3103448580362573876, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
-  m_PrefabInstance: {fileID: 8183515756559988857}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6750502657941412365 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3188313645062578804, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
@@ -442,5 +445,4 @@ MonoBehaviour:
   weapon: {fileID: 1742702041556327924}
   mover: {fileID: 6750502657941412365}
   reloadTime: 4
-  laserFrom: {fileID: 6521241064372854861}
   FireDelay: 1
