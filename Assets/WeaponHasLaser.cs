@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class WeaponHasLaser : MonoBehaviour
 {
+    [SerializeField] private bool alwaysOn = false;
+    
     [SerializeField] private float laserDist = 100;
     [SerializeField] private GameObject laserFrom;
     [SerializeField] private LineRenderer lineRenderer;
 
-    void OnUpdate()
+    void Update()
     {
-        ShootLaser();
+        if (alwaysOn) { ShootLaser();}
     }
-    void ShootLaser()
+    public void ShootLaser()
     {
         if (Physics2D.Raycast(laserFrom.transform.position, laserFrom.transform.up))
         {
