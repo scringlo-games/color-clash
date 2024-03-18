@@ -36,6 +36,14 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         [SerializeField] private float fireDelay = 0;
         private bool isDelayed = false;
         private float delayCounter = 0;
+
+        /// <summary>
+        /// Scuffed fix because lasers activate on spawn.
+        /// So, why not disable them the first time?
+        /// (Many reasons. But we are in gold.)
+        /// </summary>
+        private bool firstShot = true;
+        
         
         private DirectionalLooker looker;
         public GameObject ObjectToLaunch
@@ -78,7 +86,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
             // Firing delay
             if (isDelayed)
             {
-                if (!laser.turnedOn)
+                if (!laser.turnedOn && !firstShot)
                 {
                     laser.TurnLaserOn();
                     laser.ShootLaser();
@@ -94,6 +102,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
                     isDelayed = false;
                     laser.TurnLaserOff();
                     this.looker.UnlockRotation();
+                    firstShot = false;
                 }
             }
         }
