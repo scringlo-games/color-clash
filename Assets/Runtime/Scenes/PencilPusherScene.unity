@@ -424,6 +424,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2858198138396554182, guid: ee40d71235bf292438ace5f932667fee, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4052493332200133897, guid: ee40d71235bf292438ace5f932667fee, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.1254902
@@ -11655,6 +11659,10 @@ PrefabInstance:
     - target: {fileID: 6996973256432557079, guid: ee40d71235bf292438ace5f932667fee, type: 3}
       propertyPath: m_Tiles.Array.data[179].second.m_TileObjectToInstantiateIndex
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240541494663094743, guid: ee40d71235bf292438ace5f932667fee, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7272490220591642355, guid: ee40d71235bf292438ace5f932667fee, type: 3}
       propertyPath: waveList.waves.Array.size

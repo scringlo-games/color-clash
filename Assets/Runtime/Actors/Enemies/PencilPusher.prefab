@@ -413,6 +413,9 @@ MonoBehaviour:
   laserDist: 5000
   laserFrom: {fileID: 4604026941743467837}
   lineRenderer: {fileID: 5684397651061912577}
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &6750502657941412365 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3188313645062578804, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}

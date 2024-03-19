@@ -14,6 +14,7 @@ public class WeaponHasLaser : MonoBehaviour
     /// START DISABLED!
     /// </summary>
     [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private LayerMask mask;
 
 
     private void OnEnable()
@@ -52,8 +53,9 @@ public class WeaponHasLaser : MonoBehaviour
         Vector2 LaserUp = laserFrom.transform.up;
         if (Physics2D.Raycast(LaserOriginPosition, LaserUp))
         {
-            RaycastHit2D hit = Physics2D.Raycast(LaserOriginPosition, LaserUp);
-            Draw2DRay(LaserOriginPosition, hit.transform.position);
+            RaycastHit2D hit = Physics2D.Raycast(LaserOriginPosition, LaserUp, laserDist, mask);
+            Draw2DRay(LaserOriginPosition, hit.point);
+            
         }
         else
         {
