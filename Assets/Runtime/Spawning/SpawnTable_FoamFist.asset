@@ -9,16 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4664e13dcd5a7d94aaa73ccd192634cb, type: 3}
-  m_Name: Room List
+  m_Script: {fileID: 11500000, guid: e42cf244f43e422a9c59524b58b43710, type: 3}
+  m_Name: SpawnTable_FoamFist
   m_EditorClassIdentifier: 
-  roomList:
-  - MovementAim
-  - PaintUse
-  - InternIntro
-  - MixingUse
-  - InternBoss
-  - FoamFistIntro
-  - FoamFistElaborate
-  - FoamFistIntern
-  - FoamFistBoss
+  prefabsToSpawn:
+  - {fileID: 5730607658778991913, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
