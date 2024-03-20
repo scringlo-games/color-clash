@@ -1146,7 +1146,7 @@ MonoBehaviour:
   creditButton: {fileID: 1962019136}
   credittReturnButton: {fileID: 1945468171}
   creditPanel: {fileID: 1159559949}
-  firstSceneName: StartScene
+  firstSceneName: MovementAim
 --- !u!1 &813933487
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System;
 using ScringloGames.ColorClash.Runtime.Damage;
+using TravisRFrench.Common.Runtime.Timing;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Health
@@ -13,6 +14,10 @@ namespace ScringloGames.ColorClash.Runtime.Health
         private HealthRegistrar registrar;
         [SerializeField]
         private DamageArgsEvent damagedEvent;
+        [SerializeField]
+        private Interval interval;
+        
+        public bool IsInvincible { get; private set; }
 
         public event Action<float> HealthChanged;
 
@@ -25,12 +30,19 @@ namespace ScringloGames.ColorClash.Runtime.Health
         {
             this.registrar.Register(this);
             this.damagedEvent.Raised += this.OnDamaged;
+            this.interval.Elapsed += this.OnIntervalElapsed;
         }
 
         private void OnDisable()
         {
             this.registrar.Deregister(this);
             this.damagedEvent.Raised -= this.OnDamaged;
+            this.interval.Elapsed -= this.OnIntervalElapsed;
+        }
+
+        private void Update()
+        {
+            this.interval.Tick(Time.deltaTime);
         }
 
         private void TakeDamage(float amount)
@@ -57,8 +69,21 @@ namespace ScringloGames.ColorClash.Runtime.Health
             {
                 return;
             }
+
+            if (this.IsInvincible)
+            {
+                return;
+            }
             
+            this.interval.Reset();
+            this.interval.Start();
+            this.IsInvincible = true;
             this.TakeDamage(args.Amount);
+        }
+        
+        private void OnIntervalElapsed(IInterval interval)
+        {
+            this.IsInvincible = false;
         }
     }
 }

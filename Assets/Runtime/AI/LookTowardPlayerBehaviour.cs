@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Aiming;
+﻿using ScringloGames.ColorClash.Runtime.Aiming;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.AI

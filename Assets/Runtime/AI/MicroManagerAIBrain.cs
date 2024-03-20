@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using ScringloGames.ColorClash.Runtime.Aiming;
 using ScringloGames.ColorClash.Runtime.Movement;
 using ScringloGames.ColorClash.Runtime.Weapons;
