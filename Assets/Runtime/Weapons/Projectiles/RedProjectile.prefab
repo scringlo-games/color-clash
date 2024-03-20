@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: spawnObj
       value: 
       objectReference: {fileID: 5750940230600096753, guid: c1f795831309b5f4280f77a8bd985d1c, type: 3}
+    - target: {fileID: 6579831513382249118, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
+      propertyPath: behaviours.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6579831513382249118, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
+      propertyPath: behaviours.Array.data[2]
+      value: 
+      objectReference: {fileID: 3827482918206959367}
+    - target: {fileID: 6579831513382249118, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
+      propertyPath: behaviours.Array.data[3]
+      value: 
+      objectReference: {fileID: 7995685514610152461}
     - target: {fileID: 6602228063636873149, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
       propertyPath: m_Name
       value: RedProjectile
@@ -110,5 +122,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855a8a821e7c4b56a233f6c1f4c91aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7995685514610152461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4901289499542378357, guid: 28b0562a0f396344bbc52742521c26e1, type: 3}
+  m_PrefabInstance: {fileID: 6128693995661933702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050092730644915003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3cea533d3f4141975b6bbbd897f26c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

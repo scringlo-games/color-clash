@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Audio
 {
-    [CreateAssetMenu(menuName = "Scriptables/Services/Audio Service")]
+    [CreateAssetMenu(menuName = "Scriptables/Game Services/Audio Service")]
     public class AudioService : GameService
     {
         private AudioManager manager;

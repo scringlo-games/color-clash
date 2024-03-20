@@ -4,16 +4,20 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class OnCollisionEnterApplyHealOriginatorPercentageOfDamageOnDamageTakenCondition : OnCollisionEnterApplyConditionToOther
+    public class OnCollisionEnterApplyHealOriginatorPercentageOfDamageOnDamageTakenCondition 
+        : OnCollisionEnterApplyConditionToOther
     {
         [SerializeField]
         private float percentage;
         [SerializeField]
         private DamageArgsEvent damagedEvent;
 
-        protected override Condition GetCondition(Collision2D collision)
+        protected override Condition GetCondition(Collider2D collider2D)
         {
-            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.duration, this.damagedEvent, this.percentage);
+            return new HealOriginatorForPercentageOfDamageOnDamageTakenCondition(
+                this.duration, 
+                this.damagedEvent,
+                this.percentage);
         }
     }
 }

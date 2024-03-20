@@ -4,16 +4,20 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class OnCollisionEnterApplyHealOriginatorFlatAmountOnDamageTakenCondition : OnCollisionEnterApplyConditionToOther
+    public class OnCollisionEnterApplyHealOriginatorFlatAmountOnDamageTakenCondition 
+        : OnCollisionEnterApplyConditionToOther
     {
         [SerializeField]
         private float amount;
         [SerializeField]
         private DamageArgsEvent damagedEvent;
 
-        protected override Condition GetCondition(Collision2D collision)
+        protected override Condition GetCondition(Collider2D collider2D)
         {
-            return new HealOriginatorForFlatAmountOnDamageTakenCondition(this.duration, this.damagedEvent, this.amount);
+            return new HealOriginatorForFlatAmountOnDamageTakenCondition(
+                this.duration, 
+                this.damagedEvent, 
+                this.amount);
         }
     }
 }

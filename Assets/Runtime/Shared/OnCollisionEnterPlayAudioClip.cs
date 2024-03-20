@@ -1,11 +1,12 @@
 ﻿using ScringloGames.ColorClash.Runtime.Audio;
+using ScringloGames.ColorClash.Runtime.Shared.Contact;
 using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    public class OnCollisionEnterPlayAudioClip : MonoBehaviour
+    public class OnCollisionEnterPlayAudioClip : ContactBehaviour
     {
         [SerializeField]
         private AudioService service;
@@ -15,10 +16,10 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         private float pitchVariation = 0.2f;
         [SerializeField]
         private GameObjectFilterSet filter;
-        
-        private void OnCollisionEnter2D(Collision2D collision)
+
+        public override void OnCollisionEntered(Collision2D collision2D)
         {
-            if (!this.filter.Evaluate(collision.gameObject))
+            if (!this.filter.Evaluate(collision2D.gameObject))
             {
                 return;
             }

@@ -171,8 +171,12 @@ MonoBehaviour:
   weapon: {fileID: 3055415138624061943}
   count: 5
   capacity: 5
+  reloadInterval:
+    <Time>k__BackingField: 0
+    <Duration>k__BackingField: 1.5
   outOfAmmoEvent: {fileID: 11400000, guid: 57975dbeb785c9f4abef13b67b6b0f42, type: 2}
-  reloadEvent: {fileID: 11400000, guid: ac6bf7f8b8cb7944db7cb8c19d2919ba, type: 2}
+  reloadStartedEvent: {fileID: 11400000, guid: 421ca904126b5bd498d9835054d8831d, type: 2}
+  reloadCompletedEvent: {fileID: 11400000, guid: ac6bf7f8b8cb7944db7cb8c19d2919ba, type: 2}
 --- !u!114 &6212275566359092068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9e116d4ee8c32c8488d42305ca4351d8, type: 3}
-  pitch: 1
+  pitchMinimum: 0.75
+  pitchMaximum: 1.25
   weapon: {fileID: 3055415138624061943}
   service: {fileID: 11400000, guid: 89cbf91d2957ffe4a8bae1d2d733b56c, type: 2}

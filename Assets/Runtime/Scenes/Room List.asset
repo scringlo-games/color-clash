@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Room List
   m_EditorClassIdentifier: 
   roomList:
-  - StartScene
-  - FoamFistScene
-  - PencilPusherScene
-  - InternFoamScene
-  - BossBattle
+  - MovementAim
+  - PaintUse
+  - InternIntro
+  - MixingUse
+  - InternBoss
+  - FoamFistIntro
+  - FoamFistElaborate
+  - FoamFistIntern
+  - FoamFistBoss

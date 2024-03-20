@@ -16,20 +16,24 @@ namespace ScringloGames.ColorClash.Runtime.UI
         [SerializeField]
         private Vector2 offset;
         private float startHealth;
-        void Awake()
+
+        private void Awake()
         {
             this.startHealth = this.health.MaxHealth; 
         }
-        void OnEnable()
+
+        private void OnEnable()
         {
             this.health.HealthChanged += this.SpawnDamageNumber;
 
         }
-        void OnDisable()
+
+        private void OnDisable()
         {
             this.health.HealthChanged -= this.SpawnDamageNumber;
         }
-        void SpawnDamageNumber(float num)
+
+        private void SpawnDamageNumber(float num)
         {
             var indicatorColor = Color.white;
             var damage = this.startHealth - num;
@@ -46,7 +50,7 @@ namespace ScringloGames.ColorClash.Runtime.UI
             var damageObj = Instantiate(this.damageIndicatorObject,this.transform.position + (Vector3)this.offset, Quaternion.identity);
             if(damageObj.TryGetComponent<DamageNumberSetup>(out var numSetup))
             {
-                numSetup.Setup(damage, indicatorColor);
+                numSetup.Setup((float)System.Math.Round(damage, 1), indicatorColor);
             }
         }
         
