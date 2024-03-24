@@ -363,8 +363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d418a60ce2b882c4089e40b5d0cdde49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObj: {fileID: 0}
+  spawnObjects:
+  - {fileID: 0}
   destructible: {fileID: 1575108175203909186}
+  randomRotation: 1
+  scaleVariation: 1
 --- !u!114 &1575108175203909186
 MonoBehaviour:
   m_ObjectHideFlags: 0
