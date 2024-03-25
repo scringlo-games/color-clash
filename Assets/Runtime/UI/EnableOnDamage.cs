@@ -30,7 +30,7 @@ namespace ScringloGames.ColorClash.Runtime
         void OnDamaged(DamageArgs args)
         {
             Debug.Log("This is Damaged");
-            if(this.filter.Evaluate(args.Receiver.gameObject))
+            if(this.filter.Evaluate(args.Receiver.gameObject) && args.Amount >= 5f)
             {
                 StartCoroutine(EnableObject());
             }
