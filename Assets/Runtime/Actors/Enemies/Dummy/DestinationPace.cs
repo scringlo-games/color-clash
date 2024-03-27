@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Pathfinding.Util;
 using ScringloGames.ColorClash.Runtime.Movement;
-using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
-using UnityEngine.InputSystem.Android;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Actors.Enemies.Dummy
 {
     public class DestinationPace : MonoBehaviour
     {
