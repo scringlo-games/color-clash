@@ -1004,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummaryScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2007493962184609424, guid: 73a19b4f9461c754287e2577b4ea502a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2750414254171485109, guid: 73a19b4f9461c754287e2577b4ea502a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
