@@ -1,13 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using ScringloGames.ColorClash.Runtime.Shared;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.InputSystem.EnhancedTouch;
-using UnityEngine.UIElements;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Actors.Enemies
 {
     public class DeathSequence : MonoBehaviour
     {   [Header("Splatter Behavior")]

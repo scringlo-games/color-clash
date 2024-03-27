@@ -1,9 +1,7 @@
 using ScringloGames.ColorClash.Runtime.Aiming;
 using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Weapons.Framework;
-using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
-using UnityEngine.Networking;
 using Random = UnityEngine.Random;
 
 namespace ScringloGames.ColorClash.Runtime.Weapons

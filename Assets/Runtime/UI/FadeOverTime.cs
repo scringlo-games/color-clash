@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.UI
 {
     public class FadeOverTime : MonoBehaviour
     {
