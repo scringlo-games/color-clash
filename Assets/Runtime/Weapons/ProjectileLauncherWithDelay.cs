@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using ScringloGames.ColorClash.Runtime.Weapons;
-using UnityEngine;
-
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Weapons
 {
     public class ProjectileLauncherWithDelay : ProjectileLauncher
     {

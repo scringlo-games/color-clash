@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using ScringloGames.ColorClash.Runtime.Movement;
 using ScringloGames.ColorClash.Runtime.Shared.Attributes;
 using TravisRFrench.Attributes.Runtime;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Actors.Enemies.FoamFist
 {
     public class ChargeBehavior : MonoBehaviour
     {

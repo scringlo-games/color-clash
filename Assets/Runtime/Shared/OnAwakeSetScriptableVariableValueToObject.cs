@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
+﻿using ScringloGames.ColorClash.Runtime.Shared.ScriptableVariables;
 using UnityEngine;
 using Object = UnityEngine.Object;
 

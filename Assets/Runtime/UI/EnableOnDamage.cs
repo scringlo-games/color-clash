@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Shared.GameObjectFilters;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.UI
 {
     public class EnableOnDamage : MonoBehaviour
     {
