@@ -1,29 +1,31 @@
-using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 
-public class DestroysSelfOnTimer : MonoBehaviour
+namespace ScringloGames.ColorClash.Runtime.Shared
 {
-    [SerializeField] private float Lifetime;
-    [SerializeField] private Destructible destructible;
-
-    private float lifeLeft;
-    // Start is called before the first frame update
-    void OnEnable()
+    public class DestroysSelfOnTimer : MonoBehaviour
     {
-        this.lifeLeft = this.Lifetime;
+        [SerializeField] private float Lifetime;
+        [SerializeField] private Destructible destructible;
+
+        private float lifeLeft;
+        // Start is called before the first frame update
+        void OnEnable()
+        {
+            this.lifeLeft = this.Lifetime;
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (this.lifeLeft <= 0)
-        {
-            this.destructible.Destroy();
         }
-        else
+
+        // Update is called once per frame
+        void Update()
         {
-            this.lifeLeft -= Time.deltaTime;
+            if (this.lifeLeft <= 0)
+            {
+                this.destructible.Destroy();
+            }
+            else
+            {
+                this.lifeLeft -= Time.deltaTime;
+            }
         }
     }
 }
