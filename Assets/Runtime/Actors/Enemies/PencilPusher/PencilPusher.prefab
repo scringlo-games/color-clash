@@ -97,6 +97,26 @@ PrefabInstance:
       value: PencilPusher
       objectReference: {fileID: 0}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 1345154248942061340}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: hasDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: fireDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: laserOnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: launchVelocity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: objectToLaunch
       value: 
       objectReference: {fileID: 4112347388748418690, guid: d88947d037e3dfb4ba55aadef07e06dc, type: 3}
@@ -142,11 +162,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 34918a74ceb0bfb4098ec0b3fdf83c4f, type: 2}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Time>k__BackingField
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6457395978326122888, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: cooldown.<Duration>k__BackingField
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6848697756835719668, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_IsActive
@@ -166,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7876747178249291403, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7876747178249291403, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: reloadInterval.<Duration>k__BackingField
@@ -333,7 +353,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6215309431679738188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -346,7 +366,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8bcd869207cd9d644b408108a1fbddbd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -378,7 +398,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.14385912
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -390,8 +410,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -415,11 +435,11 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 2
+    numCapVertices: 10
     alignment: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
@@ -441,9 +461,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726336c8d62fe88409fd9261488b26fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alwaysOn: 0
   laserDist: 5000
   laserFrom: {fileID: 4604026941743467837}
   lineRenderer: {fileID: 5684397651061912577}
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &6750502657941412365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3188313645062578804, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+  m_PrefabInstance: {fileID: 8183515756559988857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9087744376142592460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2669375a858f4b00b5cfd27e485036ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9087744376142592460 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
@@ -462,3 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   looker: {fileID: 4951815679078561698}
+  weapon: {fileID: 1742702041556327924}
+  mover: {fileID: 6750502657941412365}
+  reloadTime: 4
+  FireDelay: 1

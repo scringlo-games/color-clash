@@ -1,6 +1,9 @@
+using ScringloGames.ColorClash.Runtime.Aiming;
 using ScringloGames.ColorClash.Runtime.Damage;
 using ScringloGames.ColorClash.Runtime.Weapons.Framework;
+using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
+using UnityEngine.Networking;
 using Random = UnityEngine.Random;
 
 namespace ScringloGames.ColorClash.Runtime.Weapons
@@ -21,6 +24,28 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         [SerializeField]
         private GameObject fireFrom;
 
+        [SerializeField] private bool laserOnDelay = false;
+        [SerializeField] private WeaponHasLaser laser;
+        /// <summary>
+        /// Does this fire on delay?
+        /// </summary>
+        [SerializeField] private bool hasDelay = false;
+        /// <summary>
+        /// If this fires on delay, it lasts this long.
+        /// </summary>
+        [SerializeField] private float fireDelay = 0;
+        private bool isDelayed = false;
+        private float delayCounter = 0;
+
+        /// <summary>
+        /// Scuffed fix because lasers activate on spawn.
+        /// So, why not disable them the first time?
+        /// (Many reasons. But we are in gold.)
+        /// </summary>
+        private bool firstShot = true;
+        
+        
+        private DirectionalLooker looker;
         public GameObject ObjectToLaunch
         {
             get => this.objectToLaunch;
@@ -30,6 +55,7 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
         private void OnEnable()
         {
             this.weapon.UseSucceeded += this.OnWeaponUseSucceeded;
+            looker = this.GetComponentInParent<DirectionalLooker>();
         }
 
         private void OnDisable()
@@ -55,9 +81,44 @@ namespace ScringloGames.ColorClash.Runtime.Weapons
             }
         }
 
+        private void Update()
+        {
+            // Firing delay
+            if (isDelayed)
+            {
+                if (!laser.turnedOn && !firstShot)
+                {
+                    laser.TurnLaserOn();
+                    laser.ShootLaser();
+                }
+                if (delayCounter < fireDelay)
+                {
+                    delayCounter += Time.deltaTime;
+                }
+                else
+                {
+                    this.Launch();
+                    delayCounter = 0;
+                    isDelayed = false;
+                    laser.TurnLaserOff();
+                    this.looker.UnlockRotation();
+                    firstShot = false;
+                }
+            }
+        }
+
         private void OnWeaponUseSucceeded(WeaponUsedArgs<WeaponContext> args)
         {
-            this.Launch();
+            if (hasDelay)
+            {
+                isDelayed = true;
+                looker.LockRotation();
+            }
+            else
+            {
+                this.Launch(); 
+            }
+            
         }
     }
 }

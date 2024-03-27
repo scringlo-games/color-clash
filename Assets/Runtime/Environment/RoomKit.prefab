@@ -13536,8 +13536,108 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4290939428379528779, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3364512723611115320}
+    - targetCorrespondingSourceObject: {fileID: 4290939428379528779, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 507645845020659045}
   m_SourcePrefab: {fileID: 100100000, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
+--- !u!1 &4984536934098462484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4290939428379528779, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
+  m_PrefabInstance: {fileID: 9124533922968332639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3364512723611115320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4984536934098462484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdbf183bacdd194fb2fd801bddc99a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 507645845020659045}
+  maxDuration: 0.0625
+  damagedEvent: {fileID: 11400000, guid: c69c682de0c6c374092dcb8653fe2702, type: 2}
+  filter:
+    operation: 0
+    entries:
+    - filter: {fileID: 11400000, guid: 85015e956afc0684684557676bd228ed, type: 2}
+      negate: 1
+    - filter: {fileID: 11400000, guid: 602d083ed63d51345b8fa75785251ccc, type: 2}
+      negate: 1
+--- !u!114 &507645845020659045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4984536934098462484}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89cd7b5a39c06f45a8a00386b5364d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4984536934098462484}
+  shakeRotation: 0.5
+  shakeDuration: 0.0625
+  numberOfShakes: 1
+  shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: 5.5031133
+      outSlope: 5.5031133
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.24855185
+    - serializedVersion: 3
+      time: 0.75
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &8647947685873039978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 478355571827331893, guid: dad3563113313df45ac81fce2d2b017e, type: 3}
