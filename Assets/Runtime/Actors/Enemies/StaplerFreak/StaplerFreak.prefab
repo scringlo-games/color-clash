@@ -218,8 +218,17 @@ PrefabInstance:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AttackBehaviour","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Behaviour,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AttackRange","value":{"$content":1.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Weapon","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"ScringloGames.ColorClash.Runtime.Weapons.Weapon,
-        ScringloGames.ColorClash.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+        ScringloGames.ColorClash.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"WalkBehavior","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Behaviour,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
+    - target: {fileID: 8527596333343173069, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: _data._objectReferences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527596333343173069, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: _data._objectReferences.Array.data[3]
+      value: 
+      objectReference: {fileID: 949518536772283751}
     - target: {fileID: 8689181145356377693, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: behaviours.Array.size
       value: 2
@@ -242,6 +251,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6134322360635172482}
   m_SourcePrefab: {fileID: 100100000, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+--- !u!114 &949518536772283751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4008948656266917940, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+  m_PrefabInstance: {fileID: 4219867920498709843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819172195863483622}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a29b1a30351c524cae10f20698759f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1127634537620855432 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3830824023592144859, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
