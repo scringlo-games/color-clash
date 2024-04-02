@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5457e346f3159a43bbbe6c87a660369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exit: {fileID: 0}
   waveList:
     waves: []
   roomClearedEvent: {fileID: 11400000, guid: 6f6877cb886daa14fa58aa5fd28694d7, type: 2}

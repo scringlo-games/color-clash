@@ -19,6 +19,7 @@ namespace ScringloGames.ColorClash.Runtime.Environment
             }
 
         }
+        
         public void Activate()
         {
             this.thisCollider.enabled = true;

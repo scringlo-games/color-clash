@@ -6,10 +6,11 @@ namespace ScringloGames.ColorClash.Runtime.Spawning
     {
         [SerializeField]
         private GameObject obj;
-        public GameObject spawnedObj {get; private set;}
+        public GameObject ObjectToSpawn { get; private set; }
+        
         public void SpawnObject()
         {
-            this.spawnedObj = Instantiate(this.obj,this.transform.position, Quaternion.identity);
+            this.ObjectToSpawn = Instantiate(this.obj,this.transform.position, Quaternion.identity);
             
         }
     }

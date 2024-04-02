@@ -62,7 +62,7 @@ namespace ScringloGames.ColorClash.Runtime.Spawning.EnemySpawning
                 foreach(var point in this.waveList.waves[this.currentWaveIndex].spawnList)
                 {
                     point.SpawnObject();
-                    this.currentWaveObjects.Add(point.spawnedObj);
+                    this.currentWaveObjects.Add(point.ObjectToSpawn);
                 }
             }
             else
