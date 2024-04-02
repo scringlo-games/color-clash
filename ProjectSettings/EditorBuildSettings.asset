@@ -36,6 +36,15 @@ EditorBuildSettings:
     path: Assets/Runtime/Scenes/FoamFistSequence/FoamFistBoss.unity
     guid: 299c140bcbf655e438e5a7428e240d36
   - enabled: 1
+    path: Assets/Runtime/Scenes/PencilPusherSequence/PencilPusherIntro.unity
+    guid: b893c408b2ca9fe489440a0979a90e9b
+  - enabled: 1
+    path: Assets/Runtime/Scenes/PencilPusherSequence/PencilPusherFoamFist.unity
+    guid: 469bb9d8bf5f35c4bad3e46cf10b7ad7
+  - enabled: 1
+    path: Assets/Runtime/Scenes/PencilPusherSequence/PencilPusherEscalate.unity
+    guid: 8164738ecc5e669418812196530dbcbd
+  - enabled: 1
     path: Assets/Runtime/Scenes/StaplerFreakSequence/StaplerFreakIntro.unity
     guid: 8a12c4a528d03e441a24896ebbd183a6
   - enabled: 1
@@ -47,4 +56,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Runtime/Scenes/StaplerFreakSequence/StaplerFreakBoss.unity
     guid: 0b5b9f7c5926b7f46b712cc68e9d567c
+  - enabled: 1
+    path: Assets/Runtime/Scenes/MicroManagerSequence/MicroManagerIntro.unity
+    guid: 1d5eecfb5d45b6f4f90132c66264948b
+  - enabled: 1
+    path: Assets/Runtime/Scenes/MicroManagerSequence/MicroManagerFoamFist.unity
+    guid: 0c99d4830bfaabc42b37cf9436c6308b
+  - enabled: 1
+    path: Assets/Runtime/Scenes/MicroManagerSequence/MicroManagerFFandPP.unity
+    guid: bfc575c688093c040bf4cf6851093165
   m_configObjects: {}
