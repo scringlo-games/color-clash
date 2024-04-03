@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StaplerFreak
       objectReference: {fileID: 0}
+    - target: {fileID: 1492449677477913833, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0dfe8261ef72ac147be2a354ae6fdcfd, type: 3}
     - target: {fileID: 1660615054540043390, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -242,6 +246,10 @@ PrefabInstance:
       propertyPath: behaviours.Array.data[1]
       value: 
       objectReference: {fileID: 6134322360635172482}
+    - target: {fileID: 8913436112231226112, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: puddleScale
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: globalDamageTakenMultiplier.modifiedValue
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1492449677477913833, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e6334493e86eddd4a837ffa1b6731cac, type: 3}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: objectToLaunch
       value: 
