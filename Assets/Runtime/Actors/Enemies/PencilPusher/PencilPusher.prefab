@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PencilPusher
       objectReference: {fileID: 0}
+    - target: {fileID: 1492449677477913833, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a2b82acfa43c7414bac05438b2413943, type: 3}
     - target: {fileID: 1541934666908843875, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: laser
       value: 
@@ -259,16 +263,25 @@ PrefabInstance:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AttackRange","value":{"$content":Infinity,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Weapon","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"ScringloGames.ColorClash.Runtime.Weapons.Weapon,
         ScringloGames.ColorClash.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"WalkBehavior","value":null,"typeHandle":{"Identification":"UnityEngine.Behaviour,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"GraphicsObject","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 8527596333343173069, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: _data._objectReferences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8527596333343173069, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: _data._objectReferences.Array.data[2]
       value: 
       objectReference: {fileID: 1742702041556327924}
+    - target: {fileID: 8527596333343173069, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: _data._objectReferences.Array.data[3]
+      value: 
+      objectReference: {fileID: 1515932032560649122}
+    - target: {fileID: 8913436112231226112, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: puddleScale
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -289,6 +302,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6174489192271966051}
   m_SourcePrefab: {fileID: 100100000, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+--- !u!1 &1515932032560649122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7248574515762441179, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+  m_PrefabInstance: {fileID: 8183515756559988857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1742702041556327924 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7619776654575003021, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
