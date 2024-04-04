@@ -56,8 +56,8 @@ namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
             DOTween.Sequence()
                 .Insert(0, this.right.FadeIn())
                 .Insert(0, this.left.PushLeft())
-                .Insert(1, this.left.MergeToCenter())
-                .Insert(1, this.right.MergeToCenter())
+                .Insert(0.2f, this.left.MergeToCenter())
+                .Insert(0.2f, this.right.MergeToCenter())
                 .AppendCallback(OnMergeCompleted)
                 .Play();
             

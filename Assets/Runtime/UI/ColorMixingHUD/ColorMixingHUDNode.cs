@@ -34,7 +34,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.ColorMixingHUD
         public TweenerCore<Vector3, Vector3, VectorOptions> MergeToCenter()
         {
             return this.rectTransform
-                .DOLocalMoveX(0f, 0.1f)
+                .DOLocalMoveX(0f, 0.2f)
                 .From(this.startingPosition);
         }
 
