@@ -305,6 +305,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 739077932382023155, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: count
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 739077932382023155, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
+      propertyPath: capacity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 739077932382023155, guid: 37378f282fc4dec4eb46b2e43f953d22, type: 3}
       propertyPath: reloadInterval.<Duration>k__BackingField
       value: 0
       objectReference: {fileID: 0}
