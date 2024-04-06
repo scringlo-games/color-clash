@@ -92,6 +92,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 421151218982700586, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 137898ed5e65c944db39575c9bd01282, type: 3}
+    - target: {fileID: 421151218982700586, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1121281290240885173, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_Name
       value: StaplerFreak
@@ -111,6 +119,18 @@ PrefabInstance:
     - target: {fileID: 1660615054540043390, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787800262356450501, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153069815382051997, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8164
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153069815382051997, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 2278556885959722315, guid: edd2c5582a2dd9b44a43476035e2aede, type: 3}
       propertyPath: m_Enabled
