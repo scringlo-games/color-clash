@@ -776,7 +776,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHealthHUD
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3172448402774742930, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706401346252018268, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 678426317092278412, guid: 69a4318a2ce9e4049bd7e6b0ec509bc4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
