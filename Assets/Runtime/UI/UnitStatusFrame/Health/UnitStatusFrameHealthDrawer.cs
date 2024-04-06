@@ -1,5 +1,6 @@
 ﻿using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame.Health
 {
@@ -8,12 +9,14 @@ namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame.Health
     {
         [SerializeField]
         private ProgressDrawer progressDrawer;
-
+        [SerializeField]
+        private RectTransform healthObj;
         public HealthHandler BoundTo { get; private set; }
         
         public void Bind(HealthHandler healthHandler)
         {
             this.BoundTo = healthHandler;
+            this.healthObj.sizeDelta = new Vector2(healthHandler.MaxHealth, this.healthObj.sizeDelta.y);
         }
 
         public void Unbind()
