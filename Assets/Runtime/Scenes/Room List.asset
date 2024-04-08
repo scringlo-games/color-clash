@@ -22,7 +22,13 @@ MonoBehaviour:
   - FoamFistElaborate
   - FoamFistIntern
   - FoamFistBoss
+  - PencilPusherIntro
+  - PencilPusherFoamFist
+  - PencilPusherEscalate
   - StaplerFreakIntro
   - StaplerFreakPencilPusher
   - StaplerPencilIntern
   - StaplerFreakBoss
+  - MicroManagerIntro
+  - MicroManagerFoamFist
+  - MicroManagerFFAndPP
