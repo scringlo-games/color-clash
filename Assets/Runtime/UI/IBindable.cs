@@ -1,10 +1,12 @@
-﻿namespace ScringloGames.ColorClash.Runtime.UI
-{
-    public interface IBindable<T>
-    {
-        T BoundTo { get; }
+﻿using UnityEngine;
 
-        void Bind(T obj);
+namespace ScringloGames.ColorClash.Runtime.UI
+{
+    public interface IBindable
+    {
+        GameObject BoundTo { get; }
+        
+        void Bind(GameObject obj);
         void Unbind();
     }
 }

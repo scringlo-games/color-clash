@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame.Conditions
 {
-    public class UnitStatusFrameConditionDrawer : MonoBehaviour, IBindable<ConditionBank>
+    public class UnitStatusFrameConditionDrawer : MonoBehaviour, IBindable
     {
         [Header("Drawers")]
         [SerializeField]
@@ -20,12 +20,12 @@ namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame.Conditions
         private ConditionAppliedOrExpiredEvent conditionExpiredEvent;
         private ConditionBank conditionBank;
         
-        public ConditionBank BoundTo { get; private set; }
+        public GameObject BoundTo { get; private set; }
 
-        public void Bind(ConditionBank conditionBank)
+        public void Bind(GameObject obj)
         {
-            this.BoundTo = conditionBank;
-            this.conditionBank = conditionBank.GetComponent<ConditionBank>();
+            this.BoundTo = obj;
+            this.conditionBank = obj.GetComponent<ConditionBank>();
         }
 
         public void Unbind()

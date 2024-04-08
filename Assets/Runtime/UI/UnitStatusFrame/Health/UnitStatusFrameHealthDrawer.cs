@@ -1,21 +1,23 @@
 ﻿using ScringloGames.ColorClash.Runtime.Health;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame.Health
 {
     [ExecuteAlways]
-    public class UnitStatusFrameHealthDrawer : MonoBehaviour, IBindable<HealthHandler>
+    public class UnitStatusFrameHealthDrawer : MonoBehaviour, IBindable
     {
         [SerializeField]
         private ProgressDrawer progressDrawer;
         [SerializeField]
         private RectTransform healthObj;
-        public HealthHandler BoundTo { get; private set; }
+        private HealthHandler healthHandler;
+        public GameObject BoundTo { get; private set; }
         
-        public void Bind(HealthHandler healthHandler)
+        public void Bind(GameObject obj)
         {
-            this.BoundTo = healthHandler;
+            this.BoundTo = obj;
+            this.healthHandler = obj.GetComponent<HealthHandler>();
+            
             this.healthObj.sizeDelta = new Vector2(healthHandler.MaxHealth, this.healthObj.sizeDelta.y);
         }
 
@@ -36,7 +38,6 @@ namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame.Health
                 return;
             }
             
-            var healthHandler = this.BoundTo;
             if (healthHandler == null)
             {
                 return;
