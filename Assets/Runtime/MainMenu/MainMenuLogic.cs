@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ScringloGames.ColorClash.Runtime.MainMenu
@@ -12,8 +13,9 @@ namespace ScringloGames.ColorClash.Runtime.MainMenu
         private Button startButton;
         [SerializeField]
         private Button creditButton;
+        [FormerlySerializedAs("credittReturnButton")]
         [SerializeField]
-        private Button credittReturnButton;
+        private Button creditReturnButton;
         [SerializeField]
         private GameObject creditPanel;
         [SerializeField]
@@ -21,18 +23,21 @@ namespace ScringloGames.ColorClash.Runtime.MainMenu
 
         private void OnEnable()
         {
+            
             this.startButton.onClick.AddListener(this.LoadFirstScene);
             this.creditButton.onClick.AddListener(this.ToggleCreditPanel);
-            this.credittReturnButton.onClick.AddListener(this.ToggleCreditPanel);
+            this.creditReturnButton.onClick.AddListener(this.ToggleCreditPanel);
             this.quitButton.onClick.AddListener(this.AppQuit);
             this.creditPanel.SetActive(false);
+            
+            this.startButton.Select();
         }
 
         private void OnDisable()
         {
             this.startButton.onClick.RemoveAllListeners();
             this.creditButton.onClick.RemoveAllListeners();
-            this.credittReturnButton.onClick.RemoveAllListeners();
+            this.creditReturnButton.onClick.RemoveAllListeners();
             this.quitButton.onClick.RemoveAllListeners();
         }
 

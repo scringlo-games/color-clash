@@ -1,4 +1,5 @@
 ﻿using ScringloGames.ColorClash.Runtime.Health;
+using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
@@ -6,9 +7,13 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
     public class BossHealthHUDDrawer : MonoBehaviour, IBindable<HealthHandler>
     {
         [SerializeField]
+        private GameObject boss;
+        [SerializeField]
         private ProgressDrawer healthProgressDrawer;
         [SerializeField]
         private ProgressDrawer overhealProgressDrawer;
+        private HealthHandler healthHandler;
+        private Killable killable;
         
         public HealthHandler BoundTo { get; private set; }
         
@@ -22,14 +27,22 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
             this.BoundTo = null;
         }
 
+        private void Awake()
+        {
+            this.healthHandler = boss.GetComponent<HealthHandler>();
+            this.killable = boss.GetComponent<Killable>();
+        }
+
         private void OnEnable()
         {
-            // By virtue of bosses being the first enemy in a boss room, this should be effective without requiring
-            // more super niche code.
-            // For the record - I hate this.
-            var boss = GameObject.FindWithTag("Enemy");
-            var healthHandler = boss.GetComponent<HealthHandler>();
             this.Bind(healthHandler);
+            
+            killable.Killed += OnKilled;
+        }
+
+        private void OnDisable()
+        {
+            killable.Killed -= OnKilled;
         }
 
         private void Update()
@@ -56,8 +69,11 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
                 this.overhealProgressDrawer.Progress = (this.BoundTo.Health - this.BoundTo.MaxHealth) / this.BoundTo.MaxHealth;
                 this.healthProgressDrawer.Progress = 1f;
             }
-
+        }
         
+        private void OnKilled(Killable killable)
+        {
+            this.gameObject.SetActive(false);
         }
     }
 }

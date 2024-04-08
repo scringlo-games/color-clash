@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using ScringloGames.ColorClash.Runtime.Mixing;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.UI.PlayerAmmoHUD
 {
     public class PlayerAmmoHUDColor : MonoBehaviour
     {
