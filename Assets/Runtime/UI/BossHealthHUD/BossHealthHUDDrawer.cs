@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Health;
+﻿using ScringloGames.ColorClash.Runtime.Health;
 using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 
@@ -38,12 +37,12 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
         {
             this.Bind(healthHandler);
             
-            killable.Killed += OnBossKilled;
+            killable.Killed += OnKilled;
         }
 
         private void OnDisable()
         {
-            killable.Killed -= OnBossKilled;
+            killable.Killed -= OnKilled;
         }
 
         private void Update()
@@ -72,7 +71,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
             }
         }
         
-        private void OnBossKilled()
+        private void OnKilled(Killable killable)
         {
             this.gameObject.SetActive(false);
         }

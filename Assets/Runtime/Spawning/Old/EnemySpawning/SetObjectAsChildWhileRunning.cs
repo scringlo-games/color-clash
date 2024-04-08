@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Spawning.Old.EnemySpawning
 {
     public class SetObjectAsChildWhileRunning : MonoBehaviour
     {

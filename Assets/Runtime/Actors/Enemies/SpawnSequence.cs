@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.Actors.Enemies
 {
     public class SpawnSequence : MonoBehaviour
     {

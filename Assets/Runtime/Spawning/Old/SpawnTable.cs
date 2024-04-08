@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace ScringloGames.ColorClash.Runtime.Spawning
+namespace ScringloGames.ColorClash.Runtime.Spawning.Old
 {
     public class SpawnTable : ScriptableObject
     {

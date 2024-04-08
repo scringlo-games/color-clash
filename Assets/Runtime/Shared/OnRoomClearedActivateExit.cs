@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Environment;
+﻿using ScringloGames.ColorClash.Runtime.Environment;
 using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 

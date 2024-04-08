@@ -79,12 +79,21 @@ PrefabInstance:
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"AimArrow","value":{"$content":4,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"WalkBehavior","value":{"$content":5,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Behaviour,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"RaycastOrigin","value":{"$content":6,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Transform,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"GraphicsObject","value":{"$content":7,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 3913832061939086673, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: _data._objectReferences.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3913832061939086673, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+      propertyPath: _data._objectReferences.Array.data[6]
+      value: 
+      objectReference: {fileID: 993779434605731346}
+    - target: {fileID: 3913832061939086673, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+      propertyPath: _data._objectReferences.Array.data[7]
+      value: 
+      objectReference: {fileID: 3251725572065089117}
     - target: {fileID: 5730607658778991913, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
       propertyPath: m_Name
       value: FoamFistBoss
@@ -121,6 +130,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3050649268765635255}
   m_SourcePrefab: {fileID: 100100000, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+--- !u!4 &993779434605731346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 322658540470353672, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+  m_PrefabInstance: {fileID: 698283457028579610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3251725572065089117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2634814926203795271, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+  m_PrefabInstance: {fileID: 698283457028579610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4240816412674381543 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3704955149784070141, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Spawning
+namespace ScringloGames.ColorClash.Runtime.Spawning.Old
 {
     public class Spawner : MonoBehaviour
     {

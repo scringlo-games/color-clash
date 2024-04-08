@@ -1,14 +1,15 @@
-﻿using TravisRFrench.Common.Runtime.ScriptableEvents;
+﻿using System;
+using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Shared
+namespace ScringloGames.ColorClash.Runtime.Spawning
 {
-    public class OnKilledRaiseRoomClearedEvent : MonoBehaviour
+    public class OnEntityKilledDisableBehaviour : MonoBehaviour
     {
         [SerializeField]
         private Killable killable;
         [SerializeField]
-        private ScriptableEvent roomClearedEvent;
+        private Behaviour behaviourToDisable;
 
         private void OnEnable()
         {
@@ -19,10 +20,10 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         {
             this.killable.Killed -= OnKilled;
         }
-
+        
         private void OnKilled(Killable killable)
         {
-            this.roomClearedEvent.Raise();
+            behaviourToDisable.enabled = false;
         }
     }
 }

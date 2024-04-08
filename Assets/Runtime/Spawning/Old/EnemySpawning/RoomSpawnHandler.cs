@@ -4,7 +4,7 @@ using ScringloGames.ColorClash.Runtime.Environment;
 using TravisRFrench.Common.Runtime.ScriptableEvents;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime.Spawning.EnemySpawning
+namespace ScringloGames.ColorClash.Runtime.Spawning.Old.EnemySpawning
 {
     [System.Serializable]
     public class Wave

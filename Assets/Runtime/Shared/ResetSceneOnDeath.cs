@@ -13,17 +13,17 @@ namespace ScringloGames.ColorClash.Runtime.Shared
 
         private void OnEnable()
         {
-          this.death.Killed += this.ResetScene;
+            this.death.Killed += this.OnKilled;
         }
 
         private void OnDisable()
         {
-          this.death.Killed -= this.ResetScene;
+            this.death.Killed -= this.OnKilled;
         }
 
-        private void ResetScene()
+        private void OnKilled(Killable killable)
         {
-          this.sceneService.ReloadCurrentScene();
+            this.sceneService.ReloadCurrentScene();
         }
     }
 }
