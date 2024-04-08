@@ -555,6 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c344bbfa9b73404b9bf7c5e51c660887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 0}
   healthProgressDrawer: {fileID: 7166807429933395791}
   overhealProgressDrawer: {fileID: 7293881539011833921}
 --- !u!114 &7166807429933395791

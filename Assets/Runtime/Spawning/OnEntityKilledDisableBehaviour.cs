@@ -1,5 +1,4 @@
-﻿using System;
-using ScringloGames.ColorClash.Runtime.Shared;
+﻿using ScringloGames.ColorClash.Runtime.Shared;
 using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.Spawning

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
 {
-    public class BossHealthHUDDrawer : MonoBehaviour, IBindable<HealthHandler>
+    public class BossHealthHUDDrawer : MonoBehaviour, IBindable
     {
         [SerializeField]
         private GameObject boss;
@@ -15,11 +15,13 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
         private HealthHandler healthHandler;
         private Killable killable;
         
-        public HealthHandler BoundTo { get; private set; }
+        public GameObject BoundTo { get; private set; }
         
-        public void Bind(HealthHandler healthHandler)
+        public void Bind(GameObject obj)
         {
-            this.BoundTo = healthHandler;
+            this.healthHandler = obj.GetComponent<HealthHandler>();
+            this.killable = obj.GetComponent<Killable>();
+            this.BoundTo = obj;
         }
 
         public void Unbind()
@@ -29,13 +31,12 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
 
         private void Awake()
         {
-            this.healthHandler = boss.GetComponent<HealthHandler>();
-            this.killable = boss.GetComponent<Killable>();
+            this.Bind(boss);
         }
 
         private void OnEnable()
         {
-            this.Bind(healthHandler);
+            this.Bind(healthHandler.gameObject);
             
             killable.Killed += OnKilled;
         }
@@ -56,24 +57,26 @@ namespace ScringloGames.ColorClash.Runtime.UI.BossHealthHUD
             {
                 return;
             }
-            if(this.BoundTo.Health <= this.BoundTo.MaxHealth)
+            
+            if(this.healthHandler.Health <= this.healthHandler.MaxHealth)
             {
                 // We do a zero check on MaxHealth to prevent a DivideByZeroException
-                this.healthProgressDrawer.Progress = this.BoundTo.MaxHealth == 0f
+                this.healthProgressDrawer.Progress = this.healthHandler.MaxHealth == 0f
                     ? 0f
-                    : this.BoundTo.Health / this.BoundTo.MaxHealth;
+                    : this.healthHandler.Health / this.healthHandler.MaxHealth;
                 this.overhealProgressDrawer.Progress = 0f;
             }
-            if(this.BoundTo.Health > this.BoundTo.MaxHealth)
+            if(this.healthHandler.Health > this.healthHandler.MaxHealth)
             {
-                this.overhealProgressDrawer.Progress = (this.BoundTo.Health - this.BoundTo.MaxHealth) / this.BoundTo.MaxHealth;
+                this.overhealProgressDrawer.Progress = 
+                    (this.healthHandler.Health - this.healthHandler.MaxHealth) / this.healthHandler.MaxHealth;
                 this.healthProgressDrawer.Progress = 1f;
             }
         }
         
         private void OnKilled(Killable killable)
         {
-            this.gameObject.SetActive(false);
+            this.transform.parent.gameObject.SetActive(false);
         }
     }
 }

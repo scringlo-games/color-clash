@@ -3,15 +3,20 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.UI.PlayerAmmoHUD
 {
-    public class PlayerAmmoHUDDrawer : MonoBehaviour, IBindable<AmmunitionBank>
+    public class PlayerAmmoHUDDrawer : MonoBehaviour, IBindable
     {
         [SerializeField]
         private ProgressDrawer progressDrawer;
-        public AmmunitionBank BoundTo { get; private set; }
+        private AmmunitionBank ammunitionBank;
+        public GameObject BoundTo { get; private set; }
         
-        public void Bind(AmmunitionBank bank)
+        public void Bind(GameObject obj)
         {
-            this.BoundTo = bank;
+            this.BoundTo = obj;
+            
+            // NOTE: We WILL have to fix this once we add other weapons that have ammunition - this is just to get us
+            // up and running very quickly
+            this.ammunitionBank = obj.GetComponentInChildren<AmmunitionBank>();
         }
 
         public void Unbind()
@@ -22,10 +27,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerAmmoHUD
         private void OnEnable()
         {
             var player = GameObject.FindWithTag("Player");
-            // NOTE: We WILL have to fix this once we add other weapons that have ammunition - this is just to get us
-            // up and running very quickly
-            var ammunitionBank = player.GetComponentInChildren<AmmunitionBank>();
-            this.Bind(ammunitionBank);
+            this.Bind(player);
         }
 
         private void Update()
@@ -41,9 +43,9 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerAmmoHUD
             }
             
             // We do a zero check on MaxHealth to prevent a DivideByZeroException
-            this.progressDrawer.Progress = (this.BoundTo.Capacity == 0)
+            this.progressDrawer.Progress = (this.ammunitionBank.Capacity == 0)
                 ? 0f
-                : (float)this.BoundTo.Count / (float)this.BoundTo.Capacity;
+                : (float)this.ammunitionBank.Count / (float)this.ammunitionBank.Capacity;
         }
     }
 }
