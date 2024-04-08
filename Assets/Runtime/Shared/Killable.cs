@@ -13,11 +13,11 @@ namespace ScringloGames.ColorClash.Runtime.Shared
         private HealthHandler healthHandler;
         [SerializeField]
         private Destructible destructible;
-        public event Action Killed;
+        public event Action<Killable> Killed;
 
         public void Kill()
         {
-            this.Killed?.Invoke();
+            this.Killed?.Invoke(this);
             this.StartCoroutine(this.DestroyAfterDelay());
         }
 
