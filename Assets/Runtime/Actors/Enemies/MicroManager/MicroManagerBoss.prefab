@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1028735967383306401, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
+      propertyPath: interval
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1100163322422152652, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616516391733098082, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
+      propertyPath: interval
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3719259924490384057, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
       propertyPath: m_Name
@@ -55,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 5970980717196653251, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138385460267326302, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838688796300154028, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
+      propertyPath: interval
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
