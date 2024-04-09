@@ -33,9 +33,6 @@ EditorBuildSettings:
     path: Assets/Runtime/Scenes/FoamFistSequence/FoamFistIntern.unity
     guid: 845e150894388ed46a6f28cf18ad9fc3
   - enabled: 1
-    path: Assets/Runtime/Scenes/FoamFistSequence/FoamFistBoss.unity
-    guid: 299c140bcbf655e438e5a7428e240d36
-  - enabled: 1
     path: Assets/Runtime/Scenes/PencilPusherSequence/PencilPusherIntro.unity
     guid: b893c408b2ca9fe489440a0979a90e9b
   - enabled: 1
@@ -44,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Runtime/Scenes/PencilPusherSequence/PencilPusherEscalate.unity
     guid: 8164738ecc5e669418812196530dbcbd
+  - enabled: 1
+    path: Assets/Runtime/Scenes/PencilPusherSequence/PencilPusherBoss.unity
+    guid: 299c140bcbf655e438e5a7428e240d36
   - enabled: 1
     path: Assets/Runtime/Scenes/StaplerFreakSequence/StaplerFreakIntro.unity
     guid: 8a12c4a528d03e441a24896ebbd183a6

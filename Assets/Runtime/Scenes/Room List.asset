@@ -25,6 +25,7 @@ MonoBehaviour:
   - PencilPusherIntro
   - PencilPusherFoamFist
   - PencilPusherEscalate
+  - PencilPusherBoss
   - StaplerFreakIntro
   - StaplerFreakPencilPusher
   - StaplerPencilIntern
