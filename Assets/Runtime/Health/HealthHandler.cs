@@ -77,7 +77,13 @@ namespace ScringloGames.ColorClash.Runtime.Health
             
             this.interval.Reset();
             this.interval.Start();
-            this.IsInvincible = true;
+            
+            //Jank fix to make sure that the player isn't invincible while overhealed.
+            if(args.Amount >= 5f)
+            {
+                this.IsInvincible = true;
+            }
+
             this.TakeDamage(args.Amount);
         }
         
