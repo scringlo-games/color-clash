@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3002910490298098611}
   - component: {fileID: 5123106855518847739}
   - component: {fileID: 7435066317044154497}
+  - component: {fileID: 7459625231280550300}
   m_Layer: 0
   m_Name: RoomExit
   m_TagString: Untagged
@@ -145,3 +146,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   activeSprite: {fileID: 21300000, guid: 37cedffd18550754f8569973d5823d80, type: 3}
+--- !u!114 &7459625231280550300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446778935774398761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1804b1fabdfa4ece8cbea72cd3d20eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exit: {fileID: 7435066317044154497}
+  roomClearedEvent: {fileID: 11400000, guid: 6f6877cb886daa14fa58aa5fd28694d7, type: 2}

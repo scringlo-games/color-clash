@@ -3,7 +3,7 @@ using ScringloGames.ColorClash.Runtime.Movement;
 using ScringloGames.ColorClash.Runtime.Weapons;
 using UnityEngine;
 
-namespace ScringloGames.ColorClash.Runtime
+namespace ScringloGames.ColorClash.Runtime.AI
 {
     public class MicroManagerAIBrain : MonoBehaviour
     {

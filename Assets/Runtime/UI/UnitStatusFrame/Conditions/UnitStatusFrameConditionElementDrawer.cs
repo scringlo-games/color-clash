@@ -1,23 +1,23 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame.Conditions
 {
     public class UnitStatusFrameConditionElementDrawer : MonoBehaviour
     {
         [SerializeField]
-        private TextMeshProUGUI textComponent;
+        private Image indicatorImage;
         
         public int StackCount { get; set; }
 
         private void Update()
         {
-            if (this.textComponent == null)
+            if (this.indicatorImage == null)
             {
                 return;
             }
 
-            this.textComponent.text = this.StackCount.ToString();
+            this.indicatorImage.fillAmount = StackCount/8f;
         }
     }
 }

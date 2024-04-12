@@ -96,7 +96,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame
             frame.Bind(healthHandler.gameObject);
 
             var healthDrawer = frame.GetComponentInChildren<UnitStatusFrameHealthDrawer>(true);
-            healthDrawer.Bind(healthHandler);
+            healthDrawer.Bind(healthHandler.gameObject);
         }
         
         private void OnHealthHandlerDeregistered(HealthHandler healthHandler)
@@ -123,7 +123,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.UnitStatusFrame
             frame.Bind(conditionBank.gameObject);
             
             var conditionDrawer = frame.GetComponentInChildren<UnitStatusFrameConditionDrawer>(true);
-            conditionDrawer.Bind(conditionBank);
+            conditionDrawer.Bind(conditionBank.gameObject);
         }
         
         private void OnConditionBankDeregistered(ConditionBank conditionBank)

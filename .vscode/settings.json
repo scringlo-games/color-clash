@@ -57,5 +57,6 @@
         "Temp/": true
     },
     "dotnet.defaultSolution": "Color Clash.sln",
-    "FSharp.suggestGitignore": false
+    "FSharp.suggestGitignore": false,
+    "diffEditor.codeLens": true
 }

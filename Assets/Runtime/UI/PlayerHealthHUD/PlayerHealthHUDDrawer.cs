@@ -3,18 +3,20 @@ using UnityEngine;
 
 namespace ScringloGames.ColorClash.Runtime.UI.PlayerHealthHUD
 {
-    public class PlayerHealthHUDDrawer : MonoBehaviour, IBindable<HealthHandler>
+    public class PlayerHealthHUDDrawer : MonoBehaviour, IBindable
     {
         [SerializeField]
         private ProgressDrawer healthProgressDrawer;
         [SerializeField]
         private ProgressDrawer overhealProgressDrawer;
+        private HealthHandler healthHandler;
+
+        public GameObject BoundTo { get; private set; }
         
-        public HealthHandler BoundTo { get; private set; }
-        
-        public void Bind(HealthHandler healthHandler)
+        public void Bind(GameObject obj)
         {
-            this.BoundTo = healthHandler;
+            this.BoundTo = obj;
+            this.healthHandler = obj.GetComponent<HealthHandler>();
         }
 
         public void Unbind()
@@ -25,8 +27,7 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerHealthHUD
         private void OnEnable()
         {
             var player = GameObject.FindWithTag("Player");
-            var healthHandler = player.GetComponent<HealthHandler>();
-            this.Bind(healthHandler);
+            this.Bind(player);
         }
 
         private void Update()
@@ -40,17 +41,18 @@ namespace ScringloGames.ColorClash.Runtime.UI.PlayerHealthHUD
             {
                 return;
             }
-            if(this.BoundTo.Health <= this.BoundTo.MaxHealth)
+            if(this.healthHandler.Health <= this.healthHandler.MaxHealth)
             {
                 // We do a zero check on MaxHealth to prevent a DivideByZeroException
-                this.healthProgressDrawer.Progress = this.BoundTo.MaxHealth == 0f
+                this.healthProgressDrawer.Progress = this.healthHandler.MaxHealth == 0f
                     ? 0f
-                    : this.BoundTo.Health / this.BoundTo.MaxHealth;
+                    : this.healthHandler.Health / this.healthHandler.MaxHealth;
                 this.overhealProgressDrawer.Progress = 0f;
             }
-            if(this.BoundTo.Health > this.BoundTo.MaxHealth)
+            if(this.healthHandler.Health > this.healthHandler.MaxHealth)
             {
-                this.overhealProgressDrawer.Progress = (this.BoundTo.Health - this.BoundTo.MaxHealth) / this.BoundTo.MaxHealth;
+                this.overhealProgressDrawer.Progress = 
+                    (this.healthHandler.Health - this.healthHandler.MaxHealth) / this.healthHandler.MaxHealth;
                 this.healthProgressDrawer.Progress = 1f;
 
             }
