@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Runtime/Scenes/MicroManagerSequence/MicroManagerBoss.unity
     guid: ddd6c32b579e29041b2582fab5fb22d0
+  - enabled: 1
+    path: Assets/Runtime/Scenes/VictoryScreen/VictoryScreen.unity
+    guid: 03c6410d78fbb1044ac10b1b0af20663
   m_configObjects: {}
