@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e42cf244f43e422a9c59524b58b43710, type: 3}
-  m_Name: SpawnTable_MicroManager
+  m_Name: SpawnTable_MicroManagerBoss
   m_EditorClassIdentifier: 
   prefabsToSpawn:
-  - {fileID: 5730607658778991913, guid: 086b8dc5a12bbe24eb0ede588752e555, type: 3}
+  - {fileID: 5730607658778991913, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
