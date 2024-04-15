@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Runtime/Scenes/OnboardingSequence/MixingUse.unity
     guid: 7c93c5d3c993ff54ba3710dfe8fb0aed
   - enabled: 1
-    path: Assets/Runtime/Scenes/OnboardingSequence/InternBoss.unity
-    guid: 2d52afd0cf9d7304383b533202aa6c3e
-  - enabled: 1
     path: Assets/Runtime/Scenes/FoamFistSequence/FoamFistIntro.unity
     guid: aa28b97ba9d01d546a148c53370ebba7
   - enabled: 1
