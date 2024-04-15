@@ -19,6 +19,8 @@ namespace ScringloGames.ColorClash.Runtime
         private float scaleDuration = 0.2f;
         [SerializeField]
         private AnimationCurve animCurve;
+        [SerializeField]
+        private AudioSource audioSource;
        
         public void OnSelect(BaseEventData eventData)
         {
@@ -26,6 +28,12 @@ namespace ScringloGames.ColorClash.Runtime
             button.DOScale(scaleAmount, scaleDuration)
             .SetEase(animCurve)
             .SetAutoKill(false);   
+            if(audioSource != null)
+            {
+                audioSource.Play();
+
+            }
+
         }
         
         
