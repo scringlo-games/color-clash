@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: interval
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1028735967383306401, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: ab74c15a6a4562841ab877aa6b860797, type: 2}
     - target: {fileID: 1100163322422152652, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
       propertyPath: m_Radius
       value: 1
@@ -20,6 +24,10 @@ PrefabInstance:
       propertyPath: interval
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1616516391733098082, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: ab74c15a6a4562841ab877aa6b860797, type: 2}
     - target: {fileID: 3719259924490384057, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
       propertyPath: m_Name
       value: MicroManagerBoss
@@ -72,6 +80,10 @@ PrefabInstance:
       propertyPath: interval
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7838688796300154028, guid: f66e5ee76c4024949af75f64ced98c2e, type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: ab74c15a6a4562841ab877aa6b860797, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

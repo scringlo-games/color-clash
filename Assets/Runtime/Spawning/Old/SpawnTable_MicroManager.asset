@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SpawnTable_MicroManager
   m_EditorClassIdentifier: 
   prefabsToSpawn:
-  - {fileID: 5730607658778991913, guid: 1cd3d79fa8fbfa841a616abe695d2dd4, type: 3}
+  - {fileID: 5730607658778991913, guid: 086b8dc5a12bbe24eb0ede588752e555, type: 3}
